@@ -53,9 +53,16 @@ PRE = 247; POST = 248; POST_POST = 249;
 # DVIV opcodes
 DIR = 255;
 # XDVI opcodes (not supported yet!)
-NATIVE_FONT_DEF = 250;
-PDF_FILE = 251; PIC_FILE = 252;
+PIC_FILE = 251;
+NATIVE_FONT_DEF = 252;
 GLYPH_ARRAY = 253; GLYPH_STRING = 254;
+# XDVI flags
+XDV_FLAG_VERTICAL = 0x0100;
+XDV_FLAG_COLORED = 0x0200;
+XDV_FLAG_VARIATIONS = 0x0800;
+XDV_FLAG_EXTEND = 0x1000;
+XDV_FLAG_SLANT = 0x2000;
+XDV_FLAG_EMBOLDEN = 0x4000;
 # DVI identifications
 DVI_ID = 2; DVIV_ID = 3; XDVI_ID = 5;
 
@@ -96,6 +103,11 @@ def SignedTrio(fp): # { returns the next three bytes, signed }
   except: BadDVI('Failed to SignedTrio()')
   if a < 128: return (((a << 8) + b) << 8) + c
   else: return ((((a - 256) << 8) + b) << 8) + c
+
+def Get4Bytes(fp): # { returns the next four bytes, unsigned }
+  try: a, b, c, d = map(ord, fp.read(4))
+  except: BadDVI('Failed to Get4Bytes()')
+  return (((((a << 8) + b) << 8) + c) << 8) + d
 
 def SignedQuad(fp): # { returns the next four bytes, signed }
   try: a, b, c, d = map(ord, fp.read(4))
@@ -323,8 +335,10 @@ class DVI(object):
       elif k == FNT_DEF2: p = Get2Bytes(fp)
       elif k == FNT_DEF3: p = Get3Bytes(fp)
       elif k == FNT_DEF4: p = SignedQuad(fp)
+      elif k == NATIVE_FONT_DEF: p = SignedQuad(fp)
       elif k != NOP: break
-      self.DefineFont(p, fp)
+      if k == NATIVE_FONT_DEF: self.DefineNativeFont(p, fp)
+      else: self.DefineFont(p, fp)
     if k != POST_POST:
       Warning('byte %d is not postpost!' % (fp.tell() - 1))
     if SignedQuad(fp) != self.post_loc:
@@ -355,6 +369,45 @@ class DVI(object):
         Warning("\t---design size doesn't match previous definition!")
       if f['name'] != n:
         Warning("\t---font name doesn't match previous definition!")
+
+  def DefineNativeFont(self, e, fp):
+    size = Get4Bytes(fp) # scaled size
+    flags = Get2Bytes(fp)
+    plen = GetByte(fp) # PS name length
+    flen = GetByte(fp) # family name length
+    slen = GetByte(fp) # style name length
+    fnt_name = fp.read(plen)
+    fam_name = fp.read(flen)
+    sty_name = fp.read(slen)
+    layout_dir = 0
+    rgba_color = 0
+    extend = 0
+    slant = 0
+    embolden = 0
+    if flags & XDV_FLAG_VERTICAL: layout_dir = 1
+    if flags & XDV_FLAG_COLORED: rgba_color = Get4Bytes(fp)
+    if flags & XDV_FLAG_EXTEND: extend = SignedQuad(fp)
+    if flags & XDV_FLAG_SLANT: slant = SignedQuad(fp)
+    if flags & XDV_FLAG_EMBOLDEN: embolden = SignedQuad(fp)
+    if flags & XDV_FLAG_VARIATIONS:
+      pass # XXX
+    try:
+      f = self.font_def[e]
+    except KeyError:
+      self.font_def[e] = {
+        'name': fnt_name,
+        'checksum': 0,
+        'scaled_size': size,
+        'design_size': 655360, # hardcoded
+        'family_name': fam_name,
+        'style_name': sty_name,
+        'native_font': True,
+        'layout_dir': layout_dir,
+        'color': rgba_color,
+        'extend': extend,
+        'slant': extend,
+        'embolden': embolden,
+        }
 
   def ProcessPage(self, fp):
     s = []
@@ -733,10 +786,24 @@ class DVI(object):
     # DumpFontDefinitions
     fp.write("\n[font definitions]\n")
     for e in sorted(self.font_def.keys()):
-      fp.write("fntdef: %s " % self.font_def[e]['name'])
+      fp.write("fntdef: %s" % self.font_def[e]['name'])
+      if 'native_font' in self.font_def[e].keys():
+        layout_dir = self.font_def[e]['layout_dir']
+        color = self.font_def[e]['color']
+        extend = self.font_def[e]['extend']
+        slant = self.font_def[e]['slant']
+        embolden = self.font_def[e]['embolden']
+        ext = ""
+        if layout_dir == 1: ext += "vertical;"
+        if color: ext += "color=%8X;" % color
+        if extend: ext += "extend=%d;" % extend
+        if slant: ext += "slant=%d;" % slant
+        if embolden: ext += "embolden=%d;" % embolden
+        if ext:
+          fp.write(":%s" % ext)
       if self.font_def[e]['design_size'] != self.font_def[e]['scaled_size']:
-        fp.write("(%s) " % self.by_pt_conv(self.font_def[e]['design_size']))
-      fp.write("at %s\n" % self.by_pt_conv(self.font_def[e]['scaled_size']))
+        fp.write(" (%s) " % self.by_pt_conv(self.font_def[e]['design_size']))
+      fp.write(" at %s\n" % self.by_pt_conv(self.font_def[e]['scaled_size']))
     # DumpPages
     for page in self.pages:
       fp.write("\n[page" + (" %d"*10 % tuple(page['count'])) + "]\n")
