@@ -468,6 +468,8 @@ class DVI(object):
         s.append([XXX1, q])
       elif o in (FNT_DEF1, FNT_DEF2, FNT_DEF3, FNT_DEF4):
         self.DefineFont(p, fp)
+      elif o == NATIVE_FONT_DEF:
+        self.DefineNativeFont(p, fp)
       elif o == DIR:
         s.append([DIR, p])
       elif o == PRE:
@@ -496,7 +498,7 @@ class DVI(object):
       return SignedPair(fp)
     if o in (RIGHT3, W3, X3, DOWN3, Y3, Z3):
       return SignedTrio(fp)
-    if o in (SET4, SET_RULE, PUT4, PUT_RULE, RIGHT4, W4, X4, DOWN4, Y4, Z4, FNT4, XXX4, FNT_DEF4):
+    if o in (SET4, SET_RULE, PUT4, PUT_RULE, RIGHT4, W4, X4, DOWN4, Y4, Z4, FNT4, XXX4, FNT_DEF4, NATIVE_FONT_DEF):
       return SignedQuad(fp)
     if o in (NOP, BOP, EOP, PUSH, POP, PRE, POST, POST_POST) or o > POST_POST:
       return 0
