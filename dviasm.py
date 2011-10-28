@@ -931,7 +931,7 @@ the Free Software Foundation; either version 2 of the License, or
 
 def IsDVI(fname):
   from os.path import splitext
-  if splitext(fname)[1] != '.dvi': return False
+  if splitext(fname)[1] not in ('.dvi', '.xdv'): return False
   try:
     fp = file(fname, 'rb')
     fp.seek(0)
