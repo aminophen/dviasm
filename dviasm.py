@@ -470,6 +470,10 @@ class DVI(object):
         self.DefineFont(p, fp)
       elif o == NATIVE_FONT_DEF:
         self.DefineNativeFont(p, fp)
+      elif o == GLYPH_STRING:
+        s.append([GLYPH_STRING, self.GetGlyphArray(fp)])
+      elif o == GLYPH_ARRAY:
+        s.append([GLYPH_ARRAY, self.GetGlyphArray(fp, True)])
       elif o == DIR:
         s.append([DIR, p])
       elif o == PRE:
@@ -506,6 +510,23 @@ class DVI(object):
       return 0
     if o < FNT_NUM_0 + 64:
       return o - FNT_NUM_0
+
+  def GetGlyphArray(self, fp, yPresent=False):
+    w = SignedQuad(fp)
+    l = SignedPair(fp)
+    x = []
+    y = []
+    g = {}
+    for i in range(l):
+      x.append(SignedQuad(fp))
+      if yPresent: y.append(SignedQuad(fp))
+
+    for i in range(l):
+      g[i] = {"id":Get2Bytes(fp), 'x':x[i]}
+      if yPresent:
+        g[i]["y"] = y[i]
+
+    return g
 
   ##########################################################
   # Save: Internal Format -> DVI
@@ -839,6 +860,10 @@ class DVI(object):
             if self.font_def[cmd[1]]['design_size'] != self.font_def[cmd[1]]['scaled_size']:
               fp.write("(%s) " % self.by_pt_conv(self.font_def[cmd[1]]['design_size']))
             fp.write("at %s\n" % self.by_pt_conv(cur_ssize))
+        elif cmd[0] == GLYPH_STRING:
+          fp.write("setglyphstring:%s\n" % self.DumpGlyphArray(cmd[1]))
+        elif cmd[0] == GLYPH_ARRAY:
+          fp.write("setglypharray:%s\n" % self.DumpGlyphArray(cmd[1], True))
         elif cmd[0] == RIGHT1:
           fp.write("right: %s\n" % self.byconv(cmd[1]))
         elif cmd[0] == DOWN1:
@@ -859,6 +884,12 @@ class DVI(object):
           fp.write("y0:\n")
         elif cmd[0] == Z0:
           fp.write("z0:\n")
+
+  def DumpGlyphArray(self, g, yPresent=False):
+    s = ""
+    for i in g:
+        s += " %s(%s%s)" % (g[i]["id"], g[i]["x"], yPresent and ", %s" %g[i]["y"] or "")
+    return s
 
   ##########################################################
   # Misc Functions
