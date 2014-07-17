@@ -522,11 +522,11 @@ class DVI(object):
       x.append(SignedQuad(fp))
       if yPresent:
         y.append(SignedQuad(fp))
+      else:
+        y.append(0)
 
     for i in range(l):
-      g[i] = {"id":Get2Bytes(fp), 'x':x[i]}
-      if yPresent:
-        g[i]["y"] = y[i]
+      g[i] = {"id":Get2Bytes(fp), 'x':x[i], 'y':y[i]}
 
     return g
 
@@ -862,10 +862,8 @@ class DVI(object):
             if self.font_def[cmd[1]]['design_size'] != self.font_def[cmd[1]]['scaled_size']:
               fp.write("(%s) " % self.by_pt_conv(self.font_def[cmd[1]]['design_size']))
             fp.write("at %s\n" % self.by_pt_conv(cur_ssize))
-        elif cmd[0] == GLYPH_STRING:
-          fp.write("setglyphstring:%s\n" % self.DumpGlyphArray(cmd[1]))
-        elif cmd[0] == GLYPH_ARRAY:
-          fp.write("setglypharray:%s\n" % self.DumpGlyphArray(cmd[1], True))
+        elif cmd[0] in (GLYPH_STRING, GLYPH_ARRAY):
+          fp.write("setglyphs: %s\n" % self.DumpGlyphArray(cmd[1]))
         elif cmd[0] == RIGHT1:
           fp.write("right: %s\n" % self.byconv(cmd[1]))
         elif cmd[0] == DOWN1:
@@ -887,11 +885,20 @@ class DVI(object):
         elif cmd[0] == Z0:
           fp.write("z0:\n")
 
-  def DumpGlyphArray(self, g, yPresent=False):
-    s = ""
+  def DumpGlyphArray(self, g):
+    yPresent = False
     for i in g:
-        s += " %s(%s%s)" % (g[i]["id"], g[i]["x"], yPresent and ", %s" %g[i]["y"] or "")
-    return s
+      if g[i]["y"] != 0:
+        yPresent = True
+
+    glyphs = []
+    for i in g:
+      if yPresent:
+        glyphs.append("%s(%s, %s)" % (g[i]["id"], g[i]["x"], g[i]["y"]))
+      else:
+        glyphs.append("%s(%s)" % (g[i]["id"], g[i]["x"]))
+
+    return " ".join(glyphs)
 
   ##########################################################
   # Misc Functions
