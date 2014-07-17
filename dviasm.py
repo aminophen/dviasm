@@ -818,14 +818,20 @@ class DVI(object):
         extend = self.font_def[e]['extend']
         slant = self.font_def[e]['slant']
         embolden = self.font_def[e]['embolden']
-        ext = ""
-        if layout_dir == 1: ext += "vertical;"
-        if color: ext += "color=%8X;" % color
-        if extend: ext += "extend=%d;" % extend
-        if slant: ext += "slant=%d;" % slant
-        if embolden: ext += "embolden=%d;" % embolden
+        ext = []
+        if layout_dir == 1:
+          ext.append("vertical")
+        if color:
+          ext.append("color=%8X" % color)
+        if extend:
+          ext.append("extend=%d" % extend)
+        if slant:
+          ext.append("slant=%d" % slant)
+        if embolden:
+          ext.append("embolden=%d" % embolden)
+
         if ext:
-          fp.write(":%s" % ext)
+          fp.write(":%s" % ";".join(ext))
       if self.font_def[e]['design_size'] != self.font_def[e]['scaled_size']:
         fp.write(" (%s) " % self.by_pt_conv(self.font_def[e]['design_size']))
       fp.write(" at %s\n" % self.by_pt_conv(self.font_def[e]['scaled_size']))
