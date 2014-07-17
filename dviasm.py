@@ -53,11 +53,11 @@ FNT_DEF1 = 243; FNT_DEF2 = 244; FNT_DEF3 = 245; FNT_DEF4 = 246;
 PRE = 247; POST = 248; POST_POST = 249;
 # DVIV opcodes
 DIR = 255;
-# XDVI opcodes (not supported yet!)
+# XDV opcodes
 PIC_FILE = 251;
 NATIVE_FONT_DEF = 252;
 GLYPH_ARRAY = 253; GLYPH_STRING = 254;
-# XDVI flags
+# XDV flags
 XDV_FLAG_VERTICAL = 0x0100;
 XDV_FLAG_COLORED = 0x0200;
 XDV_FLAG_VARIATIONS = 0x0800;
@@ -65,7 +65,7 @@ XDV_FLAG_EXTEND = 0x1000;
 XDV_FLAG_SLANT = 0x2000;
 XDV_FLAG_EMBOLDEN = 0x4000;
 # DVI identifications
-DVI_ID = 2; DVIV_ID = 3; XDVI_ID = 5;
+DVI_ID = 2; DVIV_ID = 3; XDV_ID = 5;
 
 def Warning(msg):
   sys.stderr.write('%s\n' % msg)
@@ -279,7 +279,7 @@ class DVI(object):
     fp.seek(0)
     if GetByte(fp) != PRE: BadDVI("First byte isn't start of preamble")
     id = GetByte(fp)
-    if id != DVI_ID and id != DVIV_ID and id != XDVI_ID:
+    if id != DVI_ID and id != DVIV_ID and id != XDV_ID:
       Warning("ID byte is %d; use the default %d!" % (id, DVI_ID))
     else:
       self.id = id
@@ -308,7 +308,7 @@ class DVI(object):
       if   k < 0:    BadDVI('all 223s; is it a DVI file?') # found EOF
       elif k != 223: break
       fp.seek(-2, 1)
-    if k != DVI_ID and k != DVIV_ID and k != XDVI_ID:
+    if k != DVI_ID and k != DVIV_ID and k != XDV_ID:
       Warning('ID byte is %d' % k)
     fp.seek(-5, 1)
     q = SignedQuad(fp)
@@ -345,8 +345,8 @@ class DVI(object):
     if SignedQuad(fp) != self.post_loc:
       Warning('bad postamble pointer in byte %d!' % (fp.tell() - 4))
     m = GetByte(fp)
-    if m != DVI_ID and m != DVIV_ID and m != XDVI_ID:
-      Warning('identification in byte %d should be %d, %d, or %d!' % (fp.tell() - 1, DVI_ID, DVIV_ID, XDVI_ID))
+    if m != DVI_ID and m != DVIV_ID and m != XDV_ID:
+      Warning('identification in byte %d should be %d, %d, or %d!' % (fp.tell() - 1, DVI_ID, DVIV_ID, XDV_ID))
 
   def DefineFont(self, e, fp):
     c = SignedQuad(fp) # font_check_sum
@@ -654,8 +654,8 @@ class DVI(object):
       # ParsePreamble
       if key == "id":
         self.id = GetInt(val)
-        if self.id != DVI_ID and self.id != DVIV_ID and self.id != XDVI_ID:
-          Warning("identification byte should be %d, %d, or %d!" % (DVI_ID, DVIV_ID, XDVI_ID))
+        if self.id != DVI_ID and self.id != DVIV_ID and self.id != XDV_ID:
+          Warning("identification byte should be %d, %d, or %d!" % (DVI_ID, DVIV_ID, XDV_ID))
       elif key == "numerator":
         d = GetInt(val)
         if d <= 0:
