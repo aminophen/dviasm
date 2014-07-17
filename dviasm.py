@@ -520,7 +520,8 @@ class DVI(object):
     g = {}
     for i in range(l):
       x.append(SignedQuad(fp))
-      if yPresent: y.append(SignedQuad(fp))
+      if yPresent:
+        y.append(SignedQuad(fp))
 
     for i in range(l):
       g[i] = {"id":Get2Bytes(fp), 'x':x[i]}
