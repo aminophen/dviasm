@@ -4,6 +4,7 @@
 # This is DVIasm, a DVI utility for editing DVI files directly.
 #
 # Copyright (C) 2007-2008 by Jin-Hwan Cho <chofchof@ktug.or.kr>
+# Copyright (C) 2011-2014 by Khaled Hosny <khaledhosny@eglug.org>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
