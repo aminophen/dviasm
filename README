@@ -1,0 +1,16 @@
+DVIasm is a TeX utility program written by Jin-Hwan Cho, that is
+designed for editing DeVice-Independent (DVI) files directly.
+
+It consists of a single Python program, dviasm.py, in a human readable
+text format and it runs on any platform in which Python is installed.
+
+All revisions of DVIasm can be downloaded at
+
+http://svn.ktug.or.kr/viewvc/dviasm/?root=ChoF
+
+It is fully documented at
+
+http://tug.org/TUGboat/Articles/tb28-2/tb89cho.pdf (TUGboat)
+http://ajt.ktug.kr/assets/2008/5/1/0201cho.pdf (Asian Journal of TeX)
+
+Jin-Hwan Cho <chofchof_at_ktug.or.kr>, the developer of DVIPDFMx.
