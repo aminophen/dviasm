@@ -866,7 +866,7 @@ class DVI(object):
               fp.write("(%s) " % self.by_pt_conv(self.font_def[cmd[1]]['design_size']))
             fp.write("at %s\n" % self.by_pt_conv(cur_ssize))
         elif cmd[0] in (GLYPH_STRING, GLYPH_ARRAY):
-          fp.write("setglyphs: %s\n" % self.DumpGlyphArray(cmd[1]))
+          fp.write("setglyphs: %s\n" % self.DumpGlyphs(cmd[1][0], cmd[1][1]))
         elif cmd[0] == RIGHT1:
           fp.write("right: %s\n" % self.byconv(cmd[1]))
         elif cmd[0] == DOWN1:
@@ -888,7 +888,7 @@ class DVI(object):
         elif cmd[0] == Z0:
           fp.write("z0:\n")
 
-  def DumpGlyphArray(self, g):
+  def DumpGlyphs(self, w, g):
     yPresent = False
     for i in g:
       if g[i]["y"] != 0:
@@ -896,12 +896,15 @@ class DVI(object):
 
     glyphs = []
     for i in g:
+      gid = "gid%s" % g[i]["id"]
+      x = self.byconv(g[i]["x"])
+      y = self.byconv(g[i]["y"])
       if yPresent:
-        glyphs.append("%s(%s, %s)" % (g[i]["id"], g[i]["x"], g[i]["y"]))
+        glyphs.append("%s(%s, %s)" % (gid, x, y))
       else:
-        glyphs.append("%s(%s)" % (g[i]["id"], g[i]["x"]))
+        glyphs.append("%s(%s)" % (gid, x))
 
-    return " ".join(glyphs)
+    return "%s %s" % (self.byconv(w), " ".join(glyphs))
 
   ##########################################################
   # Misc Functions
