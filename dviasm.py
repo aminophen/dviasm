@@ -471,10 +471,8 @@ class DVI(object):
         self.DefineFont(p, fp)
       elif o == NATIVE_FONT_DEF:
         self.DefineNativeFont(p, fp)
-      elif o == GLYPH_STRING:
-        s.append([GLYPH_STRING, self.GetGlyphArray(fp)])
-      elif o == GLYPH_ARRAY:
-        s.append([GLYPH_ARRAY, self.GetGlyphArray(fp, True)])
+      elif o in (GLYPH_STRING, GLYPH_ARRAY):
+        s.append([GLYPH_STRING, self.GetGlyphs(o, fp)])
       elif o == DIR:
         s.append([DIR, p])
       elif o == PRE:
@@ -512,23 +510,22 @@ class DVI(object):
     if o < FNT_NUM_0 + 64:
       return o - FNT_NUM_0
 
-  def GetGlyphArray(self, fp, yPresent=False):
-    w = SignedQuad(fp)
-    l = SignedPair(fp)
-    x = []
-    y = []
-    g = {}
-    for i in range(l):
-      x.append(SignedQuad(fp))
-      if yPresent:
-        y.append(SignedQuad(fp))
+  def GetGlyphs(self, cmd, fp):
+    width = SignedQuad(fp)
+    length = Get2Bytes(fp)
+    glyphs = {}
+    for i in range(length):
+      glyphs[i] = {}
+      glyphs[i]["x"] = SignedQuad(fp)
+      if cmd == GLYPH_ARRAY:
+        glyphs[i]["y"] = SignedQuad(fp)
       else:
-        y.append(0)
+        glyphs[i]["y"] = 0
 
-    for i in range(l):
-      g[i] = {"id":Get2Bytes(fp), 'x':x[i], 'y':y[i]}
+    for i in range(length):
+      glyphs[i]["id"] = Get2Bytes(fp)
 
-    return g
+    return (width, glyphs)
 
   ##########################################################
   # Save: Internal Format -> DVI
