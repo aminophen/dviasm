@@ -142,6 +142,21 @@ def PutSigned(q):
   if q < -0x80:       q += 0x10000;   return (1, Put2Bytes(q))
   return (0, PutByte(q))
 
+def PutGlyphs(cmd, width, glyphs):
+  s = []
+  length = len(glyphs)
+  s.append(PutByte(cmd))
+  s.append(PutSignedQuad(width))
+  s.append(Put2Bytes(length))
+  for glyph in glyphs:
+    s.append(PutSignedQuad(glyph["x"]))
+    if cmd == GLYPH_ARRAY:
+      s.append(PutSignedQuad(glyph["y"]))
+  for glyph in glyphs:
+    s.append(Put2Bytes(glyph["id"]))
+
+  return ''.join(s)
+
 def GetInt(s):
   try: return int(s)
   except: return -1
@@ -608,6 +623,8 @@ class DVI(object):
           else:       s.append(chr(XXX4) + PutSignedQuad(l) + cmd[1])
         elif cmd[0] == DIR:
           s.append(chr(DIR) + chr(cmd[1]))
+        elif cmd[0] in (GLYPH_ARRAY, GLYPH_STRING):
+          s.append(PutGlyphs(cmd[0], cmd[1], cmd[2]))
         else:
           Warning('invalid command %s!' % cmd[0])
       s.append(chr(EOP))
