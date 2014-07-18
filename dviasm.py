@@ -527,6 +527,30 @@ class DVI(object):
 
     return (width, glyphs)
 
+  def ReadGlyphs(self, val):
+    import re
+    glyphs = []
+    yPresent = False
+    w, g = val.split(" ", 1)
+    for m in re.finditer(r"gid(?P<id>\d+?)\((?P<pos>.*?.)\)", g):
+      gid = m.group("id")
+      pos = m.group("pos")
+
+      if "," in pos:
+        x, y = pos.split(",")
+        yPresent = True
+      else:
+        x, y = pos, "0sp"
+
+      glyphs.append({"id": int(gid), 'x': self.ConvLen(x), 'y': self.ConvLen(y)})
+
+    if yPresent:
+      cmd = GLYPH_ARRAY
+    else:
+      cmd = GLYPH_STRING
+
+    return (cmd, self.ConvLen(w), glyphs)
+
   ##########################################################
   # Save: Internal Format -> DVI
   ##########################################################
@@ -765,6 +789,9 @@ class DVI(object):
         self.cur_page.append([Z0])
       elif key == 'dir':
         self.cur_page.append([DIR, GetInt(val)])
+      elif key == 'setglyphs':
+        cmd, w, glyphs = self.ReadGlyphs(val)
+        self.cur_page.append([cmd, w, glyphs])
       else:
         Warning('invalid command %s!' % key)
 
