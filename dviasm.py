@@ -722,8 +722,7 @@ class DVI(object):
         self.total_pages = GetInt(val)
       # Parse Font Definitions
       elif key == "fntdef":
-        n, q, d = self.GetFntDef(val)
-        self.font_def[self.fnt_num] = {'name':n, 'design_size':d, 'scaled_size':q, 'checksum':0}
+        self.font_def[self.fnt_num] = self.GetFntDef(val)
         self.fnt_num += 1
       # Parse Pages
       elif key == 'xxx':
@@ -761,13 +760,15 @@ class DVI(object):
           continue
         self.cur_page.append([PUT_RULE, [self.ConvLen(c) for c in v]])
       elif key == 'fnt':
-        n, q, d = self.GetFntDef(val)
+        f = self.GetFntDef(val)
+        n = f['name']
+        d = f['design_size']
+        q = f['scaled_size']
         if n in subfont_list:
           is_subfont = True
           cur_font = n; cur_dsize = d; cur_ssize = q
         else:
           is_subfont = False
-          f = {'name':n, 'design_size':d, 'scaled_size':q, 'checksum':0}
           try:
             e = self.font_def.keys()[self.font_def.values().index(f)]
           except:
@@ -953,17 +954,71 @@ class DVI(object):
       except: return 0
 
   def GetFntDef(self, s):
+    f = {}
     try:
       n, size = s.split('(', 1)
       d, q = size.split(')', 1)
     except:
       n, q = s.split(' ', 1)
     n = n.strip(); q = q.strip()
+    if n.startswith('"') and n.endswith('"'):
+      f['native'] = True
+      n = n.strip('"')
+      flags = 0
+      color = 0
+      extend = 0
+      slant = 0
+      embolden = 0
+      try:
+        psname, ext = n.split(':')
+      except:
+        psname, ext = n, ""
+
+      if ext:
+        ext = ext.split(';')
+        for opt in ext:
+          try:
+            key, value = opt.split('=')
+          except:
+            key, value = opt, ""
+          if key == "color":
+            flags |= XDV_FLAG_COLORED
+            color = int(value, 16)
+          if key == "vertical":
+            flags |= XDV_FLAG_VERTICAL
+          if key == "extend":
+            flags |= XDV_FLAG_EXTEND
+            extend = int(value)
+          if key == "slant":
+            flags |= XDV_FLAG_SLANT
+            slant = int(value)
+          if key == "embolden":
+            flags |= XDV_FLAG_EMBOLDEN
+            embolden = int(value)
+
+      f['psname'] = psname
+      f['famname'] = "" # XXX
+      f['styname'] = "" # XXX
+      f['flags'] = flags
+      f['color'] = color
+      f['extend'] = extend
+      f['slant'] = slant
+      f['embolden'] = embolden
+      f['vars'] = 0     # XXX
+    else:
+      f['native'] = False
+
     if q[:2] == "at": q = q[2:]
     q = self.ConvLen(q.strip())
     try:    d = self.ConvLen(d.strip())
     except: d = q
-    return n, q, d
+
+    f['name'] = n
+    f['design_size'] = d
+    f['scaled_size'] = q
+    f['checksum'] = 0
+
+    return f
 
   def by_sp_conv(self, a):
     v = self.sp_conv * a
