@@ -387,7 +387,7 @@ class DVI(object):
       if q <= 0 or q >= 01000000000:
         warning("%s---not loaded, bad scale (%d)!" % (n, q))
       elif d <= 0 or d >= 01000000000:
-        msssage("%s---not loaded, bad design size (%d)!" % (n, d))
+        warning("%s---not loaded, bad design size (%d)!" % (n, d))
     else:
       if f['checksum'] != c:
         warning("\t---check sum doesn't match previous definition!")
