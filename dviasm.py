@@ -67,7 +67,7 @@ XDV_FLAG_EMBOLDEN = 0x4000;
 # DVI identifications
 DVI_ID = 2; DVIV_ID = 3; XDV_ID = 5;
 
-def Warning(msg):
+def warning(msg):
   sys.stderr.write('%s\n' % msg)
 
 def BadDVI(msg):
@@ -197,7 +197,7 @@ def PutStrASCII(t): # unsed in Dump()
     elif o < 256:       s += ('\\x%02x' % o)
     elif o < 65536:     s += ('\\u%04x' % o)
     else:
-      Warning('Not support characters > 65535; may skip %d.\n' % o)
+      warning('Not support characters > 65535; may skip %d.\n' % o)
   return "'%s'" % s
 
 def PutStrLatin1(t): # unsed in Dump()
@@ -208,7 +208,7 @@ def PutStrLatin1(t): # unsed in Dump()
     elif o < 256:                         s += ('\\x%02x' % o)
     elif o < 65536:                       s += ('\\u%04x' % o)
     else:
-      Warning('Not support characters > 65535; may skip %d.\n' % o)
+      warning('Not support characters > 65535; may skip %d.\n' % o)
   return "'%s'" % s
 
 def PutStrUTF8(t): # unsed in Dump()
@@ -307,22 +307,22 @@ class DVI(object):
     if GetByte(fp) != PRE: BadDVI("First byte isn't start of preamble")
     id = GetByte(fp)
     if id != DVI_ID and id != DVIV_ID and id != XDV_ID:
-      Warning("ID byte is %d; use the default %d!" % (id, DVI_ID))
+      warning("ID byte is %d; use the default %d!" % (id, DVI_ID))
     else:
       self.id = id
     numerator = SignedQuad(fp)
     if numerator <= 0:
-      Warning('numerator is %d; use the default 25400000!' % numerator)
+      warning('numerator is %d; use the default 25400000!' % numerator)
     else:
       self.numerator = numerator
     denominator = SignedQuad(fp)
     if denominator <= 0:
-      Warning('denominator is %d; use the default 473628672!' % denominator)
+      warning('denominator is %d; use the default 473628672!' % denominator)
     else:
       self.denominator = denominator
     mag = SignedQuad(fp)
     if mag <= 0:
-      Warning('magnification is %d; use the default 1000!' % mag)
+      warning('magnification is %d; use the default 1000!' % mag)
     else:
       self.mag = mag
     self.comment = fp.read(GetByte(fp))
@@ -336,7 +336,7 @@ class DVI(object):
       elif k != 223: break
       fp.seek(-2, 1)
     if k != DVI_ID and k != DVIV_ID and k != XDV_ID:
-      Warning('ID byte is %d' % k)
+      warning('ID byte is %d' % k)
     fp.seek(-5, 1)
     q = SignedQuad(fp)
     m = fp.tell() # id_byte
@@ -348,11 +348,11 @@ class DVI(object):
     self.first_backpointer = SignedQuad(fp)
 
     if SignedQuad(fp) != self.numerator:
-      Warning("numerator doesn't match the preamble!")
+      warning("numerator doesn't match the preamble!")
     if SignedQuad(fp) != self.denominator:
-      Warning("denominator doesn't match the preamble!")
+      warning("denominator doesn't match the preamble!")
     if SignedQuad(fp) != self.mag:
-      Warning("magnification doesn't match the preamble!")
+      warning("magnification doesn't match the preamble!")
     self.max_v = SignedQuad(fp)
     self.max_h = SignedQuad(fp)
     self.max_s = Get2Bytes(fp)
@@ -368,12 +368,12 @@ class DVI(object):
       if k == NATIVE_FONT_DEF: self.DefineNativeFont(p, fp)
       else: self.DefineFont(p, fp)
     if k != POST_POST:
-      Warning('byte %d is not postpost!' % (fp.tell() - 1))
+      warning('byte %d is not postpost!' % (fp.tell() - 1))
     if SignedQuad(fp) != self.post_loc:
-      Warning('bad postamble pointer in byte %d!' % (fp.tell() - 4))
+      warning('bad postamble pointer in byte %d!' % (fp.tell() - 4))
     m = GetByte(fp)
     if m != DVI_ID and m != DVIV_ID and m != XDV_ID:
-      Warning('identification in byte %d should be %d, %d, or %d!' % (fp.tell() - 1, DVI_ID, DVIV_ID, XDV_ID))
+      warning('identification in byte %d should be %d, %d, or %d!' % (fp.tell() - 1, DVI_ID, DVIV_ID, XDV_ID))
 
   def DefineFont(self, e, fp):
     c = SignedQuad(fp) # font_check_sum
@@ -385,18 +385,18 @@ class DVI(object):
     except KeyError:
       self.font_def[e] = {'name':n, 'checksum':c, 'scaled_size':q, 'design_size':d}
       if q <= 0 or q >= 01000000000:
-        Warning("%s---not loaded, bad scale (%d)!" % (n, q))
+        warning("%s---not loaded, bad scale (%d)!" % (n, q))
       elif d <= 0 or d >= 01000000000:
         msssage("%s---not loaded, bad design size (%d)!" % (n, d))
     else:
       if f['checksum'] != c:
-        Warning("\t---check sum doesn't match previous definition!")
+        warning("\t---check sum doesn't match previous definition!")
       if f['scaled_size'] != q:
-        Warning("\t---scaled size doesn't match previous definition!")
+        warning("\t---scaled size doesn't match previous definition!")
       if f['design_size'] != d:
-        Warning("\t---design size doesn't match previous definition!")
+        warning("\t---design size doesn't match previous definition!")
       if f['name'] != n:
-        Warning("\t---font name doesn't match previous definition!")
+        warning("\t---font name doesn't match previous definition!")
 
   def DefineNativeFont(self, e, fp):
     size = Get4Bytes(fp) # scaled size
@@ -456,7 +456,7 @@ class DVI(object):
       elif o == NOP:
         continue
       elif o == BOP:
-        Warning('bop occurred before eop!')
+        warning('bop occurred before eop!')
         break
       elif o == EOP:
         break
@@ -500,13 +500,13 @@ class DVI(object):
       elif o == DIR:
         s.append([DIR, p])
       elif o == PRE:
-        Warning('preamble command within a page!')
+        warning('preamble command within a page!')
         break
       elif o in (POST, POST_POST):
-        Warning('postamble command %d!' % o)
+        warning('postamble command %d!' % o)
         break
       else:
-        Warning('undefined command %d!' % o)
+        warning('undefined command %d!' % o)
         break
     return s
 
@@ -673,7 +673,7 @@ class DVI(object):
         elif cmd[0] == PIC_FILE:
           s.append(PutPicFile(cmd[1]))
         else:
-          Warning('invalid command %s!' % cmd[0])
+          warning('invalid command %s!' % cmd[0])
       s.append(chr(EOP))
       loc = fp.tell()
       fp.write(''.join(s))
@@ -758,25 +758,25 @@ class DVI(object):
       if key == "id":
         self.id = GetInt(val)
         if self.id != DVI_ID and self.id != DVIV_ID and self.id != XDV_ID:
-          Warning("identification byte should be %d, %d, or %d!" % (DVI_ID, DVIV_ID, XDV_ID))
+          warning("identification byte should be %d, %d, or %d!" % (DVI_ID, DVIV_ID, XDV_ID))
       elif key == "numerator":
         d = GetInt(val)
         if d <= 0:
-          Warning('non-positive numerator %d!' % d)
+          warning('non-positive numerator %d!' % d)
         else:
           self.numerator = d
           self.ComputeConversionFactors()
       elif key == "denominator":
         d = GetInt(val)
         if d <= 0:
-          Warning('non-positive denominator %d!' % d)
+          warning('non-positive denominator %d!' % d)
         else:
           self.denominator = d
           self.ComputeConversionFactors()
       elif key == "magnification":
         d = GetInt(val)
         if d <= 0:
-          Warning('non-positive magnification %d!' % d)
+          warning('non-positive magnification %d!' % d)
         else:
           self.mag = d
       elif key == "comment":
@@ -820,13 +820,13 @@ class DVI(object):
       elif key == 'setrule':
         v = val.split(' ')
         if len(v) != 2:
-          Warning('two values are required for setrule!')
+          warning('two values are required for setrule!')
           continue
         self.cur_page.append([SET_RULE, [self.ConvLen(c) for c in v]])
       elif key == 'putrule':
         v = val.split(' ')
         if len(v) != 2:
-          Warning('two values are required for putrule!')
+          warning('two values are required for putrule!')
           continue
         self.cur_page.append([PUT_RULE, [self.ConvLen(c) for c in v]])
       elif key == 'fnt':
@@ -878,7 +878,7 @@ class DVI(object):
       elif key == 'picfile':
         self.cur_page.append([PIC_FILE, self.ReadPicFile(val)])
       else:
-        Warning('invalid command %s!' % key)
+        warning('invalid command %s!' % key)
 
   def AppendFNT1(self):
     f = {'name':cur_font+"%02x"%subfont_idx, 'design_size':cur_dsize, 'scaled_size':cur_ssize, 'checksum':0}
