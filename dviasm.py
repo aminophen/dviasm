@@ -157,6 +157,18 @@ def PutGlyphs(cmd, width, glyphs):
 
   return ''.join(s)
 
+def PutPicFile(pic):
+  s = []
+  s.append(PutByte(PIC_FILE))
+  s.append(PutByte(0)) # XXX: flags
+  for v in pic["matrix"]:
+    s.append(PutSignedQuad(int(v * 65536)))
+  s.append(Put2Bytes(pic["page"]))
+  s.append(Put2Bytes(len(pic["path"])))
+  s.append(pic["path"])
+
+  return ''.join(s)
+
 def GetInt(s):
   try: return int(s)
   except: return -1
@@ -658,6 +670,8 @@ class DVI(object):
           s.append(chr(DIR) + chr(cmd[1]))
         elif cmd[0] in (GLYPH_ARRAY, GLYPH_STRING):
           s.append(PutGlyphs(cmd[0], cmd[1], cmd[2]))
+        elif cmd[0] == PIC_FILE:
+          s.append(PutPicFile(cmd[1]))
         else:
           Warning('invalid command %s!' % cmd[0])
       s.append(chr(EOP))
