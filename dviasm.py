@@ -483,6 +483,8 @@ class DVI(object):
         self.DefineNativeFont(p, fp)
       elif o in (GLYPH_STRING, GLYPH_ARRAY):
         s.append([GLYPH_STRING, self.GetGlyphs(o, fp)])
+      elif o == PIC_FILE:
+        s.append([PIC_FILE, self.GetPicFile(fp)])
       elif o == DIR:
         s.append([DIR, p])
       elif o == PRE:
@@ -536,6 +538,21 @@ class DVI(object):
       glyphs[i]["id"] = Get2Bytes(fp)
 
     return (width, glyphs)
+
+  def GetPicFile(self, fp):
+    flags = GetByte(fp)
+    matrix = []
+    matrix.append(str(SignedQuad(fp) / 65536.0))
+    matrix.append(str(SignedQuad(fp) / 65536.0))
+    matrix.append(str(SignedQuad(fp) / 65536.0))
+    matrix.append(str(SignedQuad(fp) / 65536.0))
+    matrix.append(str(SignedQuad(fp) / 65536.0))
+    matrix.append(str(SignedQuad(fp) / 65536.0))
+    matrix = " ".join(matrix)
+    page = SignedPair(fp)
+    length = SignedPair(fp)
+    path = fp.read(length)
+    return "matrix %s page %d (%s)" % (matrix, page, path)
 
   def ReadGlyphs(self, val):
     import re
@@ -905,6 +922,8 @@ class DVI(object):
             fp.write("at %s\n" % self.by_pt_conv(cur_ssize))
         elif cmd[0] in (GLYPH_STRING, GLYPH_ARRAY):
           fp.write("setglyphs: %s\n" % self.DumpGlyphs(cmd[1][0], cmd[1][1]))
+        elif cmd[0] == PIC_FILE:
+          fp.write("picfile: %s\n" % cmd[1])
         elif cmd[0] == RIGHT1:
           fp.write("right: %s\n" % self.byconv(cmd[1]))
         elif cmd[0] == DOWN1:
