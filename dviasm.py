@@ -395,34 +395,29 @@ class DVI(object):
     fnt_name = fp.read(plen)
     fam_name = fp.read(flen)
     sty_name = fp.read(slen)
-    layout_dir = 0
-    rgba_color = 0
-    extend = 0
-    slant = 0
+    ext = []
     embolden = 0
-    if flags & XDV_FLAG_VERTICAL: layout_dir = 1
-    if flags & XDV_FLAG_COLORED: rgba_color = Get4Bytes(fp)
-    if flags & XDV_FLAG_EXTEND: extend = SignedQuad(fp)
-    if flags & XDV_FLAG_SLANT: slant = SignedQuad(fp)
-    if flags & XDV_FLAG_EMBOLDEN: embolden = SignedQuad(fp)
+    if flags & XDV_FLAG_VERTICAL: ext.append("vertical")
+    if flags & XDV_FLAG_COLORED: ext.append("color=%08X" % Get4Bytes(fp))
+    if flags & XDV_FLAG_EXTEND: ext.append("extend=%d" % SignedQuad(fp))
+    if flags & XDV_FLAG_SLANT: ext.append("slant=%d" % SignedQuad(fp))
+    if flags & XDV_FLAG_EMBOLDEN: ext.append("embolden=%d" % SignedQuad(fp))
     if flags & XDV_FLAG_VARIATIONS:
       pass # XXX
     try:
       f = self.font_def[e]
     except KeyError:
+      name = '"%s"' % fnt_name
+      if ext:
+        name = '"%s:%s"' % (fnt_name, ";".join(ext))
+
       self.font_def[e] = {
-        'name': fnt_name,
+        'name': name,
         'checksum': 0,
         'scaled_size': size,
         'design_size': 655360, # hardcoded
         'family_name': fam_name,
         'style_name': sty_name,
-        'native_font': True,
-        'layout_dir': layout_dir,
-        'color': rgba_color,
-        'extend': extend,
-        'slant': extend,
-        'embolden': embolden,
         }
 
   def ProcessPage(self, fp):
@@ -853,26 +848,6 @@ class DVI(object):
     fp.write("\n[font definitions]\n")
     for e in sorted(self.font_def.keys()):
       fp.write("fntdef: %s" % self.font_def[e]['name'])
-      if 'native_font' in self.font_def[e].keys():
-        layout_dir = self.font_def[e]['layout_dir']
-        color = self.font_def[e]['color']
-        extend = self.font_def[e]['extend']
-        slant = self.font_def[e]['slant']
-        embolden = self.font_def[e]['embolden']
-        ext = []
-        if layout_dir == 1:
-          ext.append("vertical")
-        if color:
-          ext.append("color=%8X" % color)
-        if extend:
-          ext.append("extend=%d" % extend)
-        if slant:
-          ext.append("slant=%d" % slant)
-        if embolden:
-          ext.append("embolden=%d" % embolden)
-
-        if ext:
-          fp.write(":%s" % ";".join(ext))
       if self.font_def[e]['design_size'] != self.font_def[e]['scaled_size']:
         fp.write(" (%s) " % self.by_pt_conv(self.font_def[e]['design_size']))
       fp.write(" at %s\n" % self.by_pt_conv(self.font_def[e]['scaled_size']))
