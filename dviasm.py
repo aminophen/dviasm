@@ -554,6 +554,27 @@ class DVI(object):
     path = fp.read(length)
     return "matrix %s page %d (%s)" % (matrix, page, path)
 
+  def ReadPicFile(self, val):
+    pic = {}
+    toks = val.split(" ")
+    i = 0
+    while i < len(toks):
+      tok = toks[i]
+      i += 1
+      if tok == "matrix":
+        matrix = []
+        for j in range(6):
+          matrix.append(float(toks[i + j]))
+        i += 6
+        pic["matrix"] = matrix
+      elif tok == "page":
+        pic["page"] = int(toks[i])
+        i += 1
+      elif tok.startswith("(") and tok.endswith(")"):
+        pic["path"] = tok[1:-1]
+
+    return pic
+
   def ReadGlyphs(self, val):
     import re
     glyphs = []
@@ -840,6 +861,8 @@ class DVI(object):
       elif key == 'setglyphs':
         cmd, w, glyphs = self.ReadGlyphs(val)
         self.cur_page.append([cmd, w, glyphs])
+      elif key == 'picfile':
+        self.cur_page.append([PIC_FILE, self.ReadPicFile(val)])
       else:
         Warning('invalid command %s!' % key)
 
