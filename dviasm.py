@@ -639,15 +639,33 @@ class DVI(object):
   def WriteFontDefinitions(self, fp):
     s = []
     for e in sorted(self.font_def.keys()):
-      l, q = PutUnsigned(e)
-      s.append(PutByte(FNT_DEF1 + l))
-      s.append(q)
-      s.append(PutSignedQuad(self.font_def[e]['checksum']))
-      s.append(PutSignedQuad(self.font_def[e]['scaled_size']))
-      s.append(PutSignedQuad(self.font_def[e]['design_size']))
-      s.append('\x00')
-      s.append(PutByte(len(self.font_def[e]['name'])))
-      s.append(self.font_def[e]['name'])
+      if self.font_def[e]['native']:
+        flags = self.font_def[e]['flags']
+        s.append(PutByte(NATIVE_FONT_DEF))
+        s.append(PutSignedQuad(e))
+        s.append(PutSignedQuad(self.font_def[e]['scaled_size']))
+        s.append(Put2Bytes(flags))
+        s.append(PutByte(len(self.font_def[e]['psname'])))
+        s.append(PutByte(len(self.font_def[e]['famname'])))
+        s.append(PutByte(len(self.font_def[e]['styname'])))
+        s.append(self.font_def[e]['psname'])
+        s.append(self.font_def[e]['famname'])
+        s.append(self.font_def[e]['styname'])
+        if flags & XDV_FLAG_COLORED: s.append(PutSignedQuad(self.font_def[e]['color']))
+        if flags & XDV_FLAG_EXTEND: s.append(PutSignedQuad(self.font_def[e]['extend']))
+        if flags & XDV_FLAG_SLANT: s.append(PutSignedQuad(self.font_def[e]['slant']))
+        if flags & XDV_FLAG_EMBOLDEN: s.append(PutSignedQuad(self.font_def[e]['embolden']))
+        if flags & XDV_FLAG_VARIATIONS: s.append(PutSignedQuad(self.font_def[e]['vars']))
+      else:
+        l, q = PutUnsigned(e)
+        s.append(PutByte(FNT_DEF1 + l))
+        s.append(q)
+        s.append(PutSignedQuad(self.font_def[e]['checksum']))
+        s.append(PutSignedQuad(self.font_def[e]['scaled_size']))
+        s.append(PutSignedQuad(self.font_def[e]['design_size']))
+        s.append('\x00')
+        s.append(PutByte(len(self.font_def[e]['name'])))
+        s.append(self.font_def[e]['name'])
     fp.write(''.join(s))
 
   def CmdPair(self, cmd):
