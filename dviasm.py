@@ -1145,13 +1145,14 @@ binary format. It is fully documented at
 http://tug.org/TUGboat/Articles/tb28-2/tb89cho.pdf 
 http://ajt.ktug.kr/assets/2008/5/1/0201cho.pdf"""
 
-  version = """This is %prog-20080520 by Jin-Hwan Cho (Korean TeX Society)
+  version = """This is %prog-20140721 by Jin-Hwan Cho (Korean TeX Society)
   
 Copyright (C) 2007-2008 by Jin-Hwan Cho <chofchof@ktug.or.kr>
+Copyright (C) 2011-2014 by Khaled Hosny <khaledhosny@eglug.org>
 
 This is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or
+the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version."""
 
   parser = OptionParser(usage=usage, version=version)
