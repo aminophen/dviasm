@@ -54,6 +54,7 @@ PRE = 247; POST = 248; POST_POST = 249;
 # DVIV opcodes
 DIR = 255;
 # XDV opcodes
+REFLECT = 250;
 PIC_FILE = 251;
 NATIVE_FONT_DEF = 252;
 GLYPH_ARRAY = 253; GLYPH_STRING = 254;
@@ -499,6 +500,8 @@ class DVI(object):
         s.append([PIC_FILE, self.GetPicFile(fp)])
       elif o == DIR:
         s.append([DIR, p])
+      elif o == REFLECT:
+        s.append([REFLECT, p])
       elif o == PRE:
         warning('preamble command within a page!')
         break
@@ -513,7 +516,7 @@ class DVI(object):
   def Get1Arg(self, o, fp):
     if o < SET_CHAR_0 + 128:
       return o - SET_CHAR_0
-    if o in (SET1, PUT1, FNT1, XXX1, FNT_DEF1, DIR):
+    if o in (SET1, PUT1, FNT1, XXX1, FNT_DEF1, DIR, REFLECT):
       return GetByte(fp)
     if o in (SET2, PUT2, FNT2, XXX2, FNT_DEF2):
       return Get2Bytes(fp)
@@ -668,6 +671,8 @@ class DVI(object):
           else:       s.append(chr(XXX4) + PutSignedQuad(l) + cmd[1])
         elif cmd[0] == DIR:
           s.append(chr(DIR) + chr(cmd[1]))
+        elif cmd[0] == REFLECT:
+          s.append(chr(REFLECT) + chr(cmd[1]))
         elif cmd[0] in (GLYPH_ARRAY, GLYPH_STRING):
           s.append(PutGlyphs(cmd[0], cmd[1], cmd[2]))
         elif cmd[0] == PIC_FILE:
@@ -872,6 +877,8 @@ class DVI(object):
         self.cur_page.append([Z0])
       elif key == 'dir':
         self.cur_page.append([DIR, GetInt(val)])
+      elif key == 'reflect':
+        self.cur_page.append([REFLECT, GetInt(val)])
       elif key == 'setglyphs':
         cmd, w, glyphs = self.ReadGlyphs(val)
         self.cur_page.append([cmd, w, glyphs])
@@ -941,6 +948,8 @@ class DVI(object):
           fp.write("xxx: %s\n" % repr(cmd[1]))
         elif cmd[0] == DIR:
           fp.write("dir: %d\n" % cmd[1])
+        elif cmd[0] == REFLECT:
+          fp.write("reflect: %d\n" % cmd[1])
         elif cmd[0] == SET_RULE:
           fp.write("setrule: %s %s\n" % (self.byconv(cmd[1][0]), self.byconv(cmd[1][1])))
         elif cmd[0] == PUT_RULE:
