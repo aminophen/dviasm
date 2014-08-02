@@ -65,7 +65,7 @@ XDV_FLAG_EXTEND = 0x1000;
 XDV_FLAG_SLANT = 0x2000;
 XDV_FLAG_EMBOLDEN = 0x4000;
 # DVI identifications
-DVI_ID = 2; DVIV_ID = 3; XDV_ID = 5;
+DVI_ID = 2; DVIV_ID = 3; XDV_ID = 6;
 
 def warning(msg):
   sys.stderr.write('%s\n' % msg)
@@ -388,12 +388,8 @@ class DVI(object):
   def DefineNativeFont(self, e, fp):
     size = Get4Bytes(fp) # scaled size
     flags = Get2Bytes(fp)
-    plen = GetByte(fp) # PS name length
-    flen = GetByte(fp) # family name length
-    slen = GetByte(fp) # style name length
-    fnt_name = fp.read(plen)
-    fam_name = fp.read(flen)
-    sty_name = fp.read(slen)
+    l = GetByte(fp) # name length
+    fnt_name = fp.read(l)
     ext = []
     embolden = 0
     if flags & XDV_FLAG_VERTICAL: ext.append("vertical")
@@ -415,8 +411,6 @@ class DVI(object):
         'checksum': 0,
         'scaled_size': size,
         'design_size': 655360, # hardcoded
-        'family_name': fam_name,
-        'style_name': sty_name,
         }
 
   def ProcessPage(self, fp):
@@ -638,12 +632,8 @@ class DVI(object):
         s.append(PutSignedQuad(e))
         s.append(PutSignedQuad(self.font_def[e]['scaled_size']))
         s.append(Put2Bytes(flags))
-        s.append(PutByte(len(self.font_def[e]['psname'])))
-        s.append(PutByte(len(self.font_def[e]['famname'])))
-        s.append(PutByte(len(self.font_def[e]['styname'])))
-        s.append(self.font_def[e]['psname'])
-        s.append(self.font_def[e]['famname'])
-        s.append(self.font_def[e]['styname'])
+        s.append(PutByte(len(self.font_def[e]['name'])))
+        s.append(self.font_def[e]['name'])
         if flags & XDV_FLAG_COLORED: s.append(PutSignedQuad(self.font_def[e]['color']))
         if flags & XDV_FLAG_EXTEND: s.append(PutSignedQuad(self.font_def[e]['extend']))
         if flags & XDV_FLAG_SLANT: s.append(PutSignedQuad(self.font_def[e]['slant']))
@@ -985,9 +975,9 @@ class DVI(object):
       slant = 0
       embolden = 0
       try:
-        psname, ext = n.split(':')
+        name, ext = n.split(':')
       except:
-        psname, ext = n, ""
+        name, ext = n, ""
 
       if ext:
         ext = ext.split(';')
@@ -1011,9 +1001,7 @@ class DVI(object):
             flags |= XDV_FLAG_EMBOLDEN
             embolden = int(value)
 
-      f['psname'] = psname
-      f['famname'] = "" # XXX
-      f['styname'] = "" # XXX
+      f['name'] = name
       f['flags'] = flags
       f['color'] = color
       f['extend'] = extend
