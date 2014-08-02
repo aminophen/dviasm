@@ -1160,7 +1160,7 @@ binary format. It is fully documented at
 http://tug.org/TUGboat/Articles/tb28-2/tb89cho.pdf 
 http://ajt.ktug.kr/assets/2008/5/1/0201cho.pdf"""
 
-  version = """This is %prog-20140721 by Jin-Hwan Cho (Korean TeX Society)
+  version = """This is %prog-20140802 by Jin-Hwan Cho (Korean TeX Society)
   
 Copyright (C) 2007-2008 by Jin-Hwan Cho <chofchof@ktug.or.kr>
 Copyright (C) 2011-2014 by Khaled Hosny <khaledhosny@eglug.org>
