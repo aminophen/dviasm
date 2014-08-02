@@ -55,9 +55,8 @@ PRE = 247; POST = 248; POST_POST = 249;
 DIR = 255;
 # XDV opcodes
 REFLECT = 250;
-PIC_FILE = 251;
 NATIVE_FONT_DEF = 252;
-GLYPH_ARRAY = 253; GLYPH_STRING = 254;
+GLYPHS = 253;
 # XDV flags
 XDV_FLAG_VERTICAL = 0x0100;
 XDV_FLAG_COLORED = 0x0200;
@@ -65,14 +64,6 @@ XDV_FLAG_VARIATIONS = 0x0800;
 XDV_FLAG_EXTEND = 0x1000;
 XDV_FLAG_SLANT = 0x2000;
 XDV_FLAG_EMBOLDEN = 0x4000;
-# PIC_FILE PDF box types
-PDFBOX_TYPES = {
-  1: "crop",
-  2: "media",
-  3: "bleed",
-  4: "trim",
-  5: "art",
-}
 # DVI identifications
 DVI_ID = 2; DVIV_ID = 3; XDV_ID = 5;
 
@@ -151,30 +142,17 @@ def PutSigned(q):
   if q < -0x80:       q += 0x10000;   return (1, Put2Bytes(q))
   return (0, PutByte(q))
 
-def PutGlyphs(cmd, width, glyphs):
+def PutGlyphs(width, glyphs):
   s = []
   length = len(glyphs)
-  s.append(PutByte(cmd))
+  s.append(PutByte(GLYPHS))
   s.append(PutSignedQuad(width))
   s.append(Put2Bytes(length))
   for glyph in glyphs:
     s.append(PutSignedQuad(glyph["x"]))
-    if cmd == GLYPH_ARRAY:
-      s.append(PutSignedQuad(glyph["y"]))
+    s.append(PutSignedQuad(glyph["y"]))
   for glyph in glyphs:
     s.append(Put2Bytes(glyph["id"]))
-
-  return ''.join(s)
-
-def PutPicFile(pic):
-  s = []
-  s.append(PutByte(PIC_FILE))
-  s.append(PutByte(pic["boxtype"]))
-  for v in pic["matrix"]:
-    s.append(PutSignedQuad(int(v * 65536)))
-  s.append(Put2Bytes(pic["page"]))
-  s.append(Put2Bytes(len(pic["path"])))
-  s.append(pic["path"])
 
   return ''.join(s)
 
@@ -502,10 +480,8 @@ class DVI(object):
         self.DefineFont(p, fp)
       elif o == NATIVE_FONT_DEF:
         self.DefineNativeFont(p, fp)
-      elif o in (GLYPH_STRING, GLYPH_ARRAY):
-        s.append([GLYPH_STRING, self.GetGlyphs(o, fp)])
-      elif o == PIC_FILE:
-        s.append([PIC_FILE, self.GetPicFile(fp)])
+      elif o == GLYPHS:
+        s.append([GLYPHS, self.GetGlyphs(fp)])
       elif o == DIR:
         s.append([DIR, p])
       elif o == REFLECT:
@@ -545,70 +521,23 @@ class DVI(object):
     if o < FNT_NUM_0 + 64:
       return o - FNT_NUM_0
 
-  def GetGlyphs(self, cmd, fp):
+  def GetGlyphs(self, fp):
     width = SignedQuad(fp)
     length = Get2Bytes(fp)
     glyphs = {}
     for i in range(length):
       glyphs[i] = {}
       glyphs[i]["x"] = SignedQuad(fp)
-      if cmd == GLYPH_ARRAY:
-        glyphs[i]["y"] = SignedQuad(fp)
-      else:
-        glyphs[i]["y"] = 0
+      glyphs[i]["y"] = SignedQuad(fp)
 
     for i in range(length):
       glyphs[i]["id"] = Get2Bytes(fp)
 
     return (width, glyphs)
 
-  def GetPicFile(self, fp):
-    boxtype = GetByte(fp)
-    matrix = []
-    matrix.append(str(SignedQuad(fp) / 65536.0))
-    matrix.append(str(SignedQuad(fp) / 65536.0))
-    matrix.append(str(SignedQuad(fp) / 65536.0))
-    matrix.append(str(SignedQuad(fp) / 65536.0))
-    matrix.append(str(SignedQuad(fp) / 65536.0))
-    matrix.append(str(SignedQuad(fp) / 65536.0))
-    matrix = " ".join(matrix)
-    page = SignedPair(fp)
-    length = SignedPair(fp)
-    path = fp.read(length)
-    if boxtype in PDFBOX_TYPES:
-      boxtype = PDFBOX_TYPES[boxtype] + " "
-    else:
-      boxtype = ""
-
-    return "matrix %s page %d %s(%s)" % (matrix, page, boxtype, path)
-
-  def ReadPicFile(self, val):
-    pic = {"matrix":(1,0,0,1,0,0), "boxtype":0, "page":0, "path":""}
-    toks = val.split(" ")
-    i = 0
-    while i < len(toks):
-      tok = toks[i]
-      i += 1
-      if tok == "matrix":
-        matrix = []
-        for j in range(6):
-          matrix.append(float(toks[i + j]))
-        i += 6
-        pic["matrix"] = matrix
-      elif tok == "page":
-        pic["page"] = int(toks[i])
-        i += 1
-      elif tok in PDFBOX_TYPES.values():
-        pic["boxtype"] = next(key for key, value in PDFBOX_TYPES.items() if value == tok)
-      elif tok.startswith("(") and tok.endswith(")"):
-        pic["path"] = tok[1:-1]
-
-    return pic
-
   def ReadGlyphs(self, val):
     import re
     glyphs = []
-    yPresent = False
     w, g = val.split(" ", 1)
     for m in re.finditer(r"gid(?P<id>\d+?)\((?P<pos>.*?.)\)", g):
       gid = m.group("id")
@@ -616,18 +545,12 @@ class DVI(object):
 
       if "," in pos:
         x, y = pos.split(",")
-        yPresent = True
       else:
         x, y = pos, "0sp"
 
       glyphs.append({"id": int(gid), 'x': self.ConvLen(x), 'y': self.ConvLen(y)})
 
-    if yPresent:
-      cmd = GLYPH_ARRAY
-    else:
-      cmd = GLYPH_STRING
-
-    return (cmd, self.ConvLen(w), glyphs)
+    return (self.ConvLen(w), glyphs)
 
   ##########################################################
   # Save: Internal Format -> DVI
@@ -688,10 +611,8 @@ class DVI(object):
           s.append(chr(DIR) + chr(cmd[1]))
         elif cmd[0] == REFLECT:
           s.append(chr(REFLECT) + chr(cmd[1]))
-        elif cmd[0] in (GLYPH_ARRAY, GLYPH_STRING):
-          s.append(PutGlyphs(cmd[0], cmd[1], cmd[2]))
-        elif cmd[0] == PIC_FILE:
-          s.append(PutPicFile(cmd[1]))
+        elif cmd[0] == GLYPHS:
+          s.append(PutGlyphs(cmd[1], cmd[2]))
         else:
           warning('invalid command %s!' % cmd[0])
       s.append(chr(EOP))
@@ -895,10 +816,8 @@ class DVI(object):
       elif key == 'reflect':
         self.cur_page.append([REFLECT, GetInt(val)])
       elif key == 'setglyphs':
-        cmd, w, glyphs = self.ReadGlyphs(val)
-        self.cur_page.append([cmd, w, glyphs])
-      elif key == 'picfile':
-        self.cur_page.append([PIC_FILE, self.ReadPicFile(val)])
+        w, glyphs = self.ReadGlyphs(val)
+        self.cur_page.append([GLYPHS, w, glyphs])
       else:
         warning('invalid command %s!' % key)
 
@@ -981,10 +900,8 @@ class DVI(object):
             if self.font_def[cmd[1]]['design_size'] != self.font_def[cmd[1]]['scaled_size']:
               fp.write("(%s) " % self.by_pt_conv(self.font_def[cmd[1]]['design_size']))
             fp.write("at %s\n" % self.by_pt_conv(cur_ssize))
-        elif cmd[0] in (GLYPH_STRING, GLYPH_ARRAY):
+        elif cmd[0] == GLYPHS:
           fp.write("setglyphs: %s\n" % self.DumpGlyphs(cmd[1][0], cmd[1][1]))
-        elif cmd[0] == PIC_FILE:
-          fp.write("picfile: %s\n" % cmd[1])
         elif cmd[0] == RIGHT1:
           fp.write("right: %s\n" % self.byconv(cmd[1]))
         elif cmd[0] == DOWN1:
