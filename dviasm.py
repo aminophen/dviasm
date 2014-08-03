@@ -54,7 +54,7 @@ PRE = 247; POST = 248; POST_POST = 249;
 # DVIV opcodes
 DIR = 255;
 # XDV opcodes
-REFLECT = 250;
+BEGIN_REFLECT = 250; END_REFLECT = 251;
 NATIVE_FONT_DEF = 252;
 GLYPHS = 253;
 # XDV flags
@@ -478,8 +478,10 @@ class DVI(object):
         s.append([GLYPHS, self.GetGlyphs(fp)])
       elif o == DIR:
         s.append([DIR, p])
-      elif o == REFLECT:
-        s.append([REFLECT, p])
+      elif o == BEGIN_REFLECT:
+        s.append([BEGIN_REFLECT])
+      elif o == END_REFLECT:
+        s.append([END_REFLECT])
       elif o == PRE:
         warning('preamble command within a page!')
         break
@@ -494,7 +496,7 @@ class DVI(object):
   def Get1Arg(self, o, fp):
     if o < SET_CHAR_0 + 128:
       return o - SET_CHAR_0
-    if o in (SET1, PUT1, FNT1, XXX1, FNT_DEF1, DIR, REFLECT):
+    if o in (SET1, PUT1, FNT1, XXX1, FNT_DEF1, DIR):
       return GetByte(fp)
     if o in (SET2, PUT2, FNT2, XXX2, FNT_DEF2):
       return Get2Bytes(fp)
@@ -510,7 +512,7 @@ class DVI(object):
       return SignedQuad(fp)
     if o in (NOP, BOP, EOP, PUSH, POP, PRE, POST, POST_POST) or o > POST_POST:
       return 0
-    if o in (W0, X0, Y0, Z0):
+    if o in (W0, X0, Y0, Z0, BEGIN_REFLECT, END_REFLECT):
       return 0
     if o < FNT_NUM_0 + 64:
       return o - FNT_NUM_0
@@ -603,8 +605,10 @@ class DVI(object):
           else:       s.append(chr(XXX4) + PutSignedQuad(l) + cmd[1])
         elif cmd[0] == DIR:
           s.append(chr(DIR) + chr(cmd[1]))
-        elif cmd[0] == REFLECT:
-          s.append(chr(REFLECT) + chr(cmd[1]))
+        elif cmd[0] == BEGIN_REFLECT:
+          s.append(chr(BEGIN_REFLECT))
+        elif cmd[0] == END_REFLECT:
+          s.append(chr(END_REFLECT))
         elif cmd[0] == GLYPHS:
           s.append(PutGlyphs(cmd[1], cmd[2]))
         else:
@@ -803,8 +807,10 @@ class DVI(object):
         self.cur_page.append([Z0])
       elif key == 'dir':
         self.cur_page.append([DIR, GetInt(val)])
-      elif key == 'reflect':
-        self.cur_page.append([REFLECT, GetInt(val)])
+      elif key == 'begin_reflect':
+        self.cur_page.append([BEGIN_REFLECT])
+      elif key == 'end_reflect':
+        self.cur_page.append([END_REFLECT])
       elif key == 'setglyphs':
         w, glyphs = self.ReadGlyphs(val)
         self.cur_page.append([GLYPHS, w, glyphs])
@@ -872,8 +878,10 @@ class DVI(object):
           fp.write("xxx: %s\n" % repr(cmd[1]))
         elif cmd[0] == DIR:
           fp.write("dir: %d\n" % cmd[1])
-        elif cmd[0] == REFLECT:
-          fp.write("reflect: %d\n" % cmd[1])
+        elif cmd[0] == BEGIN_REFLECT:
+          fp.write("begin_reflect:\n")
+        elif cmd[0] == END_REFLECT:
+          fp.write("end_reflect:\n")
         elif cmd[0] == SET_RULE:
           fp.write("setrule: %s %s\n" % (self.byconv(cmd[1][0]), self.byconv(cmd[1][1])))
         elif cmd[0] == PUT_RULE:
