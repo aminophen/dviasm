@@ -60,7 +60,6 @@ GLYPHS = 253;
 # XDV flags
 XDV_FLAG_VERTICAL = 0x0100;
 XDV_FLAG_COLORED = 0x0200;
-XDV_FLAG_VARIATIONS = 0x0800;
 XDV_FLAG_EXTEND = 0x1000;
 XDV_FLAG_SLANT = 0x2000;
 XDV_FLAG_EMBOLDEN = 0x4000;
@@ -397,8 +396,6 @@ class DVI(object):
     if flags & XDV_FLAG_EXTEND: ext.append("extend=%d" % SignedQuad(fp))
     if flags & XDV_FLAG_SLANT: ext.append("slant=%d" % SignedQuad(fp))
     if flags & XDV_FLAG_EMBOLDEN: ext.append("embolden=%d" % SignedQuad(fp))
-    if flags & XDV_FLAG_VARIATIONS:
-      pass # XXX
     try:
       f = self.font_def[e]
     except KeyError:
@@ -642,7 +639,6 @@ class DVI(object):
         if flags & XDV_FLAG_EXTEND: s.append(PutSignedQuad(self.font_def[e]['extend']))
         if flags & XDV_FLAG_SLANT: s.append(PutSignedQuad(self.font_def[e]['slant']))
         if flags & XDV_FLAG_EMBOLDEN: s.append(PutSignedQuad(self.font_def[e]['embolden']))
-        if flags & XDV_FLAG_VARIATIONS: s.append(PutSignedQuad(self.font_def[e]['vars']))
       else:
         l, q = PutUnsigned(e)
         s.append(PutByte(FNT_DEF1 + l))
@@ -1015,7 +1011,6 @@ class DVI(object):
       f['extend'] = extend
       f['slant'] = slant
       f['embolden'] = embolden
-      f['vars'] = 0     # XXX
     else:
       f['native'] = False
 
