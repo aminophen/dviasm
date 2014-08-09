@@ -389,6 +389,7 @@ class DVI(object):
     flags = Get2Bytes(fp)
     l = GetByte(fp) # name length
     fnt_name = fp.read(l)
+    index = Get4Bytes(fp) # face index
     ext = []
     embolden = 0
     if flags & XDV_FLAG_VERTICAL: ext.append("vertical")
@@ -399,6 +400,8 @@ class DVI(object):
     try:
       f = self.font_def[e]
     except KeyError:
+      if index > 0:
+        fnt_name += "[%d]" % index
       name = '"%s"' % fnt_name
       if ext:
         name = '"%s:%s"' % (fnt_name, ";".join(ext))
@@ -635,6 +638,8 @@ class DVI(object):
         s.append(Put2Bytes(flags))
         s.append(PutByte(len(self.font_def[e]['name'])))
         s.append(self.font_def[e]['name'])
+        s.append(PutSignedQuad(self.font_def[e]['index']))
+        print >> sys.stderr, self.font_def[e]['name'], self.font_def[e]['index']
         if flags & XDV_FLAG_COLORED: s.append(PutSignedQuad(self.font_def[e]['color']))
         if flags & XDV_FLAG_EXTEND: s.append(PutSignedQuad(self.font_def[e]['extend']))
         if flags & XDV_FLAG_SLANT: s.append(PutSignedQuad(self.font_def[e]['slant']))
@@ -983,6 +988,12 @@ class DVI(object):
       except:
         name, ext = n, ""
 
+      try:
+        name, index = name.split('[')
+        index = index.split(']')[0]
+      except:
+        index = 0
+
       if ext:
         ext = ext.split(';')
         for opt in ext:
@@ -1006,6 +1017,7 @@ class DVI(object):
             embolden = int(value)
 
       f['name'] = name
+      f['index'] = int(index)
       f['flags'] = flags
       f['color'] = color
       f['extend'] = extend
@@ -1013,13 +1025,13 @@ class DVI(object):
       f['embolden'] = embolden
     else:
       f['native'] = False
+      f['name'] = n
 
     if q[:2] == "at": q = q[2:]
     q = self.ConvLen(q.strip())
     try:    d = self.ConvLen(d.strip())
     except: d = q
 
-    f['name'] = n
     f['design_size'] = d
     f['scaled_size'] = q
     f['checksum'] = 0
