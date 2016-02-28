@@ -1,5 +1,5 @@
 #! /usr/bin/env python2.7
-# -*- coding: utf_8 -*-
+# -*- coding: utf-8 -*-
 #
 # This is DVIasm, a DVI utility for editing DVI files directly.
 #
