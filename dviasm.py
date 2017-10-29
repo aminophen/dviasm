@@ -65,8 +65,8 @@ XDV_FLAG_EXTEND = 0x1000;
 XDV_FLAG_SLANT = 0x2000;
 XDV_FLAG_EMBOLDEN = 0x4000;
 # DVI identifications
-DVI_ID = 2; DVIV_ID = 3; XDV_ID = 6;
-DVI_IDS = (DVI_ID, DVIV_ID, XDV_ID)
+DVI_ID = 2; DVIV_ID = 3; XDVI_ID = 6; XDV_ID = 7;
+DVI_IDS = (DVI_ID, DVIV_ID, XDVI_ID, XDV_ID)
 
 def warning(msg):
   sys.stderr.write('%s\n' % msg)
