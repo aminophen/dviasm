@@ -66,9 +66,15 @@ XDV_FLAG_SLANT = 0x2000;
 XDV_FLAG_EMBOLDEN = 0x4000;
 # DVI identifications
 DVI_ID = 2; DVIV_ID = 3; XDV_ID = 6;
+DVI_IDS = (DVI_ID, DVIV_ID, XDV_ID)
 
 def warning(msg):
   sys.stderr.write('%s\n' % msg)
+
+def ValidID(dvi_id):
+    if dvi_id not in DVI_IDS:
+        return False
+    return True
 
 def BadDVI(msg):
   raise AttributeError, 'Bad DVI file: %s!' % msg
@@ -293,7 +299,7 @@ class DVI(object):
     fp.seek(0)
     if GetByte(fp) != PRE: BadDVI("First byte isn't start of preamble")
     id = GetByte(fp)
-    if id != DVI_ID and id != DVIV_ID and id != XDV_ID:
+    if not ValidID(id):
       warning("ID byte is %d; use the default %d!" % (id, DVI_ID))
     else:
       self.id = id
@@ -322,7 +328,7 @@ class DVI(object):
       if   k < 0:    BadDVI('all 223s; is it a DVI file?') # found EOF
       elif k != 223: break
       fp.seek(-2, 1)
-    if k != DVI_ID and k != DVIV_ID and k != XDV_ID:
+    if not ValidID(k):
       warning('ID byte is %d' % k)
     fp.seek(-5, 1)
     q = SignedQuad(fp)
@@ -359,8 +365,8 @@ class DVI(object):
     if SignedQuad(fp) != self.post_loc:
       warning('bad postamble pointer in byte %d!' % (fp.tell() - 4))
     m = GetByte(fp)
-    if m != DVI_ID and m != DVIV_ID and m != XDV_ID:
-      warning('identification in byte %d should be %d, %d, or %d!' % (fp.tell() - 1, DVI_ID, DVIV_ID, XDV_ID))
+    if not ValidID(m):
+      warning('identification in byte %d should be one of: %s!' % (fp.tell() - 1, DVI_IDS))
 
   def DefineFont(self, e, fp):
     c = SignedQuad(fp) # font_check_sum
@@ -694,8 +700,8 @@ class DVI(object):
       # ParsePreamble
       if key == "id":
         self.id = GetInt(val)
-        if self.id != DVI_ID and self.id != DVIV_ID and self.id != XDV_ID:
-          warning("identification byte should be %d, %d, or %d!" % (DVI_ID, DVIV_ID, XDV_ID))
+        if not ValidID(self.id):
+          warning('identification byte %d should be one of: %s!' % (self.id, DVI_IDS))
       elif key == "numerator":
         d = GetInt(val)
         if d <= 0:
