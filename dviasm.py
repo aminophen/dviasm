@@ -143,9 +143,10 @@ def PutUnsigned(q):
   return (0, PutByte(q))
 
 def PutSigned(q):
-  if 0 <= q < 0x800000:               return PutUnsigned(q)
   if q < -0x800000 or q >= 0x800000:  return (3, PutSignedQuad(q))
+  if q >= 0x8000:                     return (2, Put3Bytes(q))
   if q < -0x8000:     q += 0x1000000; return (2, Put3Bytes(q))
+  if q >= 0x80:                       return (1, Put2Bytes(q))
   if q < -0x80:       q += 0x10000;   return (1, Put2Bytes(q))
   return (0, PutByte(q))
 
