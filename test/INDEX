@@ -1,0 +1,3 @@
+test.dvi: Compiled with Knuth’s TeX
+test-ja.dvi: Compiled with upTeX
+test-ja-iso2022-jp.dvi: Compiled with pTeX
