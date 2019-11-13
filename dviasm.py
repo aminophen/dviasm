@@ -91,27 +91,24 @@ def SignedByte(fp): # { returns the next byte, signed }
   if b < 128: return b
   else: return b - 256
 
-def GetNBytes(fp, n):
-  return fp.read(n)
-
 def Get2Bytes(fp): # { returns the next two bytes, unsigned }
-  try: a, b = GetNBytes(fp, 2)
+  try: a, b = fp.read(2)
   except: BadDVI('Failed to Get2Bytes()')
   return (a << 8) + b
 
 def SignedPair(fp): # {returns the next two bytes, signed }
-  try: a, b = GetNBytes(fp, 2)
+  try: a, b = fp.read(2)
   except: BadDVI('Failed to SignedPair()')
   if a < 128: return (a << 8) + b
   else: return ((a - 256) << 8) + b
 
 def Get3Bytes(fp): # { returns the next three bytes, unsigned }
-  try: a, b, c = GetNBytes(fp, 3)
+  try: a, b, c = fp.read(3)
   except: BadDVI('Failed to Get3Bytes()')
   return (((a << 8) + b) << 8) + c
 
 def SignedTrio(fp): # { returns the next three bytes, signed }
-  try: a, b, c = GetNBytes(fp, 3)
+  try: a, b, c = fp.read(3)
   except: BadDVI('Failed to SignedTrio()')
   if a < 128: return (((a << 8) + b) << 8) + c
   else: return ((((a - 256) << 8) + b) << 8) + c
@@ -658,7 +655,6 @@ class DVI(object):
           s.append(PutByte(TEXT_GLYPHS))
           s.append(PutTextGlyphs(cmd[1], cmd[2], cmd[3]))
         else:
-          warning(0)
           warning('invalid command %s!' % cmd[0])
       s.append(chr(EOP))
       loc = fp.tell()
@@ -866,7 +862,6 @@ class DVI(object):
         text, w, glyphs = self.ReadTextGlyphs(val)
         self.cur_page.append([TEXT_GLYPHS, text, w, glyphs])
       else:
-        warning(1)
         warning('invalid command %s!' % key)
 
   def AppendFNT1(self):
