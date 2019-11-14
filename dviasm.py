@@ -216,6 +216,13 @@ def PutStrLatin1(t): # unsed in Dump()
       warning('Not support characters > 65535; may skip %d.\n' % o)
   return "'%s'" % s
 
+def DecodeISO2022JP(c):
+  try:
+    s = bytes.fromhex("1b 24 42 %02x %02x" % (c//256, c%256)).decode('iso2022-jp')
+  except UnicodeDecodeError:
+    s = ''
+  return s
+
 def PutStrUTF8(t): # unsed in Dump()
   s = ''
   if is_subfont:
@@ -227,7 +234,7 @@ def PutStrUTF8(t): # unsed in Dump()
       elif 32 <= o < 127: s += chr(o)
       elif o < 128:       s += ('\\x%02x' % o)
       elif is_ptex:
-        s += bytes.fromhex("1b 24 42 %02x %02x" % (o//256, o%256)).decode('iso2022-jp')
+        s += DecodeISO2022JP(o)
       else:               s += chr(o)
   return "'%s'" % s
 
@@ -238,7 +245,7 @@ def PutStrSJIS(t): # unsed in Dump()
     elif 32 <= o < 127: s += chr(o)
     elif o < 128:       s += ('\\x%02x' % o)
     else:
-      s += bytes.fromhex("1b 24 42 %02x %02x" % (o//256, o%256)).decode('iso2022-jp').encode('sjis')
+      s += DecodeISO2022JP(o).encode('sjis')
   return "'%s'" % s
 
 def IsFontChanged(f, z):
