@@ -125,7 +125,7 @@ def SignedQuad(fp): # { returns the next four bytes, signed }
   else: return ((((((a - 256) << 8) + b) << 8) + c) << 8) + d
 
 def PutByte(q):
-  return chr(q & 0xff)
+  return bytes.fromhex('%02x' % (q & 0xff))
 
 def Put2Bytes(q):
   return PutByte(q>>8) + PutByte(q)
@@ -189,7 +189,7 @@ def UCS2toJIS(c):
 
 def GetStrUTF8(s): # used in Parse()
   if len(s) > 1 and ((s[0] == "'" and s[-1] == "'") or (s[0] == '"' and s[-1] == '"')):
-    t = s[1:-1].decode('string_escape').decode('utf8')
+    t = s[1:-1]
     if is_ptex: return [UCS2toJIS(c) for c in t]
     else:       return [ord(c)       for c in t]
   else:         return ''
@@ -604,35 +604,36 @@ class DVI(object):
 
   def SaveToFile(self, fp):
     # WritePreamble
-    fp.write(''.join([chr(PRE), PutByte(self.id), PutSignedQuad(self.numerator), PutSignedQuad(self.denominator), PutSignedQuad(self.mag), PutByte(len(self.comment)), self.comment]))
+    print(self.comment)
+    fp.write(b''.join([bytes.fromhex('%02x' % PRE), PutByte(self.id), PutSignedQuad(self.numerator), PutSignedQuad(self.denominator), PutSignedQuad(self.mag), PutByte(len(self.comment)), self.comment.encode('utf8')]))
     # WriteFontDefinitions
     self.WriteFontDefinitions(fp)
     # WritePages
     stackdepth = 0; loc = -1
     for page in self.pages:
       w = x = y = z = 0; stack = []
-      s = [chr(BOP)]
+      s = [bytes.fromhex('%02x' % BOP)]
       s.extend([PutSignedQuad(c) for c in page['count']])
       s.append(PutSignedQuad(loc))
       for cmd in page['content']:
         if cmd[0] == SET1:
           for o in cmd[1]:
-            if o < 128: s.append(chr(SET_CHAR_0 + o))
+            if o < 128: s.append(bytes.fromhex('%02x' % (SET_CHAR_0 + o)))
             else:       s.append(self.CmdPair([SET1, o]))
         elif cmd[0] in (SET_RULE, PUT_RULE):
-          s.append(chr(cmd[0]) + PutSignedQuad(cmd[1][0]) + PutSignedQuad(cmd[1][1]))
+          s.append(bytes.fromhex('%02x' % cmd[0]) + PutSignedQuad(cmd[1][0]) + PutSignedQuad(cmd[1][1]))
         elif cmd[0] == PUT1:
           s.append(self.CmdPair([PUT1, cmd[1][0]]))
         elif cmd[0] in (RIGHT1, DOWN1):
           s.append(self.CmdPair(cmd))
         elif cmd[0] in (W0, X0, Y0, Z0):
-          s.append(chr(cmd[0]))
+          s.append(bytes.fromhex('%02x' % cmd[0]))
         elif cmd[0] == PUSH:
-          s.append(chr(PUSH))
+          s.append(bytes.fromhex('%02x' % PUSH))
           stack.append((w, x, y, z))
           if len(stack) > stackdepth: stackdepth = len(stack)
         elif cmd[0] == POP:
-          s.append(chr(POP))
+          s.append(bytes.fromhex('%02x' % POP))
           w, x, y, z = stack.pop()
         elif cmd[0] == W1:
           w = cmd[1]; s.append(self.CmdPair(cmd))
@@ -643,18 +644,18 @@ class DVI(object):
         elif cmd[0] == Z1:
           z = cmd[1]; s.append(self.CmdPair(cmd))
         elif cmd[0] == FNT1:
-          if cmd[1] < 64: s.append(chr(FNT_NUM_0 + cmd[1]))
+          if cmd[1] < 64: s.append(bytes.fromhex('%02x' % (FNT_NUM_0 + cmd[1])))
           else:           s.append(self.CmdPair(cmd))
         elif cmd[0] == XXX1:
           l = len(cmd[1])
-          if l < 256: s.append(chr(XXX1) + chr(l) + cmd[1])
-          else:       s.append(chr(XXX4) + PutSignedQuad(l) + cmd[1])
+          if l < 256: s.append(bytes.fromhex('%02x' % XXX1) + bytes.fromhex('%02x' % l) + cmd[1])
+          else:       s.append(bytes.fromhex('%02x' % XXX4) + PutSignedQuad(l) + cmd[1])
         elif cmd[0] == DIR:
-          s.append(chr(DIR) + chr(cmd[1]))
+          s.append(bytes.fromhex('%02x' % DIR) + bytes.fromhex('%02x' % cmd[1]))
         elif cmd[0] == BEGIN_REFLECT:
-          s.append(chr(BEGIN_REFLECT))
+          s.append(bytes.fromhex('%02x' % BEGIN_REFLECT))
         elif cmd[0] == END_REFLECT:
-          s.append(chr(END_REFLECT))
+          s.append(bytes.fromhex('%02x' % END_REFLECT))
         elif cmd[0] == GLYPHS:
           s.append(PutByte(GLYPHS))
           s.append(PutGlyphs(cmd[1], cmd[2]))
@@ -663,23 +664,24 @@ class DVI(object):
           s.append(PutTextGlyphs(cmd[1], cmd[2], cmd[3]))
         else:
           warning('invalid command %s!' % cmd[0])
-      s.append(chr(EOP))
+      s.append(bytes.fromhex('%02x' % EOP))
       loc = fp.tell()
-      fp.write(''.join(s))
+      fp.write(b''.join(s))
     # WritePostamble
     post_loc = fp.tell()
-    fp.write(''.join([chr(POST), PutSignedQuad(loc), PutSignedQuad(self.numerator), PutSignedQuad(self.denominator), PutSignedQuad(self.mag), PutSignedQuad(self.max_v), PutSignedQuad(self.max_h), Put2Bytes(stackdepth+1), Put2Bytes(len(self.pages))]))
+    fp.write(b''.join([bytes.fromhex('%02x' % POST), PutSignedQuad(loc), PutSignedQuad(self.numerator), PutSignedQuad(self.denominator), PutSignedQuad(self.mag), PutSignedQuad(self.max_v), PutSignedQuad(self.max_h), Put2Bytes(stackdepth+1), Put2Bytes(len(self.pages))]))
     # WriteFontDefinitions
     self.WriteFontDefinitions(fp)
     # WritePostPostamble
-    fp.write(''.join([chr(POST_POST), PutSignedQuad(post_loc), PutByte(self.id), '\xdf\xdf\xdf\xdf']))
+    fp.write(b''.join([bytes.fromhex('%02x' % POST_POST), PutSignedQuad(post_loc), PutByte(self.id), b'\xdf\xdf\xdf\xdf']))
     loc = fp.tell()
     while (loc % 4) != 0:
-      fp.write('\xdf'); loc += 1
+      fp.write(b'\xdf'); loc += 1
 
   def WriteFontDefinitions(self, fp):
     s = []
     for e in sorted(self.font_def.keys()):
+      print(self.font_def[e]['native'])
       if self.font_def[e]['native']:
         flags = self.font_def[e]['flags']
         s.append(PutByte(NATIVE_FONT_DEF))
@@ -687,7 +689,7 @@ class DVI(object):
         s.append(PutSignedQuad(self.font_def[e]['scaled_size']))
         s.append(Put2Bytes(flags))
         s.append(PutByte(len(self.font_def[e]['name'])))
-        s.append(self.font_def[e]['name'])
+        s.append(self.font_def[e]['name'].encode('utf8'))
         s.append(PutSignedQuad(self.font_def[e]['index']))
         print(self.font_def[e]['name'], self.font_def[e]['index'], file=sys.stderr)
         if flags & XDV_FLAG_COLORED: s.append(PutSignedQuad(self.font_def[e]['color']))
@@ -696,25 +698,27 @@ class DVI(object):
         if flags & XDV_FLAG_EMBOLDEN: s.append(PutSignedQuad(self.font_def[e]['embolden']))
       else:
         l, q = PutUnsigned(e)
+        print(l, q)
+        print(FNT_DEF1 + l)
         s.append(PutByte(FNT_DEF1 + l))
         s.append(q)
         s.append(PutSignedQuad(self.font_def[e]['checksum']))
         s.append(PutSignedQuad(self.font_def[e]['scaled_size']))
         s.append(PutSignedQuad(self.font_def[e]['design_size']))
-        s.append('\x00')
+        s.append(b'\x00')
         s.append(PutByte(len(self.font_def[e]['name'])))
-        s.append(self.font_def[e]['name'])
-    fp.write(''.join(s))
+        s.append(self.font_def[e]['name'].encode('utf8'))
+    fp.write(b''.join(s))
 
   def CmdPair(self, cmd):
     l, q = PutSigned(cmd[1])
-    return chr(cmd[0] + l) + q
+    return bytes.fromhex('%02x' % (cmd[0] + l)) + q
 
   ##########################################################
   # Parse: Text -> Internal Format
   ##########################################################
   def Parse(self, fn, encoding=''):
-    fp = open(fn, 'rb')
+    fp = open(fn, 'r')
     s = fp.read()
     fp.close()
     self.ParseFromString(s, encoding=encoding)
