@@ -227,7 +227,7 @@ def PutStrUTF8(t): # unsed in Dump()
       elif 32 <= o < 127: s += chr(o)
       elif o < 128:       s += ('\\x%02x' % o)
       elif is_ptex:
-        s += b''.join([b'\x1b$B', bytes.fromhex('%02x%02x' % (o//256, o%256))]).decode('iso2022-jp')
+        s += bytes.fromhex("1b 24 42 %02x %02x" % (o//256, o%256)).decode('iso2022-jp')
       else:               s += chr(o)
   return "'%s'" % s
 
@@ -238,7 +238,7 @@ def PutStrSJIS(t): # unsed in Dump()
     elif 32 <= o < 127: s += chr(o)
     elif o < 128:       s += ('\\x%02x' % o)
     else:
-      s += ''.join(['\x1b$B', chr(o/256), chr(o%256)]).decode('iso2022-jp').encode('sjis')
+      s += bytes.fromhex("1b 24 42 %02x %02x" % (o//256, o%256)).decode('iso2022-jp').encode('sjis')
   return "'%s'" % s
 
 def IsFontChanged(f, z):
