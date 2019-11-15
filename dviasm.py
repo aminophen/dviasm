@@ -414,7 +414,7 @@ class DVI(object):
     size = Get4Bytes(fp) # scaled size
     flags = Get2Bytes(fp)
     l = GetByte(fp) # name length
-    fnt_name = fp.read(l)
+    fnt_name = fp.read(l).decode('utf8')
     index = Get4Bytes(fp) # face index
     ext = []
     embolden = 0
@@ -494,7 +494,7 @@ class DVI(object):
       elif o < FNT_NUM_0 + 64 or o in (FNT1, FNT2, FNT3, FNT4):
         s.append([FNT1, p])
       elif o in (XXX1, XXX2, XXX3, XXX4):
-        q = fp.read(p)
+        q = fp.read(p).decode('utf8')
         s.append([XXX1, q])
       elif o in (FNT_DEF1, FNT_DEF2, FNT_DEF3, FNT_DEF4):
         self.DefineFont(p, fp)
@@ -689,6 +689,7 @@ class DVI(object):
         s.append(PutByte(len(self.font_def[e]['name'])))
         s.append(self.font_def[e]['name'].encode('utf8'))
         s.append(PutSignedQuad(self.font_def[e]['index']))
+        print(self.font_def[e]['name'], self.font_def[e]['index'], file=sys.stderr)
         if flags & XDV_FLAG_COLORED: s.append(PutSignedQuad(self.font_def[e]['color']))
         if flags & XDV_FLAG_EXTEND: s.append(PutSignedQuad(self.font_def[e]['extend']))
         if flags & XDV_FLAG_SLANT: s.append(PutSignedQuad(self.font_def[e]['slant']))
