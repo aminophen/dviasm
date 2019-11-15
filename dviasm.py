@@ -185,7 +185,7 @@ def GetStrASCII(s): # used in Parse()
 def UCS2toJIS(c):
   s = c.encode('iso2022-jp')
   if len(s) == 1: return ord(s)
-  else:           return (ord(s[3]) << 8) + ord(s[4])
+  else:           return (s[3] << 8) + s[4]
 
 def GetStrUTF8(s): # used in Parse()
   if len(s) > 1 and ((s[0] == "'" and s[-1] == "'") or (s[0] == '"' and s[-1] == '"')):
@@ -604,7 +604,6 @@ class DVI(object):
 
   def SaveToFile(self, fp):
     # WritePreamble
-    print(self.comment)
     fp.write(b''.join([bytes.fromhex('%02x' % PRE), PutByte(self.id), PutSignedQuad(self.numerator), PutSignedQuad(self.denominator), PutSignedQuad(self.mag), PutByte(len(self.comment)), self.comment.encode('utf8')]))
     # WriteFontDefinitions
     self.WriteFontDefinitions(fp)
@@ -681,7 +680,6 @@ class DVI(object):
   def WriteFontDefinitions(self, fp):
     s = []
     for e in sorted(self.font_def.keys()):
-      print(self.font_def[e]['native'])
       if self.font_def[e]['native']:
         flags = self.font_def[e]['flags']
         s.append(PutByte(NATIVE_FONT_DEF))
@@ -691,15 +689,12 @@ class DVI(object):
         s.append(PutByte(len(self.font_def[e]['name'])))
         s.append(self.font_def[e]['name'].encode('utf8'))
         s.append(PutSignedQuad(self.font_def[e]['index']))
-        print(self.font_def[e]['name'], self.font_def[e]['index'], file=sys.stderr)
         if flags & XDV_FLAG_COLORED: s.append(PutSignedQuad(self.font_def[e]['color']))
         if flags & XDV_FLAG_EXTEND: s.append(PutSignedQuad(self.font_def[e]['extend']))
         if flags & XDV_FLAG_SLANT: s.append(PutSignedQuad(self.font_def[e]['slant']))
         if flags & XDV_FLAG_EMBOLDEN: s.append(PutSignedQuad(self.font_def[e]['embolden']))
       else:
         l, q = PutUnsigned(e)
-        print(l, q)
-        print(FNT_DEF1 + l)
         s.append(PutByte(FNT_DEF1 + l))
         s.append(q)
         s.append(PutSignedQuad(self.font_def[e]['checksum']))
