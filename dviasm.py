@@ -162,7 +162,7 @@ def PutGlyphs(width, glyphs):
   for glyph in glyphs:
     s.append(Put2Bytes(glyph["id"]))
 
-  return ''.join(s)
+  return b''.join(s)
 
 def PutTextGlyphs(text, width, glyphs):
   s = []
@@ -172,7 +172,7 @@ def PutTextGlyphs(text, width, glyphs):
     s.append(Put2Bytes(ch))
   s.append(PutGlyphs(width, glyphs))
 
-  return ''.join(s)
+  return b''.join(s)
 
 def GetInt(s):
   try: return int(s)
@@ -646,9 +646,11 @@ class DVI(object):
           if cmd[1] < 64: s.append(bytes.fromhex('%02x' % (FNT_NUM_0 + cmd[1])))
           else:           s.append(self.CmdPair(cmd))
         elif cmd[0] == XXX1:
+          cmd1 = cmd[1].encode('utf8')
           l = len(cmd[1])
-          if l < 256: s.append(bytes.fromhex('%02x' % XXX1) + bytes.fromhex('%02x' % l) + cmd[1])
-          else:       s.append(bytes.fromhex('%02x' % XXX4) + PutSignedQuad(l) + cmd[1])
+          print(cmd[1])
+          if l < 256: s.append(bytes.fromhex('%02x' % XXX1) + bytes.fromhex('%02x' % l) + cmd1)
+          else:       s.append(bytes.fromhex('%02x' % XXX4) + PutSignedQuad(l) + cmd1)
         elif cmd[0] == DIR:
           s.append(bytes.fromhex('%02x' % DIR) + bytes.fromhex('%02x' % cmd[1]))
         elif cmd[0] == BEGIN_REFLECT:
