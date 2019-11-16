@@ -648,7 +648,6 @@ class DVI(object):
         elif cmd[0] == XXX1:
           cmd1 = cmd[1].encode('utf8')
           l = len(cmd[1])
-          print(cmd[1])
           if l < 256: s.append(bytes.fromhex('%02x' % XXX1) + bytes.fromhex('%02x' % l) + cmd1)
           else:       s.append(bytes.fromhex('%02x' % XXX4) + PutSignedQuad(l) + cmd1)
         elif cmd[0] == DIR:
@@ -691,7 +690,6 @@ class DVI(object):
         s.append(PutByte(len(self.font_def[e]['name'])))
         s.append(self.font_def[e]['name'].encode('utf8'))
         s.append(PutSignedQuad(self.font_def[e]['index']))
-        print(self.font_def[e]['name'], self.font_def[e]['index'], file=sys.stderr)
         if flags & XDV_FLAG_COLORED: s.append(PutSignedQuad(self.font_def[e]['color']))
         if flags & XDV_FLAG_EXTEND: s.append(PutSignedQuad(self.font_def[e]['extend']))
         if flags & XDV_FLAG_SLANT: s.append(PutSignedQuad(self.font_def[e]['slant']))
@@ -1169,7 +1167,7 @@ the Free Software Foundation, either version 3 of the License, or
                     help="tab size for push/pop [default=%default]")
   parser.add_option("-p", "--ptex",
                     action="store_true", dest="ptex", default=False,
-                    help="extended DVI for Japanese pTeX")
+                    help="ISO-2022-JP-encoded DVI for Japanese pTeX")
   parser.add_option("-s", "--subfont",
                     action="append", type="string", dest="subfont",
                     metavar="STR",
