@@ -386,7 +386,7 @@ class DVI(object):
       warning('bad postamble pointer in byte %d!' % (fp.tell() - 4))
     m = GetByte(fp)
     if not ValidID(m):
-      warning("ID byte is %d; use the same as preamble!" % (id, self.id))
+      warning("ID byte is %d; use the same as preamble!" % (m, self.id))
       self.id_post = self.id
     else:
       self.id_post = m
@@ -880,7 +880,6 @@ class DVI(object):
         warning('invalid command %s!' % key)
     if self.id_post == 0: # optional id_post not present
       self.id_post = self.id
-
 
   def AppendFNT1(self):
     f = {'name':cur_font+"%02x"%subfont_idx, 'design_size':cur_dsize, 'scaled_size':cur_ssize, 'checksum':0}
