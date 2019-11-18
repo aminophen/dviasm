@@ -282,7 +282,6 @@ class DVI(object):
   ##########################################################
   def Initialize(self):
     self.id = DVI_ID
-    self.id_post = 0 # optional
     self.numerator   = 25400000
     self.denominator = 473628672
     self.mag = 1000
@@ -386,10 +385,10 @@ class DVI(object):
       warning('bad postamble pointer in byte %d!' % (fp.tell() - 4))
     m = GetByte(fp)
     if not ValidID(m):
-      warning("ID byte is %d; use the same as preamble!" % (m, self.id))
-      self.id_post = self.id
-    else:
-      self.id_post = m
+      warning('identification in byte %d should be one of: %s!' % (fp.tell() - 1, DVI_IDS))
+    if not self.id == m:
+      if not (self.id == 2 and m == 3): # pTeX/upTeX with dir allowed
+        warning('ID byte mismatch: preamble %d vs postamble %d!' % (self.id, m))
 
   def DefineFont(self, e, fp):
     c = SignedQuad(fp) # font_check_sum
@@ -729,6 +728,7 @@ class DVI(object):
     else:                   GetStr = GetStrUTF8
     self.Initialize()
     self.fnt_num = 0
+    dir_used = 0
     for l in s.split('\n'):
       l = l.strip()
       if not l or l[0] == '%': continue
@@ -772,10 +772,6 @@ class DVI(object):
       elif key == "comment":
         self.comment = val[1:-1]
       # Parse Postamble
-      elif key == "id_post":
-        self.id_post = GetInt(val)
-        if not ValidID(self.id_post):
-          warning('identification byte %d should be one of: %s!' % (self.id_post, DVI_IDS))
       elif key == "maxv":
         self.max_v = self.ConvLen(val)
       elif key == "maxh":
@@ -866,6 +862,7 @@ class DVI(object):
         self.cur_page.append([Z0])
       elif key == 'dir':
         self.cur_page.append([DIR, GetInt(val)])
+        dir_used = 1
       elif key == 'begin_reflect':
         self.cur_page.append([BEGIN_REFLECT])
       elif key == 'end_reflect':
@@ -878,7 +875,9 @@ class DVI(object):
         self.cur_page.append([TEXT_GLYPHS, text, w, glyphs])
       else:
         warning('invalid command %s!' % key)
-    if self.id_post == 0: # optional id_post not present
+    if self.id == 2 and dir_used == 1: # standard DVI with dir -> force pTeX/upTeX spec
+      self.id_post = 3
+    else:
       self.id_post = self.id
 
   def AppendFNT1(self):
@@ -914,8 +913,6 @@ class DVI(object):
     fp.write("comment: %s\n" % repr(self.comment))
     # DumpPostamble
     fp.write("\n[postamble]\n")
-    if self.id_post != self.id: # pTeX/upTeX DVI: 3 vs 2
-      fp.write("id_post: %d\n" % self.id_post)
     fp.write("maxv: %s\n" % self.byconv(self.max_v))
     fp.write("maxh: %s\n" % self.byconv(self.max_h))
     fp.write("maxs: %d\n" % self.max_s)
