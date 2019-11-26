@@ -1,4 +1,4 @@
-DVIasm is a TeX utility program written by Jin-Hwan Cho, that is
+DVIasm is a TeX utility program originally written by Jin-Hwan Cho, that is
 designed for editing DeVice-Independent (DVI) files directly.
 
 It consists of a single Python program, dviasm.py, in a human readable

@@ -6,6 +6,7 @@
 # Copyright (C) 2007-2008 by Jin-Hwan Cho <chofchof@ktug.or.kr>
 # Copyright (C) 2011-2017 by Khaled Hosny <khaledhosny@eglug.org>
 # Copyright (C) 2019 by Arthur Reutenauer <arthur@reutenauer.eu>
+# Copyright (C) 2019 by Hironobu Yamashita <h.y.acetaminophen@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -1147,10 +1148,12 @@ binary format. It is fully documented at
 http://tug.org/TUGboat/Articles/tb28-2/tb89cho.pdf 
 http://ajt.ktug.kr/assets/2008/5/1/0201cho.pdf"""
 
-  version = """This is %prog-20190202 by Jin-Hwan Cho (Korean TeX Society)
+  version = """This is %prog-20191126
   
 Copyright (C) 2007-2008 by Jin-Hwan Cho <chofchof@ktug.or.kr>
 Copyright (C) 2011-2017 by Khaled Hosny <khaledhosny@eglug.org>
+Copyright (C) 2019 by Arthur Reutenauer <arthur@reutenauer.eu>
+Copyright (C) 2019 by Hironobu Yamashita <h.y.acetaminophen@gmail.com>
 
 This is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
