@@ -2,6 +2,8 @@
 
 # command
 DVIASM="python3 dviasm.py"
+#DVIASM="python archive/dviasm2-final.py"
+#DVIASM="python archive/dviasm-chof.py"
 
 # directory
 IN="test"
