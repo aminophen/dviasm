@@ -1,0 +1,18 @@
+[page 1 0 0 0 0 0 0 0 0 0]
+xxx: 'background cmyk .183 .054 0 0'
+down: 643.202545pt
+push:
+  down: -608.480316pt
+  xxx: 'color push LimeGreen'
+  push:
+    fnt: cmr10 (10.0pt) at 50.0pt
+    set: 'Hello,'
+    right: 16.666687pt
+    xxx: 'color push rgb 0 0 .625'
+    set: 'W'
+    xxx: 'color pop'
+    right: -4.166702pt
+    set: 'orld!'
+  pop:
+  xxx: 'color pop'
+pop:

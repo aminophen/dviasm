@@ -1,0 +1,39 @@
+[preamble]
+id: 2
+numerator: 25400000
+denominator: 473628672
+magnification: 1000
+comment: ' TeX output 2007.01.24:1740'
+
+[postamble]
+maxv: 667.202545pt
+maxh: 469.754990pt
+maxs: 2
+pages: 1
+
+[font definitions]
+fntdef: cmr10 (10.0pt) at 50.0pt
+
+[page 1 0 0 0 0 0 0 0 0 0]
+xxx: 'landscape'
+putrule: 1cm 0.5pt
+putrule: 0.5pt 1cm
+push:
+  down: -14.0pt
+pop:
+down: 643.202545pt
+push:
+  down: -608.480316pt
+  xxx: 'color push rgb 1 0 0'
+  putrule: 10pt 4in
+  xxx: 'color pop'
+  push:
+    fnt: cmr10 (10.0pt) at 50.0pt
+    set: 'Hello,'
+    right: 16.666687pt
+    set: 'W'
+    right: -4.166702pt
+    set: 'orld!'
+  pop:
+pop:
+down: 24.0pt

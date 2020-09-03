@@ -2,12 +2,16 @@
 IN=test
 OUT=output
 
-mkdir -p OUTPUT
+mkdir -p output
 set -x
 
 # tb89cho: dump -> DVI
 python3 dviasm.py $IN/hello.dump -o $OUT/hello.dump.dvi
 cmp $OUT/hello.dump.dvi $IN/hello.dump.dvi || exit 1
+python3 dviasm.py $IN/hello5.dump -o $OUT/hello5.dump.dvi
+cmp $OUT/hello5.dump.dvi $IN/hello5.dump.dvi || exit 1
+python3 dviasm.py $IN/hello6.dump -o $OUT/hello6.dump.dvi
+cmp $OUT/hello6.dump.dvi $IN/hello6.dump.dvi || exit 1
 
 # simple: DVI -> dump
 python3 dviasm.py $IN/test.dvi >$OUT/test.dump
