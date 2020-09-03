@@ -1,5 +1,14 @@
 * hello.dump: raw text (tb89cho)
   * hello.dump.dvi: compiled above with dviasm
+* hello5.dump: raw text (tb89cho)
+  * hello5.dump.dvi: compiled above with dviasm
+* hello6.dump: raw text (tb89cho)
+  * hello6.dump.dvi: compiled above with dviasm
+* ajt01lig.dvi: Compiled ajt01lig.tex with Knuth's TeX
+  * ajt01lig.dump: dumped from above
+  * ajt01lig.dump.dvi: compiled from above
+* ajt02omega.dump: dumped from above
+  * ajt02omega.dump.dvi: compiled from above
 * test.dvi: Compiled test.tex with Knuth's TeX
   * test.dump: dumped from above
   * test.dump.dvi: compiled from above

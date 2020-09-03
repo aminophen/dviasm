@@ -1,0 +1,7 @@
+[page 1]
+fnt: cyberb at 40pt
+push:
+set: '日本語文書を出版する。'
+pop:
+down: 50pt
+set: '한글문서를 출판한다.'
