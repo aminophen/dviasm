@@ -1,0 +1,37 @@
+[preamble]
+id: 2
+numerator: 25400000
+denominator: 473628672
+magnification: 1000
+comment: ' TeX output 2019.11.13:1233'
+
+[postamble]
+maxv: 667.202545pt
+maxh: 469.754990pt
+maxs: 2
+pages: 1
+
+[font definitions]
+fntdef: cmr10 at 10pt
+fntdef: upjisr-h at 10pt
+
+[page 1 0 0 0 0 0 0 0 0 0]
+push:
+  down: -14pt
+pop:
+down: 643.202545pt
+push:
+  down: -633.202545pt
+  push:
+    right: 20pt
+    fnt: upjisr-h at 10pt
+    set: '今日は'
+    fnt: cmr10 at 10pt
+    set: '!'
+  pop:
+pop:
+down: 24pt
+push:
+  right: 232.377487pt
+  set: '1'
+pop:

@@ -1,3 +1,11 @@
-test.dvi: Compiled with Knuth’s TeX
-test-ja.dvi: Compiled with upTeX
-test-ja-iso2022-jp.dvi: Compiled with pTeX
+* hello.dump: raw text (tb89cho)
+  * hello.dump.dvi: compiled above with dviasm
+* test.dvi: Compiled test.tex with Knuth's TeX
+  * test.dump: dumped from above
+  * test.dump.dvi: compiled from above
+* test-ja.dvi: Compiled test-ja.tex with upTeX
+  * test-ja.dump: dumped from above
+  * test-ja.dump.dvi: compiled from above
+* test-ja-p.dvi: Compiled test-ja.tex with pTeX (ISO-2022-JP)
+  * test-ja-p.dump: dumped from above
+  * test-ja-p.dump.dvi: compiled from above
