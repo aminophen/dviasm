@@ -1235,4 +1235,4 @@ if __name__ == '__main__':
   else: # dump -> dvi
     aDVI.Parse(args[0], encoding=options.encoding)
     if options.output: aDVI.Save(options.output)
-    else:              aDVI.SaveToFile(sys.stdout)
+    else:              aDVI.SaveToFile(sys.stdout.buffer)
