@@ -1,0 +1,44 @@
+[preamble]
+id: 2
+numerator: 25400000
+denominator: 473628672
+magnification: 1000
+comment: ' TeX output 2020.09.04:2045'
+
+[postamble]
+maxv: 667.202545pt
+maxh: 469.754990pt
+maxs: 3
+pages: 1
+
+[font definitions]
+fntdef: cmr10 at 10pt
+fntdef: min10 at 10pt
+
+[page 1 0 0 0 0 0 0 0 0 0]
+push:
+  down: -14pt
+pop:
+down: 643.202545pt
+push:
+  down: -633.202545pt
+  push:
+    right: 20pt
+    fnt: min10 at 10pt
+    set: '日本語'
+    w: 2.405533pt
+    fnt: cmr10 at 10pt
+    set: 'T'
+    push:
+      right: -1.667023pt
+      down: 2.152771pt
+      set: 'E'
+    pop:
+    right: 3.888550pt
+    set: 'X'
+    w0:
+    fnt: min10 at 10pt
+    set: 'を出版分野で本格的に応用する。'
+  pop:
+pop:
+down: 24pt

@@ -1,0 +1,14 @@
+[page 1]
+push:
+  fnt: outbtm at 10pt
+  set: '한글문서를'
+  right: 3.333328pt
+  set: '조판한다'
+pop:
+down: 12pt
+push:
+  fnt: outgtm at 10pt
+  set: '한글문서를'
+  right: 3.333328pt
+  set: '조판한다'
+pop:

@@ -1,20 +1,34 @@
-* hello.dump: raw text (tb89cho)
+## from tb89cho
+* hello.dump: raw text
   * hello.dump.dvi: compiled above with dviasm
-* hello5.dump: raw text (tb89cho)
+* hello5.dump: raw text (with specials)
   * hello5.dump.dvi: compiled above with dviasm
-* hello6.dump: raw text (tb89cho)
+* hello6.dump: raw text (with specials)
   * hello6.dump.dvi: compiled above with dviasm
-* ajt01lig.dvi: Compiled ajt01lig.tex with Knuth's TeX (ajt0201)
+
+## from ajt0201
+* ajt01lig.dvi: Compiled ajt01lig.tex with Knuth's TeX
   * ajt01lig.dump: dumped from above
   * ajt01lig.dump.dvi: compiled from above
-* ajt02omega.dump: raw text (ajt0201)
-  * ajt02omega.dump.dvi: compiled from above
+* ajt02omega.dump: raw text (for Omega)
+  * ajt02omega.dump.dvi: compiled above with dviasm
+* ajt03jp.dvi: Compiled ajt03jp.tex with pTeX
+  * ajt03jp.dump: dumped from above
+  * ajt03jp.dump.dvi: compiled from above
+* ajt04jy.dump: raw text (for pTeX)
+  * ajt04jy.dump.dvi: compiled above with dviasm
+* ajt05jt.dump: raw text (for pTeX)
+  * ajt05jt.dump.dvi: compiled above with dviasm
+* ajt06kr.dump: raw text (for ko.TeX)
+  * ajt06kr.dump.dvi: compiled above with dviasm
+
+## minimum by Arthur Reutenauer (2019-11-14)
 * test.dvi: Compiled test.tex with Knuth's TeX
   * test.dump: dumped from above
   * test.dump.dvi: compiled from above
 * test-ja.dvi: Compiled test-ja.tex with upTeX
   * test-ja.dump: dumped from above
   * test-ja.dump.dvi: compiled from above
-* test-ja-p.dvi: Compiled test-ja.tex with pTeX (ISO-2022-JP)
+* test-ja-p.dvi: Compiled test-ja.tex with pTeX
   * test-ja-p.dump: dumped from above
   * test-ja-p.dump.dvi: compiled from above

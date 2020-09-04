@@ -24,14 +24,26 @@ cmp $OUT/hello6.dump.dvi $IN/hello6.dump.dvi || exit 1
 # ajt0201cho: DVI -> dump
 $DVIASM $IN/ajt01lig.dvi >$OUT/ajt01lig.dump
 diff $OUT/ajt01lig.dump $IN/ajt01lig.dump || exit 1
+$DVIASM --ptex $IN/ajt03jp.dvi >$OUT/ajt03jp.dump
+diff $OUT/ajt03jp.dump $IN/ajt03jp.dump || exit 1
 
 # ajt0201cho: dump -> DVI
+## ajt05jt.dump -> ajt05jt.dump.dvi was wrong (DVIV_ID)
+## => fixed in py3-20191126
 $DVIASM $IN/ajt01lig.dump -o $OUT/ajt01lig.dump.dvi
 cmp $OUT/ajt01lig.dump.dvi $IN/ajt01lig.dump.dvi || exit 1
 $DVIASM $IN/ajt02omega.dump -o $OUT/ajt02omega.dump.dvi
 cmp $OUT/ajt02omega.dump.dvi $IN/ajt02omega.dump.dvi || exit 1
+$DVIASM --ptex $IN/ajt03jp.dump -o $OUT/ajt03jp.dump.dvi
+cmp $OUT/ajt03jp.dump.dvi $IN/ajt03jp.dump.dvi || exit 1
+$DVIASM --ptex $IN/ajt04jy.dump -o $OUT/ajt04jy.dump.dvi
+cmp $OUT/ajt04jy.dump.dvi $IN/ajt04jy.dump.dvi || exit 1
+$DVIASM --ptex $IN/ajt05jt.dump -o $OUT/ajt05jt.dump.dvi
+cmp $OUT/ajt05jt.dump.dvi $IN/ajt05jt.dump.dvi || exit 1
+$DVIASM --subfont=outbtm,outgtm, $IN/ajt06kr.dump -o $OUT/ajt06kr.dump.dvi
+cmp $OUT/ajt06kr.dump.dvi $IN/ajt06kr.dump.dvi || exit 1
 
-# simple: DVI -> dump
+# simple: DVI -> dump (stdout)
 $DVIASM $IN/test.dvi >$OUT/test.dump
 diff $OUT/test.dump $IN/test.dump || exit 1
 $DVIASM $IN/test-ja.dvi >$OUT/test-ja.dump
@@ -39,7 +51,23 @@ diff $OUT/test-ja.dump $IN/test-ja.dump || exit 1
 $DVIASM -p $IN/test-ja-p.dvi >$OUT/test-ja-p.dump
 diff $OUT/test-ja-p.dump $IN/test-ja-p.dump || exit 1
 
-# simple: dump -> DVI
+# simple: DVI -> dump (file)
+$DVIASM $IN/test.dvi -o $OUT/testo.dump
+diff $OUT/testo.dump $IN/test.dump || exit 1
+$DVIASM $IN/test-ja.dvi -o $OUT/testo-ja.dump
+diff $OUT/testo-ja.dump $IN/test-ja.dump || exit 1
+$DVIASM -p $IN/test-ja-p.dvi -o $OUT/testo-ja-p.dump
+diff $OUT/testo-ja-p.dump $IN/test-ja-p.dump || exit 1
+
+# simple: dump -> DVI (stdout)
+$DVIASM $IN/test.dump >$OUT/testo.dump.dvi
+cmp $OUT/testo.dump.dvi $IN/test.dump.dvi || exit 1
+$DVIASM $IN/test-ja.dump >$OUT/testo-ja.dump.dvi
+cmp $OUT/testo-ja.dump.dvi $IN/test-ja.dump.dvi || exit 1
+$DVIASM -p $IN/test-ja-p.dump >$OUT/testo-ja-p.dump.dvi
+cmp $OUT/testo-ja-p.dump.dvi $IN/test-ja-p.dump.dvi || exit 1
+
+# simple: dump -> DVI (file)
 $DVIASM -o $OUT/test.dump.dvi $IN/test.dump
 cmp $OUT/test.dump.dvi $IN/test.dump.dvi || exit 1
 $DVIASM -o $OUT/test-ja.dump.dvi $IN/test-ja.dump
