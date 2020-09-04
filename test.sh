@@ -13,6 +13,42 @@ mkdir -p $OUT
 # debug
 set -x
 
+#####
+
+# simple: DVI -> dump (file)
+$DVIASM $IN/test.dvi -o $OUT/testo.dump
+diff $OUT/testo.dump $IN/test.dump || exit 1
+$DVIASM $IN/test-ja.dvi -o $OUT/testo-ja.dump
+diff $OUT/testo-ja.dump $IN/test-ja.dump || exit 1
+$DVIASM -p $IN/test-ja-p.dvi -o $OUT/testo-ja-p.dump
+diff $OUT/testo-ja-p.dump $IN/test-ja-p.dump || exit 1
+
+# simple: DVI -> dump (stdout)
+$DVIASM $IN/test.dvi >$OUT/test.dump
+diff $OUT/test.dump $IN/test.dump || exit 1
+$DVIASM $IN/test-ja.dvi >$OUT/test-ja.dump
+diff $OUT/test-ja.dump $IN/test-ja.dump || exit 1
+$DVIASM -p $IN/test-ja-p.dvi >$OUT/test-ja-p.dump
+diff $OUT/test-ja-p.dump $IN/test-ja-p.dump || exit 1
+
+# simple: dump -> DVI (file)
+$DVIASM -o $OUT/test.dump.dvi $IN/test.dump
+cmp $OUT/test.dump.dvi $IN/test.dump.dvi || exit 1
+$DVIASM -o $OUT/test-ja.dump.dvi $IN/test-ja.dump
+cmp $OUT/test-ja.dump.dvi $IN/test-ja.dump.dvi || exit 1
+$DVIASM -p -o $OUT/test-ja-p.dump.dvi $IN/test-ja-p.dump
+cmp $OUT/test-ja-p.dump.dvi $IN/test-ja-p.dump.dvi || exit 1
+
+# simple: dump -> DVI (stdout)
+$DVIASM $IN/test.dump >$OUT/testo.dump.dvi
+cmp $OUT/testo.dump.dvi $IN/test.dump.dvi || exit 1
+$DVIASM $IN/test-ja.dump >$OUT/testo-ja.dump.dvi
+cmp $OUT/testo-ja.dump.dvi $IN/test-ja.dump.dvi || exit 1
+$DVIASM -p $IN/test-ja-p.dump >$OUT/testo-ja-p.dump.dvi
+cmp $OUT/testo-ja-p.dump.dvi $IN/test-ja-p.dump.dvi || exit 1
+
+#####
+
 # tb89cho: dump -> DVI
 $DVIASM $IN/hello.dump -o $OUT/hello.dump.dvi
 cmp $OUT/hello.dump.dvi $IN/hello.dump.dvi || exit 1
@@ -43,6 +79,8 @@ cmp $OUT/ajt05jt.dump.dvi $IN/ajt05jt.dump.dvi || exit 1
 $DVIASM --subfont=outbtm,outgtm, $IN/ajt06kr.dump -o $OUT/ajt06kr.dump.dvi
 cmp $OUT/ajt06kr.dump.dvi $IN/ajt06kr.dump.dvi || exit 1
 
+#####
+
 # gh0012: DVI -> dump
 ## gh0012.dvi -> gh0012.dump caused error with --ptex
 ## => [TODO]
@@ -58,38 +96,6 @@ $DVIASM $IN/gh0012.dump -o $OUT/gh0012.dump.dvi
 cmp $OUT/gh0012.dump.dvi $IN/gh0012.dump.dvi || exit 1
 #$DVIASM --ptex $IN/gh0012.dump -o $OUT/gh0012-p.dump.dvi
 #cmp $OUT/gh0012-p.dump.dvi $IN/gh0012.dump.dvi || exit 1
-
-# simple: DVI -> dump (stdout)
-$DVIASM $IN/test.dvi >$OUT/test.dump
-diff $OUT/test.dump $IN/test.dump || exit 1
-$DVIASM $IN/test-ja.dvi >$OUT/test-ja.dump
-diff $OUT/test-ja.dump $IN/test-ja.dump || exit 1
-$DVIASM -p $IN/test-ja-p.dvi >$OUT/test-ja-p.dump
-diff $OUT/test-ja-p.dump $IN/test-ja-p.dump || exit 1
-
-# simple: DVI -> dump (file)
-$DVIASM $IN/test.dvi -o $OUT/testo.dump
-diff $OUT/testo.dump $IN/test.dump || exit 1
-$DVIASM $IN/test-ja.dvi -o $OUT/testo-ja.dump
-diff $OUT/testo-ja.dump $IN/test-ja.dump || exit 1
-$DVIASM -p $IN/test-ja-p.dvi -o $OUT/testo-ja-p.dump
-diff $OUT/testo-ja-p.dump $IN/test-ja-p.dump || exit 1
-
-# simple: dump -> DVI (stdout)
-$DVIASM $IN/test.dump >$OUT/testo.dump.dvi
-cmp $OUT/testo.dump.dvi $IN/test.dump.dvi || exit 1
-$DVIASM $IN/test-ja.dump >$OUT/testo-ja.dump.dvi
-cmp $OUT/testo-ja.dump.dvi $IN/test-ja.dump.dvi || exit 1
-$DVIASM -p $IN/test-ja-p.dump >$OUT/testo-ja-p.dump.dvi
-cmp $OUT/testo-ja-p.dump.dvi $IN/test-ja-p.dump.dvi || exit 1
-
-# simple: dump -> DVI (file)
-$DVIASM -o $OUT/test.dump.dvi $IN/test.dump
-cmp $OUT/test.dump.dvi $IN/test.dump.dvi || exit 1
-$DVIASM -o $OUT/test-ja.dump.dvi $IN/test-ja.dump
-cmp $OUT/test-ja.dump.dvi $IN/test-ja.dump.dvi || exit 1
-$DVIASM -p -o $OUT/test-ja-p.dump.dvi $IN/test-ja-p.dump
-cmp $OUT/test-ja-p.dump.dvi $IN/test-ja-p.dump.dvi || exit 1
 
 # finish
 echo success!
