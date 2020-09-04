@@ -43,6 +43,22 @@ cmp $OUT/ajt05jt.dump.dvi $IN/ajt05jt.dump.dvi || exit 1
 $DVIASM --subfont=outbtm,outgtm, $IN/ajt06kr.dump -o $OUT/ajt06kr.dump.dvi
 cmp $OUT/ajt06kr.dump.dvi $IN/ajt06kr.dump.dvi || exit 1
 
+# gh0012: DVI -> dump
+## gh0012.dvi -> gh0012.dump caused error with --ptex
+## => [TODO]
+$DVIASM $IN/gh0012.dvi >$OUT/gh0012.dump
+diff $OUT/gh0012.dump $IN/gh0012.dump || exit 1
+#$DVIASM --ptex $IN/gh0012.dvi >$OUT/gh0012-p.dump
+#diff $OUT/gh0012-p.dump $IN/gh0012.dump || exit 1
+
+# gh0012: dump -> DVI
+## gh0012.dump -> gh0012.dump.dvi caused error with --ptex
+## => [TODO]
+$DVIASM $IN/gh0012.dump -o $OUT/gh0012.dump.dvi
+cmp $OUT/gh0012.dump.dvi $IN/gh0012.dump.dvi || exit 1
+#$DVIASM --ptex $IN/gh0012.dump -o $OUT/gh0012-p.dump.dvi
+#cmp $OUT/gh0012-p.dump.dvi $IN/gh0012.dump.dvi || exit 1
+
 # simple: DVI -> dump (stdout)
 $DVIASM $IN/test.dvi >$OUT/test.dump
 diff $OUT/test.dump $IN/test.dump || exit 1

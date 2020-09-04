@@ -32,3 +32,8 @@
 * test-ja-p.dvi: Compiled test-ja.tex with pTeX
   * test-ja-p.dump: dumped from above
   * test-ja-p.dump.dvi: compiled from above
+
+## from GitHub Issue 12
+* gh0012.dvi: Compiled gh0012.tex with LaTeX (= pLaTeX)
+  * gh0012.dump: dumped from above
+  * gh0012.dump.dvi: compiled from above

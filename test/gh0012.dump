@@ -1,0 +1,73 @@
+[preamble]
+id: 2
+numerator: 25400000
+denominator: 473628672
+magnification: 1000
+comment: ' TeX output 2020.09.04:2155'
+
+[postamble]
+maxv: 633pt
+maxh: 407pt
+maxs: 6
+pages: 1
+
+[font definitions]
+fntdef: cmr10 at 10pt
+fntdef: cmsy10 at 10pt
+fntdef: cmtt10 at 10pt
+fntdef: tcrm1000 at 10pt
+
+[page 1 0 0 0 0 0 0 0 0 0]
+down: 633pt
+push:
+  down: -605pt
+  down: 575pt
+  push:
+    down: -540pt
+    push:
+      right: 77pt
+      fnt: cmtt10 at 10pt
+      set: '\\usepackage{amsmath}'
+      right: 3.333328pt
+      fnt: cmsy10 at 10pt
+      set: '\x00'
+      fnt: cmr10 at 10pt
+      set: '1'
+    pop:
+    down: 22pt
+    push:
+      push:
+        push:
+          push:
+            right: 77.001251pt
+            fnt: tcrm1000 at 10pt
+            set: ''
+          pop:
+        pop:
+      pop:
+      right: 87.000031pt
+      fnt: cmr10 at 10pt
+      set: 'First'
+    pop:
+    down: 20pt
+    push:
+      push:
+        push:
+          push:
+            right: 77.001251pt
+            fnt: tcrm1000 at 10pt
+            set: ''
+          pop:
+        pop:
+      pop:
+      right: 87.000031pt
+      fnt: cmr10 at 10pt
+      set: 'Second'
+    pop:
+  pop:
+  down: 30pt
+  push:
+    right: 232pt
+    set: '1'
+  pop:
+pop:
