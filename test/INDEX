@@ -33,6 +33,17 @@
   * test-ja-p.dump: dumped from above
   * test-ja-p.dump.dvi: compiled from above
 
+## from https://github.com/aminophen/tex-assort
+* font.dvi: Compiled with LaTeX
+  * font.dump: dumped from above
+  * font.dump.dvi: compiled from above
+* font.xdv: Compiled with XeLaTeX (W32)
+  * font.xdump: dumped from above
+  * font.xdump.xdv: compiled from above
+* native.xdv: Compiled with XeLaTeX (W32)
+  * native.xdump: dumped from above
+  * native.xdump.xdv: compiled from above
+
 ## from GitHub Issue 12
 * gh0012.dvi: Compiled gh0012.tex with LaTeX (= pLaTeX)
   * gh0012.dump: dumped from above
