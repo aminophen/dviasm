@@ -140,6 +140,20 @@ diff $OUT/ipxm.dump $IN/ipxm.dump || exit 1
 $DVIASM --subfont=ipxm-r-u,ipxg-r-u, $IN/ipxm.dump -o $OUT/ipxm.dump.dvi
 cmp $OUT/ipxm.dump.dvi $IN/ipxm.dump.dvi || exit 1
 
+##### inputenc and fontenc
+
+# varenc: DVI -> dump
+$DVIASM -p $IN/varenc-p.dvi >$OUT/varenc-p.dump
+diff $OUT/varenc-p.dump $IN/varenc-p.dump || exit 1
+$DVIASM $IN/varenc-up.dvi >$OUT/varenc-up.dump
+diff $OUT/varenc-up.dump $IN/varenc-up.dump || exit 1
+
+# varenc: dump -> DVI
+$DVIASM -p $IN/varenc-p.dump -o $OUT/varenc-p.dump.dvi
+cmp $OUT/varenc-p.dump.dvi $IN/varenc-p.dump.dvi || exit 1
+$DVIASM $IN/varenc-up.dump -o $OUT/varenc-up.dump.dvi
+cmp $OUT/varenc-up.dump.dvi $IN/varenc-up.dump.dvi || exit 1
+
 #####
 
 # finish

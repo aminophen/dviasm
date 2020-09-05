@@ -1,0 +1,119 @@
+[preamble]
+id: 2
+numerator: 25400000
+denominator: 473628672
+magnification: 1000
+comment: ' TeX output 2020.09.05:2225'
+
+[postamble]
+maxv: 682pt
+maxh: 398pt
+maxs: 3
+pages: 1
+
+[font definitions]
+fntdef: cmr10 at 10pt
+fntdef: upjisr-h (10pt)  at 9.622192pt
+fntdef: ptmr8y at 10pt
+fntdef: tcrm1000 at 10pt
+fntdef: ecrm1000 at 10pt
+
+[page 1 0 0 0 0 0 0 0 0 0]
+down: 682pt
+push:
+  down: -653pt
+  down: 623pt
+  push:
+    down: -588pt
+    push:
+      right: 68pt
+      fnt: cmr10 at 10pt
+      set: 'aller'
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: 'の複合過去形は'
+      w: -0.277786pt
+      fnt: cmr10 at 10pt
+      set: '^'
+      x: -4.722229pt
+      set: 'etre'
+      right: 3.333328pt
+      set: 'all'
+      w0:
+      set: '\x13'
+      x0:
+      set: 'e'
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: 'です'
+    pop:
+    y: 12pt
+    push:
+      right: 68pt
+      set: '直接入力'
+      fnt: tcrm1000 at 10pt
+      set: ''
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: 'も確認'
+    pop:
+    y0:
+    push:
+      right: 68pt
+      fnt: ecrm1000 at 10pt
+      set: 'aller'
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: 'の複合過去形は'
+      fnt: ecrm1000 at 10pt
+      set: 'être'
+      right: 3.332520pt
+      set: 'allé'
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: 'です'
+    pop:
+    y0:
+    push:
+      right: 68pt
+      set: '直接入力'
+      fnt: tcrm1000 at 10pt
+      set: ''
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: 'も確認'
+    pop:
+    y0:
+    push:
+      right: 68pt
+      fnt: ptmr8y at 10pt
+      set: 'aller'
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: 'の複合過去形は'
+      fnt: ptmr8y at 10pt
+      set: 'être'
+      right: 2.500000pt
+      set: 'allé'
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: 'です'
+    pop:
+    y0:
+    push:
+      right: 68pt
+      set: '直接入力'
+      fnt: ptmr8y at 10pt
+      set: ''
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: 'も確認'
+    pop:
+    y0:
+    push:
+      right: 68pt
+      set: '著作は'
+      fnt: ptmr8y at 10pt
+      set: '©'
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: 'マーク'
+    pop:
+  pop:
+  down: 30pt
+  push:
+    right: 223pt
+    fnt: ptmr8y at 10pt
+    set: '1'
+  pop:
+pop:

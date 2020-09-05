@@ -58,3 +58,11 @@
 * ipxm.dvi: Compiled ipxm.tex with LaTeX (not pLaTeX)
   * ipxm.dump: dumped from above
   * ipxm.dump.dvi: compiled from above
+
+## inputenc and fontenc
+* varenc-p.dvi: Compiled varenc.tex with pLaTeX
+  * varenc-p.dump: dumped from above
+  * varenc-p.dump.dvi: compiled from above
+* varenc-up.dvi: Compiled varenc.tex with upLaTeX
+  * varenc-up.dump: dumped from above
+  * varenc-up.dump.dvi: compiled from above

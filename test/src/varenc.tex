@@ -1,0 +1,26 @@
+\documentclass[a4paper,dvipdfmx]{article}
+% inputenc utf8 is recently preloaded.
+\usepackage[utf8]{inputenc}
+% OT1/T1 are always preloaded.
+% TS1 (textcomp) is recently preloaded.
+% LY1 needs loaded explictly.
+\usepackage[TS1,LY1]{fontenc}
+%\usepackage{lmodern}
+\begin{document}
+\noautospacing \noautoxspacing
+% --- アクセント合成
+\fontencoding{OT1}\selectfont
+allerの複合過去形は\^etre all\'eです\par
+直接入力ƒも確認\par
+% --- アクセント単一グリフ
+\fontencoding{T1}\selectfont
+allerの複合過去形は\^etre all\'eです\par
+直接入力ƒも確認\par
+% --- アクセント単一グリフ
+\fontencoding{LY1}\selectfont
+allerの複合過去形は\^etre all\'eです\par
+直接入力ƒも確認\par
+% ---
+著作は\textcopyright マーク\par
+% ---
+\end{document}
