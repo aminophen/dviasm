@@ -693,7 +693,8 @@ class DVI(object):
   def WriteFontDefinitions(self, fp):
     s = []
     for e in sorted(self.font_def.keys()):
-      if self.font_def[e]['native']:
+      try:
+        self.font_def[e]['native']
         flags = self.font_def[e]['flags']
         s.append(PutByte(NATIVE_FONT_DEF))
         s.append(PutSignedQuad(e))
@@ -706,7 +707,7 @@ class DVI(object):
         if flags & XDV_FLAG_EXTEND: s.append(PutSignedQuad(self.font_def[e]['extend']))
         if flags & XDV_FLAG_SLANT: s.append(PutSignedQuad(self.font_def[e]['slant']))
         if flags & XDV_FLAG_EMBOLDEN: s.append(PutSignedQuad(self.font_def[e]['embolden']))
-      else:
+      except KeyError:
         l, q = PutUnsigned(e)
         s.append(PutByte(FNT_DEF1 + l))
         s.append(q)
