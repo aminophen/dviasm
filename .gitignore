@@ -2,5 +2,6 @@
 *.log
 *.out
 *.toc
+*.zip
 output
 test/*.pdf
