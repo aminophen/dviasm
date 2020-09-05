@@ -107,10 +107,20 @@ diff $OUT/ajt06kr.dump.dump $IN/ajt06kr.dump.dump || exit 1
 
 # checklength: dump -> DVI -> dump
 ## checklength.dump ->...-> checklength.dump.dump was different
-## => fixed in py2-20191202 (#3, #5)
+## => fixed in py2-20190202 (#3, #5)
 $DVIASM -u sp $IN/checklength.dump -o $OUT/checklength.dump.dvi
 $DVIASM -u sp $OUT/checklength.dump.dvi >$OUT/checklength.dump.dump
 diff $OUT/checklength.dump.dump $IN/checklength.dump || exit 1
+
+##### from GitHub Issue 6/7
+
+# overbmp: DVI -> dump -> DVI
+## set3 was unsupported in Python 2.x
+## => fixed in py3-20191126 (#6, #7)
+$DVIASM $IN/overbmp-up.dvi >$OUT/overbmp-up.dump
+diff $OUT/overbmp-up.dump $IN/overbmp-up.dump || exit 1
+$DVIASM $IN/overbmp-up.dump -o $OUT/overbmp-up.dump.dvi
+cmp $OUT/overbmp-up.dump.dvi $IN/overbmp-up.dump.dvi || exit 1
 
 ##### from GitHub Issue 12
 

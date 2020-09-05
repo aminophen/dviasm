@@ -1,0 +1,65 @@
+[preamble]
+id: 2
+numerator: 25400000
+denominator: 473628672
+magnification: 1000
+comment: ' TeX output 2020.09.06:0000'
+
+[postamble]
+maxv: 667.202545pt
+maxh: 60pt
+maxs: 3
+pages: 1
+
+[font definitions]
+fntdef: cmr10 at 10pt
+fntdef: upjisr-h at 10pt
+fntdef: upjisr-v at 10pt
+
+[page 1 0 0 0 0 0 0 0 0 0]
+push:
+  down: -14pt
+pop:
+down: 643.202545pt
+push:
+  down: -583.202545pt
+  push:
+    right: 8.799988pt
+    dir: 3
+    push:
+      right: 20pt
+      fnt: upjisr-h at 10pt
+      set: 'どとー。'
+    pop:
+  pop:
+  y: 12pt
+  push:
+    push:
+      right: 20pt
+      set: 'よーこ。'
+    pop:
+  pop:
+  down: 62.199997pt
+  push:
+    right: 5pt
+    down: -60pt
+    dir: 1
+    push:
+      right: 20pt
+      fnt: upjisr-v at 10pt
+      set: 'たーて。'
+    pop:
+  pop:
+  y0:
+  push:
+    right: 20pt
+    fnt: upjisr-h at 10pt
+    set: '𠮟𠮷'
+  pop:
+pop:
+down: 24pt
+push:
+  right: 27.500000pt
+  fnt: cmr10 at 10pt
+  set: '1'
+pop:
