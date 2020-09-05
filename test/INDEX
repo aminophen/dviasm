@@ -46,6 +46,11 @@
   * native.xdump: dumped from above
   * native.xdump.xdv: compiled from above
 
+## from GitHub Issue 6/7
+* overbmp-up.dvi: Compiled overbmp-up.tex with upTeX
+  * overbmp-up.dump: dumped from above
+  * overbmp-up.dump.dvi: compiled from above
+
 ## from GitHub Issue 12
 * gh0012.dvi: Compiled gh0012.tex with LaTeX (= pLaTeX)
   * gh0012.dump: dumped from above
