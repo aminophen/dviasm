@@ -192,7 +192,10 @@ def GetStrASCII(s): # used in Parse()
   else: return ''
 
 def UCS2toJIS(c):
-  s = c.encode('iso2022-jp')
+  try:
+    s = c.encode('iso2022-jp')
+  except UnicodeEncodeError:
+    s = c.encode('raw_unicode_escape')
   if len(s) == 1: return ord(s)
   else:           return (s[3] << 8) + s[4]
 
@@ -229,7 +232,7 @@ def DecodeISO2022JP(c):
   try:
     s = bytes.fromhex("1b 24 42 %02x %02x" % (c//256, c%256)).decode('iso2022-jp')
   except UnicodeDecodeError:
-    s = ''
+    s = chr(c)
   return s
 
 def PutStrUTF8(t): # used in Dump()
