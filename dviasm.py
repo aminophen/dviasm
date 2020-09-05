@@ -1166,7 +1166,7 @@ binary format. It is fully documented at
 Please report bugs to
   https://github.com/aminophen/dviasm"""
 
-  version = """This is %prog-20200905
+  version = """This is %prog-$RELEASEDATE
 
 Copyright (C) 2007-2008 by Jin-Hwan Cho <chofchof@ktug.or.kr>
 Copyright (C) 2011-2017 by Khaled Hosny <khaledhosny@eglug.org>
