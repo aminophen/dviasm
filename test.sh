@@ -143,12 +143,16 @@ cmp $OUT/ipxm.dump.dvi $IN/ipxm.dump.dvi || exit 1
 ##### inputenc and fontenc
 
 # varenc: DVI -> dump
+## varenc-p.dvi -> varenc-p.dump caused error with --ptex
+## => [TODO] workaround in py3-20200905, needs reconsider (#13)
 $DVIASM -p $IN/varenc-p.dvi >$OUT/varenc-p.dump
 diff $OUT/varenc-p.dump $IN/varenc-p.dump || exit 1
 $DVIASM $IN/varenc-up.dvi >$OUT/varenc-up.dump
 diff $OUT/varenc-up.dump $IN/varenc-up.dump || exit 1
 
 # varenc: dump -> DVI
+## varenc-p.dump -> varenc-p.dump.dvi caused error with --ptex
+## => [TODO] workaround in py3-20200905, needs reconsider (#13)
 $DVIASM -p $IN/varenc-p.dump -o $OUT/varenc-p.dump.dvi
 cmp $OUT/varenc-p.dump.dvi $IN/varenc-p.dump.dvi || exit 1
 $DVIASM $IN/varenc-up.dump -o $OUT/varenc-up.dump.dvi
