@@ -5,8 +5,8 @@
 #
 # Copyright (C) 2007-2008 by Jin-Hwan Cho <chofchof@ktug.or.kr>
 # Copyright (C) 2011-2017 by Khaled Hosny <khaledhosny@eglug.org>
-# Copyright (C) 2019 by Arthur Reutenauer <arthur@reutenauer.eu>
-# Copyright (C) 2019 by Hironobu Yamashita <h.y.acetaminophen@gmail.com>
+# Copyright (C) 2019      by Arthur Reutenauer <arthur@reutenauer.eu>
+# Copyright (C) 2019-2020 by Hironobu Yamashita <h.y.acetaminophen@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -145,6 +145,13 @@ def PutUnsigned(q):
   return (0, PutByte(q))
 
 def PutSigned(q):
+  if 0 <= q < 0x800000:               return PutUnsigned(q)
+  if q < -0x800000 or q >= 0x800000:  return (3, PutSignedQuad(q))
+  if q < -0x8000:     q += 0x1000000; return (2, Put3Bytes(q))
+  if q < -0x80:       q += 0x10000;   return (1, Put2Bytes(q))
+  return (0, PutByte(q))
+
+def PutSignedLength(q):
   if q < -0x800000 or q >= 0x800000:  return (3, PutSignedQuad(q))
   if q >= 0x8000:                     return (2, Put3Bytes(q))
   if q < -0x8000:     q += 0x1000000; return (2, Put3Bytes(q))
@@ -629,7 +636,7 @@ class DVI(object):
         elif cmd[0] == PUT1:
           s.append(self.CmdPair([PUT1, cmd[1][0]]))
         elif cmd[0] in (RIGHT1, DOWN1):
-          s.append(self.CmdPair(cmd))
+          s.append(self.CmdPairLength(cmd))
         elif cmd[0] in (W0, X0, Y0, Z0):
           s.append(bytes.fromhex('%02x' % cmd[0]))
         elif cmd[0] == PUSH:
@@ -640,13 +647,13 @@ class DVI(object):
           s.append(bytes.fromhex('%02x' % POP))
           w, x, y, z = stack.pop()
         elif cmd[0] == W1:
-          w = cmd[1]; s.append(self.CmdPair(cmd))
+          w = cmd[1]; s.append(self.CmdPairLength(cmd))
         elif cmd[0] == X1:
-          x = cmd[1]; s.append(self.CmdPair(cmd))
+          x = cmd[1]; s.append(self.CmdPairLength(cmd))
         elif cmd[0] == Y1:
-          y = cmd[1]; s.append(self.CmdPair(cmd))
+          y = cmd[1]; s.append(self.CmdPairLength(cmd))
         elif cmd[0] == Z1:
-          z = cmd[1]; s.append(self.CmdPair(cmd))
+          z = cmd[1]; s.append(self.CmdPairLength(cmd))
         elif cmd[0] == FNT1:
           if cmd[1] < 64: s.append(bytes.fromhex('%02x' % (FNT_NUM_0 + cmd[1])))
           else:           s.append(self.CmdPair(cmd))
@@ -713,6 +720,10 @@ class DVI(object):
 
   def CmdPair(self, cmd):
     l, q = PutSigned(cmd[1])
+    return bytes.fromhex('%02x' % (cmd[0] + l)) + q
+
+  def CmdPairLength(self, cmd):
+    l, q = PutSignedLength(cmd[1])
     return bytes.fromhex('%02x' % (cmd[0] + l)) + q
 
   ##########################################################
