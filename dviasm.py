@@ -232,7 +232,7 @@ def PutStrUTF8(t): # used in Dump()
   s = ''
   if is_subfont:
     for o in t:
-      s += chr((subfont_idx << 8) + o).encode('utf8')
+      s += chr((subfont_idx << 8) + o)
   else: # not the case of subfont
     for o in t:
       if o == 92:         s += '\\\\'
