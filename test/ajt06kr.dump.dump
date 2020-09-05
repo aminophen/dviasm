@@ -1,0 +1,59 @@
+[preamble]
+id: 2
+numerator: 25400000
+denominator: 473628672
+magnification: 1000
+comment: ''
+
+[postamble]
+maxv: 0pt
+maxh: 0pt
+maxs: 2
+pages: 1
+
+[font definitions]
+fntdef: outbtmd5 at 10pt
+fntdef: outbtmae at 10pt
+fntdef: outbtmbb at 10pt
+fntdef: outbtmc1 at 10pt
+fntdef: outbtmb9 at 10pt
+fntdef: outbtmc8 at 10pt
+fntdef: outbtmd3 at 10pt
+fntdef: outbtmb2 at 10pt
+fntdef: outgtmd5 at 10pt
+fntdef: outgtmae at 10pt
+fntdef: outgtmbb at 10pt
+fntdef: outgtmc1 at 10pt
+fntdef: outgtmb9 at 10pt
+fntdef: outgtmc8 at 10pt
+fntdef: outgtmd3 at 10pt
+fntdef: outgtmb2 at 10pt
+
+[page 1 0 0 0 0 0 0 0 0 0]
+push:
+  fnt: outbtm at 10pt
+  set: '한'
+    set: '글'
+    set: '문'
+    set: '서'
+    set: '를'
+  right: 3.333328pt
+    set: '조'
+    set: '판'
+    set: '한'
+    set: '다'
+pop:
+down: 12pt
+push:
+  fnt: outgtm at 10pt
+  set: '한'
+    set: '글'
+    set: '문'
+    set: '서'
+    set: '를'
+  right: 3.333328pt
+    set: '조'
+    set: '판'
+    set: '한'
+    set: '다'
+pop:

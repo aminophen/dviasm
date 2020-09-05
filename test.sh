@@ -13,7 +13,7 @@ mkdir -p $OUT
 # debug
 set -x
 
-#####
+##### minimum by Arthur Reutenauer
 
 # simple: DVI -> dump (file)
 $DVIASM $IN/test.dvi -o $OUT/testo.dump
@@ -47,7 +47,7 @@ cmp $OUT/testo-ja.dump.dvi $IN/test-ja.dump.dvi || exit 1
 $DVIASM -p $IN/test-ja-p.dump >$OUT/testo-ja-p.dump.dvi
 cmp $OUT/testo-ja-p.dump.dvi $IN/test-ja-p.dump.dvi || exit 1
 
-#####
+##### from https://github.com/aminophen/tex-assort
 
 # font/native: DVI/XDV -> dump
 $DVIASM $IN/font.dvi -o $OUT/font.dump
@@ -65,7 +65,7 @@ cmp $OUT/font.xdump.xdv $IN/font.xdump.xdv || exit 1
 $DVIASM $IN/native.xdump -o $OUT/native.xdump.xdv
 cmp $OUT/native.xdump.xdv $IN/native.xdump.xdv || exit 1
 
-#####
+##### documented behavior by Jin-Hwan Cho (ChoF)
 
 # tb89cho: dump -> DVI
 $DVIASM $IN/hello.dump -o $OUT/hello.dump.dvi
@@ -97,7 +97,13 @@ cmp $OUT/ajt05jt.dump.dvi $IN/ajt05jt.dump.dvi || exit 1
 $DVIASM --subfont=outbtm,outgtm, $IN/ajt06kr.dump -o $OUT/ajt06kr.dump.dvi
 cmp $OUT/ajt06kr.dump.dvi $IN/ajt06kr.dump.dvi || exit 1
 
-#####
+# ajt0201cho: DVI -> dump (back)
+$DVIASM $IN/ajt02omega.dump.dvi -o $OUT/ajt02omega.dump.dump
+diff $OUT/ajt02omega.dump.dump $IN/ajt02omega.dump.dump || exit 1
+$DVIASM --subfont=outbtm,outgtm, $IN/ajt06kr.dump.dvi -o $OUT/ajt06kr.dump.dump
+diff $OUT/ajt06kr.dump.dump $IN/ajt06kr.dump.dump || exit 1
+
+##### from GitHub PR 5 by Masamichi Hosoda
 
 # checklength: dump -> DVI -> dump
 ## checklength.dump ->...-> checklength.dump.dump was different
@@ -106,7 +112,7 @@ $DVIASM -u sp $IN/checklength.dump -o $OUT/checklength.dump.dvi
 $DVIASM -u sp $OUT/checklength.dump.dvi >$OUT/checklength.dump.dump
 diff $OUT/checklength.dump.dump $IN/checklength.dump || exit 1
 
-#####
+##### from GitHub Issue 12
 
 # gh0012: DVI -> dump
 ## gh0012.dvi -> gh0012.dump caused error with --ptex
@@ -123,6 +129,18 @@ $DVIASM $IN/gh0012.dump -o $OUT/gh0012.dump.dvi
 cmp $OUT/gh0012.dump.dvi $IN/gh0012.dump.dvi || exit 1
 $DVIASM --ptex $IN/gh0012.dump -o $OUT/gh0012-p.dump.dvi
 cmp $OUT/gh0012-p.dump.dvi $IN/gh0012.dump.dvi || exit 1
+
+##### user-defined subfont
+
+# ipxm: DVI -> dump
+$DVIASM --subfont=ipxm-r-u,ipxg-r-u, $IN/ipxm.dvi >$OUT/ipxm.dump
+diff $OUT/ipxm.dump $IN/ipxm.dump || exit 1
+
+# ipxm: dump -> DVI
+$DVIASM --subfont=ipxm-r-u,ipxg-r-u, $IN/ipxm.dump -o $OUT/ipxm.dump.dvi
+cmp $OUT/ipxm.dump.dvi $IN/ipxm.dump.dvi || exit 1
+
+#####
 
 # finish
 echo success!

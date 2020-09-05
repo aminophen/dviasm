@@ -1,0 +1,196 @@
+[preamble]
+id: 2
+numerator: 25400000
+denominator: 473628672
+magnification: 1000
+comment: ' TeX output 2020.09.05:1315'
+
+[postamble]
+maxv: 682pt
+maxh: 398pt
+maxs: 4
+pages: 1
+
+[font definitions]
+fntdef: cmr10 at 10pt
+fntdef: ipxm-r-u65 at 10pt
+fntdef: ipxm-r-u67 at 10pt
+fntdef: ipxm-r-u8a at 10pt
+fntdef: ipxm-r-u30 at 10pt
+fntdef: ipxm-r-u51 at 10pt
+fntdef: ipxm-r-u72 at 10pt
+fntdef: ipxm-r-u52 at 10pt
+fntdef: ipxm-r-u91 at 10pt
+fntdef: ipxm-r-u68 at 10pt
+fntdef: ipxm-r-u76 at 10pt
+fntdef: ipxm-r-u5f at 10pt
+fntdef: ipxm-r-u75 at 10pt
+fntdef: ipxm-r-ot1 at 10pt
+fntdef: ipxg-r-ot1 at 10pt
+fntdef: ipxg-r-u65 at 10pt
+fntdef: ipxg-r-u67 at 10pt
+fntdef: ipxg-r-u8a at 10pt
+fntdef: ipxg-r-u30 at 10pt
+fntdef: ipxg-r-u51 at 10pt
+fntdef: ipxg-r-u72 at 10pt
+fntdef: ipxg-r-u52 at 10pt
+fntdef: ipxg-r-u91 at 10pt
+fntdef: ipxg-r-u68 at 10pt
+fntdef: ipxg-r-u76 at 10pt
+fntdef: ipxg-r-u5f at 10pt
+fntdef: ipxg-r-u75 at 10pt
+
+[page 1 0 0 0 0 0 0 0 0 0]
+down: 682pt
+push:
+  down: -653pt
+  down: 623pt
+  push:
+    down: -588pt
+    push:
+      right: 68pt
+      fnt: cmr10 at 10pt
+      set: 'Here's'
+      w: 3.333328pt
+      set: 'an'
+      w0:
+      set: 'example:'
+    pop:
+    y: 12pt
+    push:
+      right: 68pt
+      fnt: ipxm-r-u at 10pt
+      set: '日'
+            set: '本'
+            set: '語'
+      w: 2.500000pt
+      fnt: cmr10 at 10pt
+      set: 'T'
+      push:
+        right: -1.667023pt
+        down: 2.152771pt
+        set: 'E'
+      pop:
+      right: 3.888550pt
+      set: 'X'
+      w0:
+      fnt: ipxm-r-u at 10pt
+      set: 'を'
+            set: '出'
+            set: '版'
+            set: '分'
+            set: '野'
+            set: 'で'
+            set: '本'
+            set: '格'
+            set: '的'
+            set: 'に'
+            set: '応'
+            set: '用'
+            set: 'する。'
+    pop:
+    y0:
+    push:
+      right: 68pt
+            set: '日'
+            set: '本'
+            set: '語'
+      w: 2.500000pt
+      fnt: ipxm-r-ot1 at 10pt
+      set: 'T'
+      push:
+        right: -1.667023pt
+        down: 2.500000pt
+        set: 'E'
+      pop:
+      right: 4.072968pt
+      set: 'X'
+      w0:
+      fnt: ipxm-r-u at 10pt
+      set: 'を'
+            set: '出'
+            set: '版'
+            set: '分'
+            set: '野'
+            set: 'で'
+            set: '本'
+            set: '格'
+            set: '的'
+            set: 'に'
+            set: '応'
+            set: '用'
+            set: 'する。'
+    pop:
+    y0:
+    push:
+      right: 68pt
+      fnt: ipxg-r-u at 10pt
+      set: '日'
+            set: '本'
+            set: '語'
+      w: 2.500000pt
+      fnt: ipxg-r-ot1 at 10pt
+      set: 'T'
+      push:
+        right: -1.667023pt
+        down: 2.500000pt
+        set: 'E'
+      pop:
+      right: 3.032974pt
+      set: 'X'
+      w0:
+      fnt: ipxg-r-u at 10pt
+      set: 'を'
+            set: '出'
+            set: '版'
+            set: '分'
+            set: '野'
+            set: 'で'
+            set: '本'
+            set: '格'
+            set: '的'
+            set: 'に'
+            set: '応'
+            set: '用'
+            set: 'する。'
+    pop:
+    y0:
+    push:
+      right: 68pt
+            set: '日'
+            set: '本'
+            set: '語'
+      w: 2.500000pt
+      fnt: cmr10 at 10pt
+      set: 'T'
+      push:
+        right: -1.667023pt
+        down: 2.152771pt
+        set: 'E'
+      pop:
+      right: 3.888550pt
+      set: 'X'
+      w0:
+      fnt: ipxg-r-u at 10pt
+      set: 'を'
+            set: '出'
+            set: '版'
+            set: '分'
+            set: '野'
+            set: 'で'
+            set: '本'
+            set: '格'
+            set: '的'
+            set: 'に'
+            set: '応'
+            set: '用'
+            set: 'する。'
+    pop:
+  pop:
+  down: 30pt
+  push:
+    right: 223pt
+    fnt: cmr10 at 10pt
+    set: '1'
+  pop:
+pop:

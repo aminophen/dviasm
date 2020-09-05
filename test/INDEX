@@ -12,6 +12,7 @@
   * ajt01lig.dump.dvi: compiled from above
 * ajt02omega.dump: raw text (for Omega)
   * ajt02omega.dump.dvi: compiled above with dviasm
+  * ajt02omega.dump.dump: dumped from above
 * ajt03jp.dvi: Compiled ajt03jp.tex with pTeX
   * ajt03jp.dump: dumped from above
   * ajt03jp.dump.dvi: compiled from above
@@ -21,6 +22,7 @@
   * ajt05jt.dump.dvi: compiled above with dviasm
 * ajt06kr.dump: raw text (for ko.TeX)
   * ajt06kr.dump.dvi: compiled above with dviasm
+  * ajt06kr.dump.dump: dumped from above
 
 ## minimum by Arthur Reutenauer (2019-11-14)
 * test.dvi: Compiled test.tex with Knuth's TeX

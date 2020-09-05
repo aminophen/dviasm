@@ -1,0 +1,16 @@
+\documentclass[a4paper,dvipdfmx]{article}
+\usepackage{CJKutf8}
+\usepackage{ipaex-type1}
+\begin{document}
+Here's an example:\par
+\begin{CJK}{UTF8}{ipxm}\CJKtilde
+% 和文=IPAex明朝, 欧文=CM Roman
+日本語~{\TeX}~を出版分野で本格的に応用する。\par
+% 和文=欧文=IPAex明朝
+\textipxm{日本語~{\TeX}~を出版分野で本格的に応用する。}\par
+% 和文=欧文=IPAexゴシック
+\textipxg{日本語~{\TeX}~を出版分野で本格的に応用する。}\par
+% 和文=IPAexゴシック, 欧文=CM Roman
+\textCJKipxg{日本語~{\TeX}~を出版分野で本格的に応用する。}\par
+\end{CJK}
+\end{document}

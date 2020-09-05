@@ -1,0 +1,56 @@
+[preamble]
+id: 2
+numerator: 25400000
+denominator: 473628672
+magnification: 1000
+comment: ''
+
+[postamble]
+maxv: 0pt
+maxh: 0pt
+maxs: 2
+pages: 1
+
+[font definitions]
+fntdef: cyberb65 at 40pt
+fntdef: cyberb67 at 40pt
+fntdef: cyberb8a at 40pt
+fntdef: cyberb66 at 40pt
+fntdef: cyberb30 at 40pt
+fntdef: cyberb51 at 40pt
+fntdef: cyberb72 at 40pt
+fntdef: cyberbd5 at 40pt
+fntdef: cyberbae at 40pt
+fntdef: cyberbbb at 40pt
+fntdef: cyberbc1 at 40pt
+fntdef: cyberbb9 at 40pt
+fntdef: cyberb00 at 40pt
+fntdef: cyberbcd at 40pt
+fntdef: cyberbd3 at 40pt
+fntdef: cyberbb2 at 40pt
+
+[page 1 0 0 0 0 0 0 0 0 0]
+push:
+  fnt: cyberb at 40pt
+  set: '日'
+    set: '本'
+    set: '語'
+    set: '文'
+    set: '書'
+    set: 'を'
+    set: '出'
+    set: '版'
+    set: 'する。'
+pop:
+down: 50pt
+set: '한'
+set: '글'
+set: '문'
+set: '서'
+set: '를'
+set: ' '
+set: '출'
+set: '판'
+set: '한'
+set: '다'
+set: '.'
