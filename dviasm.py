@@ -1101,7 +1101,6 @@ class DVI(object):
       f['slant'] = slant
       f['embolden'] = embolden
     else:
-      f['native'] = False
       f['name'] = n
 
     if q[:2] == "at": q = q[2:]
