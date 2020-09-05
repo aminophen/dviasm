@@ -1160,16 +1160,18 @@ def ProcessOptions():
 DVIasm is a Python script to support changing or creating DVI files
 via disassembling into text, editing, and then reassembling into
 binary format. It is fully documented at
+  http://tug.org/TUGboat/Articles/tb28-2/tb89cho.pdf
+  http://ajt.ktug.kr/assets/2008/5/1/0201cho.pdf
 
-http://tug.org/TUGboat/Articles/tb28-2/tb89cho.pdf 
-http://ajt.ktug.kr/assets/2008/5/1/0201cho.pdf"""
+Please report bugs to
+  https://github.com/aminophen/dviasm"""
 
-  version = """This is %prog-20191126
-  
+  version = """This is %prog-20200905
+
 Copyright (C) 2007-2008 by Jin-Hwan Cho <chofchof@ktug.or.kr>
 Copyright (C) 2011-2017 by Khaled Hosny <khaledhosny@eglug.org>
-Copyright (C) 2019 by Arthur Reutenauer <arthur@reutenauer.eu>
-Copyright (C) 2019 by Hironobu Yamashita <h.y.acetaminophen@gmail.com>
+Copyright (C) 2019      by Arthur Reutenauer <arthur@reutenauer.eu>
+Copyright (C) 2019-2020 by Hironobu Yamashita <h.y.acetaminophen@gmail.com>
 
 This is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -1204,7 +1206,7 @@ the Free Software Foundation, either version 3 of the License, or
   (options, args) = parser.parse_args()
   if not options.unit in ['sp', 'pt', 'bp', 'mm', 'cm', 'in']:
     parser.error("invalid unit name '%s'!" % options.unit)
-  if options.tabsize < 0: 
+  if options.tabsize < 0:
     parser.error("negative tabsize!")
   if not options.encoding in ['ascii', 'latin1', 'utf8', 'sjis']:
     parser.error("invalid encoding '%s'!" % options.encoding)
