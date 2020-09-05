@@ -49,6 +49,24 @@ cmp $OUT/testo-ja-p.dump.dvi $IN/test-ja-p.dump.dvi || exit 1
 
 #####
 
+# font/native: DVI/XDV -> dump
+$DVIASM $IN/font.dvi -o $OUT/font.dump
+diff $OUT/font.dump $IN/font.dump || exit 1
+$DVIASM $IN/font.xdv -o $OUT/font.xdump
+diff $OUT/font.xdump $IN/font.xdump || exit 1
+$DVIASM $IN/native.xdv -o $OUT/native.xdump
+diff $OUT/native.xdump $IN/native.xdump || exit 1
+
+# font/native: dump -> DVI/XDV
+$DVIASM $IN/font.dump -o $OUT/font.dump.dvi
+cmp $OUT/font.dump $IN/font.dump || exit 1
+$DVIASM $IN/font.xdump -o $OUT/font.xdump.xdv
+cmp $OUT/font.xdump.xdv $IN/font.xdump.xdv || exit 1
+$DVIASM $IN/native.xdump -o $OUT/native.xdump.xdv
+cmp $OUT/native.xdump.xdv $IN/native.xdump.xdv || exit 1
+
+#####
+
 # tb89cho: dump -> DVI
 $DVIASM $IN/hello.dump -o $OUT/hello.dump.dvi
 cmp $OUT/hello.dump.dvi $IN/hello.dump.dvi || exit 1

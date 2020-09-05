@@ -1,0 +1,1326 @@
+[preamble]
+id: 2
+numerator: 25400000
+denominator: 473628672
+magnification: 1000
+comment: ' TeX output 2017.06.03:0419'
+
+[postamble]
+maxv: 627.362427pt
+maxh: 434pt
+maxs: 11
+pages: 4
+
+[font definitions]
+fntdef: cmex10 at 10pt
+fntdef: cmr7 at 7pt
+fntdef: cmr10 at 10pt
+fntdef: cmmi7 at 7pt
+fntdef: cmmi10 at 10pt
+fntdef: cmsy7 at 7pt
+fntdef: cmsy10 at 10pt
+fntdef: cmbx12 (12pt)  at 20.740005pt
+fntdef: cmbx12 (12pt)  at 24.880005pt
+fntdef: cmbx12 (12pt)  at 14.399994pt
+fntdef: cmtt10 at 10pt
+fntdef: cmsl10 at 10pt
+
+[page 1 0 0 0 0 0 0 0 0 0]
+down: 627.362427pt
+push:
+  down: -593.362427pt
+  down: 568.067490pt
+  push:
+    down: -360pt
+    push:
+      right: 176.648041pt
+      fnt: cmbx12 (12pt) at 20.740005pt
+      set: 'P'
+      right: -0.648132pt
+      set: 'art'
+      right: 7.777496pt
+      set: 'I'
+    pop:
+    down: 50pt
+    push:
+      right: 132.809601pt
+      fnt: cmbx12 (12pt) at 24.880005pt
+      set: 'Sample'
+      right: 9.330002pt
+      set: 'part'
+    pop:
+  pop:
+  down: 25.294937pt
+  push:
+    right: 205pt
+    fnt: cmr10 at 10pt
+    set: '1'
+  pop:
+pop:
+
+[page 2 0 0 0 0 0 0 0 0 0]
+down: 627.362427pt
+push:
+  down: -593.362427pt
+  down: 568.067490pt
+pop:
+
+[page 3 0 0 0 0 0 0 0 0 0]
+down: 627.362427pt
+push:
+  down: -593.362427pt
+  down: 568.067490pt
+  push:
+    down: -463.382584pt
+    push:
+      right: 35pt
+      fnt: cmbx12 (12pt) at 20.740005pt
+      set: 'Chapter'
+      right: 7.777496pt
+      set: '1'
+    pop:
+    down: 51.617416pt
+    push:
+      right: 35pt
+      fnt: cmbx12 (12pt) at 24.880005pt
+      set: 'Sample'
+      right: 9.330002pt
+      set: 'c'
+      right: -0.777512pt
+      set: 'hapter'
+    pop:
+    down: 59.617416pt
+    push:
+      push:
+        right: 35pt
+        fnt: cmbx12 (12pt) at 14.399994pt
+        set: '1.1'
+      pop:
+      right: 71.899948pt
+      set: 'Sample'
+      right: 5.399994pt
+      set: 'section'
+    pop:
+    down: 24.912918pt
+    push:
+      right: 35pt
+      fnt: cmr10 at 10pt
+      set: 'Lorem'
+      w: 2.799149pt
+      set: 'ipsum'
+      w0:
+      set: 'dolor'
+      w0:
+      set: 'sit'
+      w: 2.799164pt
+      set: 'amet,'
+      right: 2.905975pt
+      set: 'consectetuer'
+      w0:
+      set: 'adipiscing'
+      w: 2.799149pt
+      set: 'elit.'
+      right: 4.266388pt
+      set: 'Ut'
+      w0:
+      set: 'purus'
+      w0:
+      set: 'elit,'
+      right: 2.905991pt
+      set: 'v'
+      right: -0.277786pt
+      set: 'estibu-'
+    pop:
+    y: 12pt
+    push:
+      right: 35pt
+      set: 'lum'
+      w: 4.006470pt
+      set: 'ut,'
+      right: 4.174774pt
+      set: 'placerat'
+      w0:
+      set: 'ac,'
+      w: 4.174759pt
+      set: 'adipiscing'
+      x: 4.006485pt
+      set: 'vitae,'
+      w0:
+      set: 'felis.'
+      right: 6.463898pt
+      set: 'Curabitur'
+      w: 4.006470pt
+      set: 'dictum'
+      x0:
+      set: 'gra'
+      right: -0.277786pt
+      set: 'vida'
+      w0:
+      set: 'mauris.'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'Nam'
+      x: 3.803360pt
+      set: 'arcu'
+      right: 3.803375pt
+      set: 'lib'
+      right: 0.277786pt
+      set: 'ero,'
+      right: 3.920868pt
+      set: 'non'
+      w: -0.277786pt
+      set: 'umm'
+      w0:
+      set: 'y'
+      x0:
+      set: 'eget,'
+      w: 3.920868pt
+      set: 'consectetuer'
+      right: 3.803375pt
+      set: 'id,'
+      w0:
+      set: 'vulputate'
+      x0:
+      set: 'a,'
+      w0:
+      set: 'magna.'
+      right: 5.854553pt
+      set: 'Donec'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'v'
+      x: -0.277786pt
+      set: 'ehicula'
+      w: 3.391159pt
+      set: 'augue'
+      right: 3.391144pt
+      set: 'eu'
+      w0:
+      set: 'neque.'
+      right: 4.617920pt
+      set: 'P'
+      x0:
+      set: 'ellen'
+      x0:
+      set: 'tesque'
+      w0:
+      set: 'habitan'
+      x0:
+      set: 't'
+      w0:
+      set: 'morbi'
+      w0:
+      set: 'tristique'
+      w0:
+      set: 'senectus'
+      right: 3.391144pt
+      set: 'et'
+      w0:
+      set: 'ne-'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'tus'
+      w: 4.005173pt
+      set: 'et'
+      w0:
+      set: 'malesuada'
+      right: 4.005157pt
+      set: 'fames'
+      w0:
+      set: 'ac'
+      w0:
+      set: 'turpis'
+      w0:
+      set: 'egestas.'
+      x: 6.459961pt
+      set: 'Mauris'
+      w0:
+      set: 'ut'
+      w0:
+      set: 'leo.'
+      x0:
+      set: 'Cras'
+      w0:
+      set: 'viv'
+      right: -0.277786pt
+      set: 'erra'
+      w0:
+      set: 'metus'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'rhoncus'
+      w: 4.200348pt
+      set: 'sem.'
+      x: 7.045517pt
+      set: 'Nulla'
+      w0:
+      set: 'et'
+      w0:
+      set: 'lectus'
+      w0:
+      set: 'v'
+      right: -0.277786pt
+      set: 'estibulum'
+      w0:
+      set: 'urna'
+      w0:
+      set: 'fringilla'
+      w0:
+      set: 'ultrices.'
+      x0:
+      set: 'Phasellus'
+      w0:
+      set: 'eu'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'tellus'
+      w: 4.082260pt
+      set: 'sit'
+      w0:
+      set: 'amet'
+      right: 4.082245pt
+      set: 'tortor'
+      w0:
+      set: 'gra'
+      x: -0.277786pt
+      set: 'vida'
+      w0:
+      set: 'placerat.'
+      right: 6.691223pt
+      set: 'In'
+      x0:
+      set: 'teger'
+      w0:
+      set: 'sapien'
+      w0:
+      set: 'est,'
+      x: 4.269485pt
+      set: 'iaculis'
+      w0:
+      set: 'in,'
+      x0:
+      set: 'pretium'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'quis,'
+      w: 4.325668pt
+      set: 'viv'
+      x: -0.277786pt
+      set: 'erra'
+      right: 4.127197pt
+      set: 'ac,'
+      w0:
+      set: 'n'
+      x0:
+      set: 'unc.'
+      right: 6.826065pt
+      set: 'Praesen'
+      x0:
+      set: 't'
+      w: 4.127197pt
+      set: 'eget'
+      right: 4.127213pt
+      set: 'sem'
+      w0:
+      set: 'v'
+      x0:
+      set: 'el'
+      w0:
+      set: 'leo'
+      right: 4.127213pt
+      set: 'ultrices'
+      w0:
+      set: 'bib'
+      right: 0.277786pt
+      set: 'endum.'
+      right: 6.826065pt
+      set: 'Aenean'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'faucibus.'
+      right: 5.590149pt
+      set: 'Morbi'
+      w: 3.715225pt
+      set: 'dolor'
+      w0:
+      set: 'n'
+      right: -0.277786pt
+      set: 'ulla,'
+      x: 3.810715pt
+      set: 'malesuada'
+      w0:
+      set: 'eu,'
+      right: 3.810699pt
+      set: 'pulvinar'
+      w0:
+      set: 'at,'
+      x0:
+      set: 'mollis'
+      w0:
+      set: 'ac,'
+      right: 3.810699pt
+      set: 'n'
+      right: -0.277786pt
+      set: 'ulla.'
+      right: 5.590149pt
+      set: 'Cur-'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'abitur'
+      w: 3.340134pt
+      set: 'auctor'
+      x: 3.340118pt
+      set: 'semp'
+      right: 0.277786pt
+      set: 'er'
+      w0:
+      set: 'n'
+      right: -0.277786pt
+      set: 'ulla.'
+      right: 4.464844pt
+      set: 'Donec'
+      w0:
+      set: 'v'
+      right: -0.555557pt
+      set: 'arius'
+      w0:
+      set: 'orci'
+      w0:
+      set: 'eget'
+      x0:
+      set: 'risus.'
+      right: 4.464844pt
+      set: 'Duis'
+      w0:
+      set: 'nibh'
+      w0:
+      set: 'mi,'
+      right: 3.341827pt
+      set: 'congue'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'eu,'
+      x: 2.892288pt
+      set: 'accumsan'
+      w: 2.782028pt
+      set: 'eleifend,'
+      right: 2.892303pt
+      set: 'sagittis'
+      w0:
+      set: 'quis,'
+      x0:
+      set: 'diam.'
+      right: 4.260681pt
+      set: 'Duis'
+      w0:
+      set: 'eget'
+      w0:
+      set: 'orci'
+      right: 2.782043pt
+      set: 'sit'
+      w0:
+      set: 'amet'
+      w0:
+      set: 'orci'
+      w0:
+      set: 'dignissim'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'rutrum.'
+    pop:
+    z: 13.617416pt
+    push:
+      right: 50pt
+      set: 'Nam'
+      w: 4.440109pt
+      set: 'dui'
+      right: 4.440125pt
+      set: 'ligula,'
+      x: 4.716812pt
+      set: 'fringilla'
+      w0:
+      set: 'a,'
+      x0:
+      set: 'euismo'
+      w: 0.277786pt
+      set: 'd'
+      x: 4.440125pt
+      set: 'so'
+      w0:
+      set: 'dales,'
+      right: 4.716797pt
+      set: 'sollicitudin'
+      x0:
+      set: 'v'
+      right: -0.277786pt
+      set: 'el,'
+      right: 4.716812pt
+      set: 'wisi.'
+      right: 7.764801pt
+      set: 'Morbi'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'auctor'
+      w: 2.598267pt
+      set: 'lorem'
+      x: 2.598282pt
+      set: 'non'
+      w0:
+      set: 'justo.'
+      right: 4.199432pt
+      set: 'Nam'
+      x0:
+      set: 'lacus'
+      w0:
+      set: 'lib'
+      right: 0.277786pt
+      set: 'ero,'
+      w: 2.745285pt
+      set: 'pretium'
+      x0:
+      set: 'at,'
+      w0:
+      set: 'lob'
+      right: 0.277786pt
+      set: 'ortis'
+      w: 2.598267pt
+      set: 'vitae,'
+      right: 2.745300pt
+      set: 'ultricies'
+      w0:
+      set: 'et,'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'tellus.'
+      right: 4.222610pt
+      set: 'Donec'
+      w: 2.667831pt
+      set: 'aliquet,'
+      x: 2.800934pt
+      set: 'tortor'
+      w0:
+      set: 'sed'
+      right: 2.667816pt
+      set: 'accumsan'
+      w0:
+      set: 'bib'
+      right: 0.277786pt
+      set: 'endum,'
+      x0:
+      set: 'erat'
+      w0:
+      set: 'ligula'
+      right: 2.667816pt
+      set: 'aliquet'
+      w0:
+      set: 'magna,'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'vitae'
+      w: 2.576126pt
+      set: 'ornare'
+      x: 2.576141pt
+      set: 'o'
+      right: 0.277786pt
+      set: 'dio'
+      w0:
+      set: 'metus'
+      w0:
+      set: 'a'
+      x0:
+      set: 'mi.'
+      right: 4.192047pt
+      set: 'Morbi'
+      w0:
+      set: 'ac'
+      w0:
+      set: 'orci'
+      x0:
+      set: 'et'
+      w0:
+      set: 'nisl'
+      w0:
+      set: 'hendrerit'
+      x0:
+      set: 'mollis.'
+      right: 4.192047pt
+      set: 'Susp'
+      right: 0.277786pt
+      set: 'endisse'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'ut'
+      w: 2.749939pt
+      set: 'massa.'
+      x: 4.249985pt
+      set: 'Cras'
+      w0:
+      set: 'nec'
+      w0:
+      set: 'an'
+      w: -0.277786pt
+      set: 'te.'
+      x0:
+      set: 'P'
+      w0:
+      set: 'ellen'
+      w0:
+      set: 'tesque'
+      right: 2.749939pt
+      set: 'a'
+      right: 2.749924pt
+      set: 'n'
+      w0:
+      set: 'ulla.'
+      x0:
+      set: 'Cum'
+      w: 2.749939pt
+      set: 'so'
+      x: 0.277786pt
+      set: 'ciis'
+      w0:
+      set: 'nato'
+      x0:
+      set: 'que'
+      w0:
+      set: 'p'
+      x0:
+      set: 'enatibus'
+      w0:
+      set: 'et'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'magnis'
+      w: 3.206879pt
+      set: 'dis'
+      w0:
+      set: 'parturien'
+      x: -0.277786pt
+      set: 't'
+      w0:
+      set: 'mon'
+      x0:
+      set: 'tes,'
+      right: 3.232178pt
+      set: 'nascetur'
+      w0:
+      set: 'ridiculus'
+      w0:
+      set: 'm'
+      x0:
+      set: 'us.'
+      right: 4.402298pt
+      set: 'Aliquam'
+      w0:
+      set: 'tincidun'
+      x0:
+      set: 't'
+      w0:
+      set: 'urna.'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'Nulla'
+      w: 3.333328pt
+      set: 'ullamcorp'
+      right: 0.277786pt
+      set: 'er'
+      w0:
+      set: 'v'
+      x: -0.277786pt
+      set: 'estibulum'
+      w0:
+      set: 'turpis.'
+      right: 4.444443pt
+      set: 'P'
+      x0:
+      set: 'ellen'
+      x0:
+      set: 'tesque'
+      w0:
+      set: 'cursus'
+      w0:
+      set: 'luctus'
+      w0:
+      set: 'mauris.'
+    pop:
+    z0:
+    push:
+      right: 50pt
+      set: 'Nulla'
+      w: 3.528824pt
+      set: 'malesuada'
+      x: 3.528839pt
+      set: 'p'
+      right: 0.277786pt
+      set: 'orttitor'
+      w0:
+      set: 'diam.'
+      right: 5.030945pt
+      set: 'Donec'
+      w0:
+      set: 'felis'
+      x0:
+      set: 'erat,'
+      right: 3.577698pt
+      set: 'congue'
+      w0:
+      set: 'non,'
+      right: 3.577713pt
+      set: 'v'
+      right: -0.277786pt
+      set: 'olutpat'
+      w0:
+      set: 'at,'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'tincidun'
+      w: -0.277786pt
+      set: 't'
+      x: 3.705154pt
+      set: 'tristique,'
+      right: 3.798111pt
+      set: 'lib'
+      right: 0.277786pt
+      set: 'ero.'
+      right: 5.559921pt
+      set: 'Viv'
+      right: -0.555557pt
+      set: 'am'
+      w0:
+      set: 'us'
+      x0:
+      set: 'viv'
+      w0:
+      set: 'erra'
+      x0:
+      set: 'fermen'
+      w0:
+      set: 'tum'
+      x0:
+      set: 'felis.'
+      right: 5.559921pt
+      set: 'Donec'
+      x0:
+      set: 'non'
+      w0:
+      set: 'umm'
+      w0:
+      set: 'y'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'p'
+      right: 0.277786pt
+      set: 'ellen'
+      w: -0.277786pt
+      set: 'tesque'
+      x: 4.358749pt
+      set: 'an'
+      w0:
+      set: 'te.'
+      right: 7.520676pt
+      set: 'Phasellus'
+      x0:
+      set: 'adipiscing'
+      x0:
+      set: 'semp'
+      right: 0.277786pt
+      set: 'er'
+      w: 4.358734pt
+      set: 'elit.'
+      right: 7.520691pt
+      set: 'Proin'
+      w0:
+      set: 'fermen'
+      right: -0.277786pt
+      set: 'tum'
+      x0:
+      set: 'massa'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'ac'
+      w: 3.826767pt
+      set: 'quam.'
+      right: 5.924728pt
+      set: 'Sed'
+      w0:
+      set: 'diam'
+      w: 3.826752pt
+      set: 'turpis,'
+      x: 3.950119pt
+      set: 'molestie'
+      w0:
+      set: 'vitae,'
+      x0:
+      set: 'placerat'
+      w: 3.826767pt
+      set: 'a,'
+      x: 3.950104pt
+      set: 'molestie'
+      w0:
+      set: 'nec,'
+      x0:
+      set: 'leo.'
+      right: 5.924744pt
+      set: 'Mae-'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'cenas'
+      w: 3.706299pt
+      set: 'lacinia.'
+      right: 5.563354pt
+      set: 'Nam'
+      right: 3.706314pt
+      set: 'ipsum'
+      w0:
+      set: 'ligula,'
+      right: 3.799530pt
+      set: 'eleifend'
+      w0:
+      set: 'at,'
+      x: 3.799545pt
+      set: 'accumsan'
+      w0:
+      set: 'nec,'
+      x0:
+      set: 'suscipit'
+      w0:
+      set: 'a,'
+      x0:
+      set: 'ipsum.'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'Morbi'
+      w: 2.903763pt
+      set: 'blandit'
+      x: 2.903748pt
+      set: 'ligula'
+      w0:
+      set: 'feugiat'
+      x0:
+      set: 'magna.'
+      right: 4.301254pt
+      set: 'Nunc'
+      w0:
+      set: 'eleifend'
+      w0:
+      set: 'consequat'
+      x0:
+      set: 'lorem.'
+      right: 4.301254pt
+      set: 'Sed'
+      w0:
+      set: 'lacinia'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'n'
+      x: -0.277786pt
+      set: 'ulla'
+      w: 4.065430pt
+      set: 'vitae'
+      w0:
+      set: 'enim.'
+      right: 6.640732pt
+      set: 'P'
+      x0:
+      set: 'ellen'
+      x0:
+      set: 'tesque'
+      w0:
+      set: 'tincidun'
+      x0:
+      set: 't'
+      w0:
+      set: 'purus'
+      w0:
+      set: 'v'
+      x0:
+      set: 'el'
+      w0:
+      set: 'magna.'
+      right: 6.640732pt
+      set: 'In'
+      x0:
+      set: 'teger'
+      w0:
+      set: 'non'
+      w0:
+      set: 'enim.'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'Praesen'
+      x: -0.277786pt
+      set: 't'
+      w: 2.899353pt
+      set: 'euismo'
+      right: 0.277786pt
+      set: 'd'
+      w0:
+      set: 'n'
+      x0:
+      set: 'unc'
+      w0:
+      set: 'eu'
+      w0:
+      set: 'purus.'
+      x: 4.299789pt
+      set: 'Donec'
+      right: 2.899368pt
+      set: 'bib'
+      right: 0.277786pt
+      set: 'endum'
+      w0:
+      set: 'quam'
+      w0:
+      set: 'in'
+      w0:
+      set: 'tellus.'
+      x0:
+      set: 'Nullam'
+      w0:
+      set: 'cur-'
+    pop:
+    y0:
+    push:
+      right: 35pt
+      set: 'sus'
+      w: 3.666626pt
+      set: 'pulvinar'
+      w0:
+      set: 'lectus.'
+      x: 5.444336pt
+      set: 'Donec'
+      w0:
+      set: 'et'
+      w0:
+      set: 'mi.'
+      right: 5.444321pt
+      set: 'Nam'
+      w0:
+      set: 'vulputate'
+      w0:
+      set: 'metus'
+      w0:
+      set: 'eu'
+      w0:
+      set: 'enim.'
+      x0:
+      set: 'V'
+      right: -0.833344pt
+      set: 'estibulum'
+    pop:
+  pop:
+  down: 25.294937pt
+  push:
+    right: 205pt
+    set: '3'
+  pop:
+pop:
+
+[page 4 0 0 0 0 0 0 0 0 0]
+down: 627.362427pt
+push:
+  down: -593.362427pt
+  push:
+    push:
+      right: 89pt
+      fnt: cmr10 at 10pt
+      set: '4'
+      right: 174.860825pt
+      fnt: cmsl10 at 10pt
+      set: 'CHAPTER'
+      w: 3.333328pt
+      set: '1.'
+      right: 7.777771pt
+      set: 'SAMPLE'
+      w0:
+      set: 'CHAPTER'
+    pop:
+  pop:
+  down: 568.067490pt
+  push:
+    down: -540pt
+    push:
+      right: 89pt
+      fnt: cmr10 at 10pt
+      set: 'p'
+      right: 0.277786pt
+      set: 'ellen'
+      right: -0.277786pt
+      set: 'tesque'
+      w: 3.333328pt
+      set: 'felis'
+      w0:
+      set: 'eu'
+      w0:
+      set: 'massa.'
+    pop:
+    y: 33.069397pt
+    push:
+      push:
+        right: 89pt
+        fnt: cmbx12 (12pt) at 14.399994pt
+        set: '1.2'
+      pop:
+      right: 125.899948pt
+      set: 'Co'
+      right: 0.449997pt
+      set: 'de'
+      right: 5.399994pt
+      set: 'test'
+    pop:
+    down: 21.902756pt
+    push:
+      right: 99.499908pt
+      fnt: cmtt10 at 10pt
+      set: 'Blah,'
+      w: 5.249954pt
+      set: 'blah,'
+      w0:
+      set: 'blah:'
+      w0:
+      set: '3'
+      w0:
+      set: 'words'
+    pop:
+    y0:
+    push:
+      push:
+        right: 89pt
+        fnt: cmbx12 (12pt) at 14.399994pt
+        set: '1.3'
+      pop:
+      right: 125.899948pt
+      set: 'Math'
+      right: 5.399994pt
+      set: 'test'
+    pop:
+    down: 27.441772pt
+    push:
+      push:
+        push:
+          push:
+            right: 134.074738pt
+            down: -14.100128pt
+            fnt: cmex10 at 10pt
+            set: '\x12'
+          pop:
+          push:
+            right: 141.435883pt
+            down: -13.611221pt
+            set: 'Z'
+          pop:
+          push:
+            down: -11.139023pt
+            push:
+              right: 151.435898pt
+              fnt: cmsy7 at 7pt
+              set: '1'
+            pop:
+            down: 20.250244pt
+            push:
+              right: 146.991455pt
+              fnt: cmr7 at 7pt
+              set: '0'
+            pop:
+          pop:
+          push:
+            push:
+              push:
+                down: -6.765076pt
+                push:
+                  push:
+                    right: 162.774765pt
+                    fnt: cmr10 at 10pt
+                    set: 'sin'
+                  pop:
+                  right: 176.719193pt
+                  fnt: cmmi10 at 10pt
+                  set: 'x'
+                pop:
+                right: 162.774765pt
+                down: 4.465057pt
+                putrule: 0.399979pt 19.659698pt
+                down: 9.202652pt
+                push:
+                  push:
+                    right: 2.805542pt
+                    down: -7.202759pt
+                    fnt: cmsy10 at 10pt
+                    set: 'p'
+                  pop:
+                  push:
+                    right: 11.138901pt
+                    down: -7.202759pt
+                    putrule: 0.399979pt 5.715271pt
+                    down: 7.202759pt
+                    push:
+                      fnt: cmmi10 at 10pt
+                      set: 'x'
+                    pop:
+                  pop:
+                pop:
+              pop:
+            pop:
+          pop:
+          right: 183.634460pt
+          set: 'dx'
+          push:
+            down: -14.100128pt
+            fnt: cmex10 at 10pt
+            set: '\x13'
+          pop:
+        pop:
+        push:
+          right: 201.915741pt
+          down: -12.027908pt
+          fnt: cmr7 at 7pt
+          set: '2'
+        pop:
+        right: 209.179581pt
+        fnt: cmr10 at 10pt
+        set: '='
+        push:
+          down: -12.500046pt
+          push:
+            right: 6.064194pt
+            fnt: cmsy7 at 7pt
+            set: '1'
+          pop:
+          down: 12.500046pt
+          push:
+            push:
+              right: 2.828079pt
+              down: -9.500061pt
+              fnt: cmex10 at 10pt
+              set: 'X'
+            pop:
+          pop:
+          down: 12.027817pt
+          push:
+            right: 2.777710pt
+            fnt: cmmi7 at 7pt
+            set: 'k'
+            right: 0.168976pt
+            fnt: cmr7 at 7pt
+            set: '=0'
+          pop:
+        pop:
+        push:
+          push:
+            push:
+              down: -6.765076pt
+              push:
+                right: 26.885757pt
+                fnt: cmr10 at 10pt
+                set: '(2'
+                fnt: cmmi10 at 10pt
+                set: 'k'
+                right: 0.314804pt
+                fnt: cmr10 at 10pt
+                set: ')!'
+              pop:
+              right: 20.189545pt
+              down: 4.465057pt
+              putrule: 0.399979pt 34.468872pt
+              down: 9.159515pt
+              push:
+                set: '2'
+                push:
+                  down: -2.888885pt
+                  fnt: cmr7 at 7pt
+                  set: '2'
+                  fnt: cmmi7 at 7pt
+                  set: 'k'
+                pop:
+                right: 8.906296pt
+                fnt: cmr10 at 10pt
+                set: '('
+                fnt: cmmi10 at 10pt
+                set: 'k'
+                right: 0.314804pt
+                fnt: cmr10 at 10pt
+                set: '!)'
+                push:
+                  down: -2.888885pt
+                  fnt: cmr7 at 7pt
+                  set: '2'
+                pop:
+              pop:
+            pop:
+          pop:
+        pop:
+        push:
+          push:
+            push:
+              down: -6.765076pt
+              push:
+                right: 68.429916pt
+                fnt: cmr10 at 10pt
+                set: '1'
+              pop:
+              right: 57.058411pt
+              down: 4.465057pt
+              putrule: 0.399979pt 27.743011pt
+              down: 9.159515pt
+              push:
+                set: '2'
+                fnt: cmmi10 at 10pt
+                set: 'k'
+                right: 2.536972pt
+                fnt: cmr10 at 10pt
+                set: '+'
+                right: 2.222168pt
+                set: '1'
+              pop:
+            pop:
+          pop:
+        pop:
+        right: 88.779129pt
+        set: '='
+        push:
+          down: -12.500046pt
+          push:
+            right: 6.064194pt
+            fnt: cmsy7 at 7pt
+            set: '1'
+          pop:
+          down: 12.500046pt
+          push:
+            push:
+              right: 3.661423pt
+              down: -9.500061pt
+              fnt: cmex10 at 10pt
+              set: 'Y'
+            pop:
+          pop:
+          down: 12.027817pt
+          push:
+            right: 2.777710pt
+            fnt: cmmi7 at 7pt
+            set: 'k'
+            right: 0.168976pt
+            fnt: cmr7 at 7pt
+            set: '=1'
+          pop:
+        pop:
+        push:
+          push:
+            push:
+              down: -6.765076pt
+              push:
+                right: 28.800629pt
+                fnt: cmr10 at 10pt
+                set: '4'
+                fnt: cmmi10 at 10pt
+                set: 'k'
+                push:
+                  right: 0.314804pt
+                  down: -3.628922pt
+                  fnt: cmr7 at 7pt
+                  set: '2'
+                pop:
+              pop:
+              right: 20.189545pt
+              down: 4.465057pt
+              putrule: 0.399979pt 32.229141pt
+              down: 9.159515pt
+              push:
+                fnt: cmr10 at 10pt
+                set: '4'
+                fnt: cmmi10 at 10pt
+                set: 'k'
+                push:
+                  right: 0.314804pt
+                  down: -2.888885pt
+                  fnt: cmr7 at 7pt
+                  set: '2'
+                pop:
+                right: 7.023102pt
+                fnt: cmsy10 at 10pt
+                set: '\x00'
+                right: 2.222168pt
+                fnt: cmr10 at 10pt
+                set: '1'
+              pop:
+            pop:
+          pop:
+        pop:
+        right: 56.396393pt
+        set: '='
+        push:
+          push:
+            push:
+              down: -6.765076pt
+              push:
+                right: 3.977707pt
+                fnt: cmmi10 at 10pt
+                set: '\x19'
+              pop:
+              right: 3.977707pt
+              down: 4.465057pt
+              putrule: 0.399979pt 6.059052pt
+              down: 9.159515pt
+              push:
+                right: 0.529526pt
+                fnt: cmr10 at 10pt
+                set: '2'
+              pop:
+            pop:
+          pop:
+        pop:
+      pop:
+      push:
+        push:
+          right: 413.444382pt
+          set: '(1.1)'
+        pop:
+      pop:
+    pop:
+  pop:
+pop:

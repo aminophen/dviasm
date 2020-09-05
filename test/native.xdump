@@ -1,0 +1,145 @@
+[preamble]
+id: 7
+numerator: 25400000
+denominator: 473628672
+magnification: 1000
+comment: ' XeTeX output 2017.06.03:0407'
+
+[postamble]
+maxv: 633pt
+maxh: 407pt
+maxs: 3
+pages: 1
+
+[font definitions]
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf" at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=220022FF" at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=115511FF" at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-italic.otf:color=2244FFFF" at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-italic.otf:color=112299FF" at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-bold.otf:color=FF4422FF" at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-bold.otf:color=992211FF" at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-bolditalic.otf:color=888844FF" at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-bolditalic.otf:color=444422FF" at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=220022FF;embolden=19661" at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=115511FF;embolden=19661" at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=220022FF;embolden=1966" at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=115511FF;embolden=1966" at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=220022FF;slant=19661;embolden=1966" at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=115511FF;slant=19661;embolden=1966" at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=220022FF;slant=65536;embolden=1966" at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=115511FF;slant=65536;embolden=1966" at 10pt
+
+[page 1 0 0 0 0 0 0 0 0 0]
+xxx: 'pdf:pagesize default'
+down: 633pt
+push:
+  down: -605pt
+  down: 575pt
+  push:
+    down: -540pt
+    push:
+      right: 77pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=220022FF" at 10pt
+      setglyphs: 31.009995pt gid109(0pt) gid85(6.919998pt) gid97(11.919998pt) gid67(15.449997pt) gid60(18.229996pt) gid64(23.229996pt) gid106(28.229996pt)
+      w: 2.500000pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=115511FF" at 10pt
+      setglyphs: 27.440002pt gid98(0pt) gid1000(5.559998pt) gid926(12.430008pt) gid995(18.080002pt) gid995(22.759995pt)
+      w0:
+      setglyphs: 20.770004pt gid43(0pt) gid926(6.470001pt) gid1023(12.119995pt) gid1029(16.479996pt)
+    pop:
+    y: 12pt
+    push:
+      right: 77pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-italic.otf:color=2244FFFF" at 10pt
+      setglyphs: 21.110001pt gid66(0pt) gid106(3.330002pt) gid29(6.110001pt) gid73(11.110001pt) gid67(13.889999pt) gid44(16.669998pt)
+      w: 2.500000pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-italic.otf:color=112299FF" at 10pt
+      setglyphs: 23.570007pt gid66(0pt) gid1040(3.330002pt) gid926(7.100006pt) gid995(11.809998pt) gid980(15.979996pt) gid939(18.699997pt)
+      w0:
+      setglyphs: 24.350006pt gid98(0pt) gid1000(5pt) gid926(11.300003pt) gid995(16.009995pt) gid995(20.180008pt)
+      w0:
+      setglyphs: 19.639999pt gid43(0pt) gid926(6.570007pt) gid1023(11.279999pt) gid1029(15.899994pt)
+    pop:
+    y0:
+    push:
+      right: 77pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-bold.otf:color=FF4422FF" at 10pt
+      setglyphs: 20.009995pt gid35(0pt) gid82(6.669998pt) gid73(11.669998pt) gid48(14.449997pt)
+      w: 2.500000pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-bold.otf:color=992211FF" at 10pt
+      setglyphs: 23.419998pt gid35(0pt) gid1009(6.570007pt) gid995(12.610001pt) gid946(17.759995pt)
+      w0:
+      setglyphs: 28.899994pt gid98(0pt) gid1000(5.559998pt) gid926(12.899994pt) gid995(18.600006pt) gid995(23.750000pt)
+      w0:
+      setglyphs: 21.970001pt gid43(0pt) gid926(7.020004pt) gid1023(12.720001pt) gid1029(17.570007pt)
+    pop:
+    y0:
+    push:
+      right: 77pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-bolditalic.otf:color=888844FF" at 10pt
+      setglyphs: 19.449997pt gid35(0pt) gid82(6.669998pt) gid73(11.669998pt) gid48(14.449997pt)
+      w: 2.500000pt
+      setglyphs: 21.669998pt gid66(0pt) gid106(3.889999pt) gid29(6.669998pt) gid73(11.669998pt) gid67(14.449997pt) gid44(17.229996pt)
+      w0:
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-bolditalic.otf:color=444422FF" at 10pt
+      setglyphs: 22.300003pt gid35(0pt) gid1009(6.520004pt) gid995(12.039993pt) gid946(16.720001pt)
+      w0:
+      setglyphs: 26.240005pt gid66(0pt) gid1040(3.889999pt) gid926(8.070007pt) gid995(13.309998pt) gid980(17.990005pt) gid939(21.210007pt)
+      w0:
+      setglyphs: 27.009995pt gid98(0pt) gid1000(5.559998pt) gid926(12.410004pt) gid995(17.649994pt) gid995(22.330002pt)
+      w0:
+      setglyphs: 20.800003pt gid43(0pt) gid926(6.470001pt) gid1023(11.710007pt) gid1029(16.479996pt)
+    pop:
+    y0:
+    push:
+      right: 77pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=220022FF;embolden=19661" at 10pt
+      setglyphs: 31.009995pt gid109(0pt) gid85(6.919998pt) gid97(11.919998pt) gid67(15.449997pt) gid60(18.229996pt) gid64(23.229996pt) gid106(28.229996pt)
+      w: 2.500000pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=115511FF;embolden=19661" at 10pt
+      setglyphs: 27.440002pt gid98(0pt) gid1000(5.559998pt) gid926(12.430008pt) gid995(18.080002pt) gid995(22.759995pt)
+      w0:
+      setglyphs: 20.770004pt gid43(0pt) gid926(6.470001pt) gid1023(12.119995pt) gid1029(16.479996pt)
+    pop:
+    y0:
+    push:
+      right: 77pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=220022FF;embolden=1966" at 10pt
+      setglyphs: 31.009995pt gid109(0pt) gid85(6.919998pt) gid97(11.919998pt) gid67(15.449997pt) gid60(18.229996pt) gid64(23.229996pt) gid106(28.229996pt)
+      w: 2.500000pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=115511FF;embolden=1966" at 10pt
+      setglyphs: 27.440002pt gid98(0pt) gid1000(5.559998pt) gid926(12.430008pt) gid995(18.080002pt) gid995(22.759995pt)
+      w0:
+      setglyphs: 20.770004pt gid43(0pt) gid926(6.470001pt) gid1023(12.119995pt) gid1029(16.479996pt)
+    pop:
+    y0:
+    push:
+      right: 77pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=220022FF;slant=19661;embolden=1966" at 10pt
+      setglyphs: 31.009995pt gid109(0pt) gid85(6.919998pt) gid97(11.919998pt) gid67(15.449997pt) gid60(18.229996pt) gid64(23.229996pt) gid106(28.229996pt)
+      w: 2.500000pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=115511FF;slant=19661;embolden=1966" at 10pt
+      setglyphs: 27.440002pt gid98(0pt) gid1000(5.559998pt) gid926(12.430008pt) gid995(18.080002pt) gid995(22.759995pt)
+      w0:
+      setglyphs: 20.770004pt gid43(0pt) gid926(6.470001pt) gid1023(12.119995pt) gid1029(16.479996pt)
+    pop:
+    y0:
+    push:
+      right: 77pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=220022FF;slant=65536;embolden=1966" at 10pt
+      setglyphs: 31.009995pt gid109(0pt) gid85(6.919998pt) gid97(11.919998pt) gid67(15.449997pt) gid60(18.229996pt) gid64(23.229996pt) gid106(28.229996pt)
+      w: 2.500000pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf:color=115511FF;slant=65536;embolden=1966" at 10pt
+      setglyphs: 27.440002pt gid98(0pt) gid1000(5.559998pt) gid926(12.430008pt) gid995(18.080002pt) gid995(22.759995pt)
+      w0:
+      setglyphs: 20.770004pt gid43(0pt) gid926(6.470001pt) gid1023(12.119995pt) gid1029(16.479996pt)
+    pop:
+  pop:
+  down: 30pt
+  push:
+    right: 232pt
+    fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf" at 10pt
+    setglyphs: 5pt gid82(0pt)
+  pop:
+pop:

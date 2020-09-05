@@ -1,0 +1,1176 @@
+[preamble]
+id: 7
+numerator: 25400000
+denominator: 473628672
+magnification: 1000
+comment: ' XeTeX output 2017.06.03:0419'
+
+[postamble]
+maxv: 627.582413pt
+maxh: 434pt
+maxs: 11
+pages: 4
+
+[font definitions]
+fntdef: cmex10 at 10pt
+fntdef: cmr7 at 7pt
+fntdef: cmr10 at 10pt
+fntdef: cmmi7 at 7pt
+fntdef: cmmi10 at 10pt
+fntdef: cmsy7 at 7pt
+fntdef: cmsy10 at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf" at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf" (10pt)  at 20.740005pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf" (10pt)  at 24.880005pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf" (10pt)  at 14.399994pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf" at 10pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmromanslant10-regular.otf" at 10pt
+
+[page 1 0 0 0 0 0 0 0 0 0]
+xxx: 'pdf:pagesize default'
+down: 627.362427pt
+push:
+  down: -593.362427pt
+  down: 568.067490pt
+  push:
+    down: -360pt
+    push:
+      right: 176.628510pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf" (10pt) at 20.740005pt
+      setglyphs: 45.275436pt gid83(0pt) gid28(15.306122pt) gid96(26.650909pt) gid105(36.191315pt)
+      right: 7.777496pt
+      setglyphs: 8.690063pt gid65(0pt)
+    pop:
+    down: 50pt
+    push:
+      right: 132.785339pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf" (10pt) at 24.880005pt
+      setglyphs: 88.597702pt gid97(0pt) gid28(15.550003pt) gid75(29.159363pt) gid84(52.496811pt) gid72(68.046814pt) gid50(75.834259pt)
+      right: 9.330002pt
+      setglyphs: 51.501617pt gid84(0pt) gid28(15.550003pt) gid96(29.159363pt) gid105(40.604172pt)
+    pop:
+  pop:
+  down: 25.294937pt
+  push:
+    right: 205pt
+    fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf" at 10pt
+    setglyphs: 5pt gid82(0pt)
+  pop:
+pop:
+
+[page 2 0 0 0 0 0 0 0 0 0]
+xxx: 'pdf:pagesize default'
+down: 627.362427pt
+push:
+  down: -593.362427pt
+  down: 568.067490pt
+pop:
+
+[page 3 0 0 0 0 0 0 0 0 0]
+xxx: 'pdf:pagesize default'
+down: 627.362427pt
+push:
+  down: -593.362427pt
+  down: 568.067490pt
+  push:
+    down: -463.384293pt
+    push:
+      right: 35pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf" (10pt) at 20.740005pt
+      setglyphs: 83.395569pt gid42(0pt) gid63(16.861618pt) gid28(29.824127pt) gid84(41.168915pt) gid105(54.131409pt) gid50(63.215546pt) gid96(73.855164pt)
+      right: 7.777496pt
+      setglyphs: 11.676620pt gid82(0pt)
+    pop:
+    down: 51.615723pt
+    push:
+      right: 35pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf" (10pt) at 24.880005pt
+      setglyphs: 88.597702pt gid97(0pt) gid28(15.550003pt) gid75(29.159363pt) gid84(52.496811pt) gid72(68.046814pt) gid50(75.834259pt)
+      right: 9.330002pt
+      setglyphs: 91.483780pt gid43(0pt) gid63(11.668716pt) gid28(27.218719pt) gid84(40.828094pt) gid105(56.378098pt) gid50(67.275543pt) gid96(80.038986pt)
+    pop:
+    down: 59.615707pt
+    push:
+      push:
+        right: 35pt
+        fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf" (10pt) at 14.399994pt
+        setglyphs: 20.721588pt gid82(0pt) gid88(8.107193pt) gid82(12.614395pt)
+      pop:
+      right: 70.121582pt
+      setglyphs: 51.278381pt gid97(0pt) gid28(9pt) gid75(16.876801pt) gid84(30.383987pt) gid72(39.383987pt) gid50(43.891190pt)
+      right: 5.399994pt
+      setglyphs: 48.902374pt gid98(0pt) gid50(6.393600pt) gid43(13.780792pt) gid105(20.980789pt) gid66(27.287994pt) gid81(31.795181pt) gid77(39.902390pt)
+    pop:
+    down: 24.921432pt
+    push:
+      right: 35pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf" at 10pt
+      setglyphs: 27.940002pt gid71(0pt) gid81(6.250000pt) gid96(11.250000pt) gid50(15.169998pt) gid75(19.610001pt)
+      w: 2.797455pt
+      setglyphs: 26.169998pt gid66(0pt) gid84(2.779999pt) gid98(8.339996pt) gid109(12.279999pt) gid75(17.839996pt)
+      x: 2.797440pt
+      setglyphs: 22.259995pt gid47(0pt) gid81(5.559998pt) gid72(10.559998pt) gid81(13.339996pt) gid96(18.339996pt)
+      w0:
+      setglyphs: 10.610001pt gid98(0pt) gid66(3.940002pt) gid105(6.720001pt)
+      x0:
+      setglyphs: 24.440002pt gid28(0pt) gid75(5pt) gid50(13.330002pt) gid105(17.770004pt) gid45(21.660004pt)
+      right: 2.903961pt
+      setglyphs: 53.960007pt gid43(0pt) gid81(4.440002pt) gid77(9.440002pt) gid98(15pt) gid50(18.940002pt) gid43(23.380005pt) gid105(27.820007pt) gid50(31.710007pt) gid105(36.150009pt) gid109(40.040009pt) gid50(45.600006pt) gid96(50.040009pt)
+      x0:
+      setglyphs: 43.400009pt gid28(0pt) gid47(5pt) gid66(10.559998pt) gid84(13.339996pt) gid66(18.899994pt) gid98(21.680008pt) gid43(25.619995pt) gid66(30.059998pt) gid77(32.839996pt) gid59(38.400009pt)
+      w0:
+      setglyphs: 16.669998pt gid50(0pt) gid72(4.440002pt) gid66(7.220001pt) gid105(10pt) gid88(13.889999pt)
+      right: 4.262482pt
+      setglyphs: 11.389999pt gid108(0pt) gid105(7.500000pt)
+      w0:
+      setglyphs: 24.540009pt gid84(0pt) gid109(5.559998pt) gid96(11.119995pt) gid109(15.039993pt) gid98(20.600006pt)
+      x0:
+      setglyphs: 16.669998pt gid50(0pt) gid72(4.440002pt) gid66(7.220001pt) gid105(10pt) gid45(13.889999pt)
+      right: 2.903961pt
+      setglyphs: 34.500000pt gid112(0pt) gid50(5pt) gid98(9.440002pt) gid105(13.380005pt) gid66(17.270004pt) gid35(20.050003pt) gid109(25.610001pt) gid64(31.169998pt)
+    pop:
+    y: 12pt
+    push:
+      right: 35pt
+      setglyphs: 16.669998pt gid72(0pt) gid109(2.779999pt) gid75(8.339996pt)
+      w: 4.000595pt
+      setglyphs: 12.229996pt gid109(0pt) gid105(5.559998pt) gid45(9.449997pt)
+      x: 4.168228pt
+      setglyphs: 35.029999pt gid84(0pt) gid72(5.559998pt) gid28(8.339996pt) gid43(13.339996pt) gid50(17.779999pt) gid96(22.220001pt) gid28(26.139999pt) gid105(31.139999pt)
+      w0:
+      setglyphs: 12.220001pt gid28(0pt) gid43(5pt) gid45(9.440002pt)
+      x0:
+      setglyphs: 43.400009pt gid28(0pt) gid47(5pt) gid66(10.559998pt) gid84(13.339996pt) gid66(18.899994pt) gid98(21.680008pt) gid43(25.619995pt) gid66(30.059998pt) gid77(32.839996pt) gid59(38.400009pt)
+      w0:
+      setglyphs: 24.169998pt gid112(0pt) gid66(5.279999pt) gid105(8.059998pt) gid28(11.949997pt) gid50(16.949997pt) gid45(21.389999pt)
+      x0:
+      setglyphs: 19.779999pt gid55(0pt) gid50(3.059998pt) gid72(7.500000pt) gid66(10.279999pt) gid98(13.059998pt) gid88(17pt)
+      right: 6.451767pt
+      setglyphs: 43.410004pt gid42(0pt) gid109(7.220001pt) gid96(12.779999pt) gid28(16.699997pt) gid35(21.699997pt) gid66(27.259995pt) gid105(30.040009pt) gid109(33.930008pt) gid96(39.490005pt)
+      w0:
+      setglyphs: 30.559998pt gid47(0pt) gid66(5.559998pt) gid43(8.339996pt) gid105(12.779999pt) gid109(16.669998pt) gid75(22.229996pt)
+      right: 4.000580pt
+      setglyphs: 32.259995pt gid59(0pt) gid96(5pt) gid28(8.919998pt) gid112(13.639999pt) gid66(18.919998pt) gid47(21.699997pt) gid28(27.259995pt)
+      w0:
+      setglyphs: 32.309998pt gid75(0pt) gid28(8.330002pt) gid109(13.330002pt) gid96(18.889999pt) gid66(22.809998pt) gid98(25.589996pt) gid88(29.529999pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 20.830002pt gid76(0pt) gid28(7.500000pt) gid75(12.500000pt)
+      w: 3.800766pt
+      setglyphs: 18.919998pt gid28(0pt) gid96(5pt) gid43(8.919998pt) gid109(13.360001pt)
+      w0:
+      setglyphs: 27.540009pt gid72(0pt) gid66(2.779999pt) gid35(5.559998pt) gid50(11.399994pt) gid96(15.839996pt) gid81(19.759995pt) gid45(24.759995pt)
+      right: 3.918472pt
+      setglyphs: 43.059998pt gid77(0pt) gid81(5.559998pt) gid77(10.559998pt) gid109(15.839996pt) gid75(21.399994pt) gid75(29.729996pt) gid118(37.779999pt)
+      w0:
+      setglyphs: 20.550003pt gid50(0pt) gid59(4.440002pt) gid50(9.440002pt) gid105(13.880005pt) gid45(17.770004pt)
+      x: 3.918457pt
+      setglyphs: 53.960007pt gid43(0pt) gid81(4.440002pt) gid77(9.440002pt) gid98(15pt) gid50(18.940002pt) gid43(23.380005pt) gid105(27.820007pt) gid50(31.710007pt) gid105(36.150009pt) gid109(40.040009pt) gid50(45.600006pt) gid96(50.040009pt)
+      w0:
+      setglyphs: 11.119995pt gid66(0pt) gid47(2.779999pt) gid45(8.339996pt)
+      x0:
+      setglyphs: 41.960007pt gid112(0pt) gid109(5.279999pt) gid72(10.839996pt) gid84(13.619995pt) gid109(19.180008pt) gid105(24.740005pt) gid28(28.630005pt) gid105(33.630005pt) gid50(37.520004pt)
+      w0:
+      setglyphs: 7.779999pt gid28(0pt) gid45(5pt)
+      x0:
+      setglyphs: 31.669998pt gid75(0pt) gid28(8.330002pt) gid59(13.330002pt) gid77(18.330002pt) gid28(23.889999pt) gid88(28.889999pt)
+      right: 5.852310pt
+      setglyphs: 27.080002pt gid46(0pt) gid81(7.639999pt) gid77(12.639999pt) gid50(18.199997pt) gid43(22.639999pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 35.559998pt gid112(0pt) gid50(5pt) gid63(9.440002pt) gid66(15pt) gid43(17.779999pt) gid109(22.220001pt) gid72(27.779999pt) gid28(30.559998pt)
+      w: 3.389160pt
+      setglyphs: 25.559998pt gid28(0pt) gid109(5pt) gid59(10.559998pt) gid109(15.559998pt) gid50(21.119995pt)
+      x: 3.389175pt
+      setglyphs: 10pt gid50(0pt) gid109(4.440002pt)
+      w0:
+      setglyphs: 28.059998pt gid77(0pt) gid50(5.559998pt) gid91(10pt) gid109(15.279999pt) gid50(20.839996pt) gid88(25.279999pt)
+      right: 4.617508pt
+      setglyphs: 53.800003pt gid83(0pt) gid50(6.529999pt) gid72(10.970001pt) gid72(13.750000pt) gid50(16.529999pt) gid77(20.970001pt) gid105(26.250000pt) gid50(30.139999pt) gid98(34.580002pt) gid91(38.520004pt) gid109(43.800003pt) gid50(49.360001pt)
+      w0:
+      setglyphs: 36.960007pt gid63(0pt) gid28(5.559998pt) gid35(10.559998pt) gid66(16.119995pt) gid105(18.899994pt) gid28(22.790009pt) gid77(27.790009pt) gid105(33.070007pt)
+      w0:
+      setglyphs: 25.589996pt gid75(0pt) gid81(8.330002pt) gid96(13.330002pt) gid35(17.250000pt) gid66(22.809998pt)
+      x0:
+      setglyphs: 36.479996pt gid105(0pt) gid96(3.889999pt) gid66(7.809998pt) gid98(10.589996pt) gid105(14.529999pt) gid66(18.419998pt) gid91(21.199997pt) gid109(26.479996pt) gid50(32.040009pt)
+      w0:
+      setglyphs: 36.210007pt gid98(0pt) gid50(3.940002pt) gid77(8.380005pt) gid50(13.940002pt) gid43(18.380005pt) gid105(22.820007pt) gid109(26.710007pt) gid98(32.270004pt)
+      x0:
+      setglyphs: 8.330002pt gid50(0pt) gid105(4.440002pt)
+      w0:
+      setglyphs: 13.330002pt gid77(0pt) gid50(5.559998pt) gid64(10pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 13.389999pt gid105(0pt) gid109(3.889999pt) gid98(9.449997pt)
+      w: 4.005005pt
+      setglyphs: 8.330002pt gid50(0pt) gid105(4.440002pt)
+      x: 4.004990pt
+      setglyphs: 45.610001pt gid75(0pt) gid28(8.330002pt) gid72(13.330002pt) gid50(16.110001pt) gid98(20.550003pt) gid109(24.490005pt) gid28(30.050003pt) gid47(35.050003pt) gid28(40.610001pt)
+      w0:
+      setglyphs: 24.770004pt gid55(0pt) gid28(3.059998pt) gid75(8.059998pt) gid50(16.389999pt) gid98(20.830002pt)
+      w0:
+      setglyphs: 9.440002pt gid28(0pt) gid43(5pt)
+      x0:
+      setglyphs: 25.649994pt gid105(0pt) gid109(3.889999pt) gid96(9.449997pt) gid84(13.369995pt) gid66(18.930008pt) gid98(21.710007pt)
+      w0:
+      setglyphs: 33.430008pt gid50(0pt) gid59(4.440002pt) gid50(9.440002pt) gid98(13.880005pt) gid105(17.820007pt) gid28(21.710007pt) gid98(26.710007pt) gid88(30.649994pt)
+      x: 6.464996pt
+      setglyphs: 30.369995pt gid74(0pt) gid28(9.169998pt) gid109(14.169998pt) gid96(19.729996pt) gid66(23.649994pt) gid98(26.430008pt)
+      w0:
+      setglyphs: 9.449997pt gid109(0pt) gid105(5.559998pt)
+      w0:
+      setglyphs: 15pt gid72(0pt) gid50(2.779999pt) gid81(7.220001pt) gid88(12.220001pt)
+      x0:
+      setglyphs: 20.080002pt gid42(0pt) gid96(7.220001pt) gid28(11.139999pt) gid98(16.139999pt)
+      right: 4.004990pt
+      setglyphs: 30.339996pt gid112(0pt) gid66(5.279999pt) gid112(8.059998pt) gid50(13.059998pt) gid96(17.500000pt) gid96(21.419998pt) gid28(25.339996pt)
+      w0:
+      setglyphs: 26.160004pt gid75(0pt) gid50(8.330002pt) gid105(12.770004pt) gid109(16.660004pt) gid98(22.220001pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 33.979996pt gid96(0pt) gid63(3.919998pt) gid81(9.479996pt) gid77(14.479996pt) gid43(20.040009pt) gid109(24.479996pt) gid98(30.040009pt)
+      w: 2.746552pt
+      setglyphs: 19.490005pt gid98(0pt) gid50(3.940002pt) gid75(8.380005pt) gid88(16.710007pt)
+      x: 4.245514pt
+      setglyphs: 23.619995pt gid76(0pt) gid109(7.500000pt) gid72(13.059998pt) gid72(15.839996pt) gid28(18.619995pt)
+      w0:
+      setglyphs: 8.330002pt gid50(0pt) gid105(4.440002pt)
+      w0:
+      setglyphs: 25.050003pt gid72(0pt) gid50(2.779999pt) gid43(7.220001pt) gid105(11.660004pt) gid109(15.550003pt) gid98(21.110001pt)
+      w0:
+      setglyphs: 47.839996pt gid112(0pt) gid50(5pt) gid98(9.440002pt) gid105(13.380005pt) gid66(17.270004pt) gid35(20.050003pt) gid109(25.610001pt) gid72(31.169998pt) gid109(33.949997pt) gid75(39.509995pt)
+      w0:
+      setglyphs: 20.040009pt gid109(0pt) gid96(5.559998pt) gid77(9.479996pt) gid28(15.039993pt)
+      w0:
+      setglyphs: 33.660004pt gid55(0pt) gid96(3.059998pt) gid66(6.979996pt) gid77(9.759995pt) gid59(15.320007pt) gid66(20.320007pt) gid72(23.100006pt) gid72(25.880005pt) gid28(28.660004pt)
+      w0:
+      setglyphs: 34.529999pt gid109(0pt) gid72(5.559998pt) gid105(8.339996pt) gid96(12.229996pt) gid66(16.149994pt) gid43(18.930008pt) gid50(23.369995pt) gid98(27.809998pt) gid88(31.750000pt)
+      x0:
+      setglyphs: 40.809998pt gid83(0pt) gid63(6.809998pt) gid28(12.369995pt) gid98(17.369995pt) gid50(21.309998pt) gid72(25.750000pt) gid72(28.529999pt) gid109(31.309998pt) gid98(36.869995pt)
+      w0:
+      setglyphs: 10pt gid50(0pt) gid109(4.440002pt)
+      w0:
+      setglyphs: 14.440002pt gid105(0pt) gid50(3.889999pt) gid72(8.330002pt) gid64(11.110001pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 12.279999pt gid72(0pt) gid109(2.779999pt) gid98(8.339996pt)
+      w: 3.106827pt
+      setglyphs: 10.610001pt gid98(0pt) gid66(3.940002pt) gid105(6.720001pt)
+      x: 3.106842pt
+      setglyphs: 21.660004pt gid28(0pt) gid75(5pt) gid50(13.330002pt) gid105(17.770004pt)
+      w0:
+      setglyphs: 25.619995pt gid105(0pt) gid81(3.889999pt) gid96(8.889999pt) gid105(12.809998pt) gid81(16.699997pt) gid96(21.699997pt)
+      w0:
+      setglyphs: 32.259995pt gid59(0pt) gid96(5pt) gid28(8.919998pt) gid112(13.639999pt) gid66(18.919998pt) gid47(21.699997pt) gid28(27.259995pt)
+      w0:
+      setglyphs: 37.809998pt gid84(0pt) gid72(5.559998pt) gid28(8.339996pt) gid43(13.339996pt) gid50(17.779999pt) gid96(22.220001pt) gid28(26.139999pt) gid105(31.139999pt) gid88(35.029999pt)
+      right: 4.365616pt
+      setglyphs: 30.580002pt gid65(0pt) gid77(3.610001pt) gid105(8.889999pt) gid50(12.779999pt) gid59(17.220001pt) gid50(22.220001pt) gid96(26.660004pt)
+      w0:
+      setglyphs: 27.279999pt gid98(0pt) gid28(3.940002pt) gid84(8.940002pt) gid66(14.500000pt) gid50(17.279999pt) gid77(21.720001pt)
+      x0:
+      setglyphs: 15.050003pt gid50(0pt) gid98(4.440002pt) gid105(8.380005pt) gid45(12.270004pt)
+      right: 3.151459pt
+      setglyphs: 27.279999pt gid66(0pt) gid28(2.779999pt) gid43(7.779999pt) gid109(12.220001pt) gid72(17.779999pt) gid66(20.559998pt) gid98(23.339996pt)
+      w0:
+      setglyphs: 11.119995pt gid66(0pt) gid77(2.779999pt) gid45(8.339996pt)
+      right: 3.151474pt
+      setglyphs: 34.479996pt gid84(0pt) gid96(5.559998pt) gid50(9.479996pt) gid105(13.919998pt) gid66(17.809998pt) gid109(20.589996pt) gid75(26.149994pt)
+      w0:
+      setglyphs: 20.339996pt gid91(0pt) gid109(5.279999pt) gid66(10.839996pt) gid98(13.619995pt) gid45(17.559998pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 30.339996pt gid112(0pt) gid66(5.279999pt) gid112(8.059998pt) gid50(13.059998pt) gid96(17.500000pt) gid96(21.419998pt) gid28(25.339996pt)
+      w: 2.724716pt
+      setglyphs: 12.220001pt gid28(0pt) gid43(5pt) gid45(9.440002pt)
+      right: 2.845764pt
+      setglyphs: 23.619995pt gid77(0pt) gid109(5.279999pt) gid77(10.839996pt) gid43(16.399994pt) gid88(20.839996pt)
+      right: 4.238251pt
+      setglyphs: 37.720001pt gid83(0pt) gid96(6.809998pt) gid28(10.729996pt) gid50(15.729996pt) gid98(20.169998pt) gid50(24.110001pt) gid77(28.550003pt) gid105(33.830002pt)
+      w0:
+      setglyphs: 17.770004pt gid50(0pt) gid59(4.440002pt) gid50(9.440002pt) gid105(13.880005pt)
+      w0:
+      setglyphs: 16.710007pt gid98(0pt) gid50(3.940002pt) gid75(8.380005pt)
+      w0:
+      setglyphs: 12.220001pt gid112(0pt) gid50(5pt) gid72(9.440002pt)
+      w0:
+      setglyphs: 12.220001pt gid72(0pt) gid50(2.779999pt) gid81(7.220001pt)
+      w0:
+      setglyphs: 31.750000pt gid109(0pt) gid72(5.559998pt) gid105(8.339996pt) gid96(12.229996pt) gid66(16.149994pt) gid43(18.930008pt) gid50(23.369995pt) gid98(27.809998pt)
+      w0:
+      setglyphs: 46.410004pt gid35(0pt) gid66(5.559998pt) gid35(8.339996pt) gid50(14.180008pt) gid77(18.619995pt) gid47(24.180008pt) gid109(29.740005pt) gid75(35.300003pt) gid88(43.630005pt)
+      right: 4.238235pt
+      setglyphs: 32.220001pt gid27(0pt) gid50(7.220001pt) gid77(11.660004pt) gid50(17.220001pt) gid28(21.660004pt) gid77(26.660004pt)
+      w0:
+      setglyphs: 38.680008pt gid55(0pt) gid28(3.059998pt) gid109(8.059998pt) gid43(13.619995pt) gid66(18.059998pt) gid35(20.839996pt) gid109(26.399994pt) gid98(31.960007pt) gid88(35.900009pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 26.430008pt gid74(0pt) gid81(9.169998pt) gid96(14.169998pt) gid35(18.089996pt) gid66(23.649994pt)
+      w: 2.769852pt
+      setglyphs: 22.259995pt gid47(0pt) gid81(5.559998pt) gid72(10.559998pt) gid81(13.339996pt) gid96(18.339996pt)
+      right: 2.769867pt
+      setglyphs: 24.180008pt gid77(0pt) gid109(5.279999pt) gid72(10.839996pt) gid72(13.619995pt) gid28(16.399994pt) gid45(21.399994pt)
+      x: 2.881882pt
+      setglyphs: 45.610001pt gid75(0pt) gid28(8.330002pt) gid72(13.330002pt) gid50(16.110001pt) gid98(20.550003pt) gid109(24.490005pt) gid28(30.050003pt) gid47(35.050003pt) gid28(40.610001pt)
+      w0:
+      setglyphs: 12.779999pt gid50(0pt) gid109(4.440002pt) gid45(10pt)
+      right: 2.881897pt
+      setglyphs: 36.440002pt gid84(0pt) gid109(5.559998pt) gid72(11.119995pt) gid112(13.899994pt) gid66(19.180008pt) gid77(21.960007pt) gid28(27.520004pt) gid96(32.520004pt)
+      w0:
+      setglyphs: 11.669998pt gid28(0pt) gid105(5pt) gid45(8.889999pt)
+      x0:
+      setglyphs: 25.610001pt gid75(0pt) gid81(8.330002pt) gid72(13.330002pt) gid72(16.110001pt) gid66(18.889999pt) gid98(21.669998pt)
+      right: 2.769867pt
+      setglyphs: 12.220001pt gid28(0pt) gid43(5pt) gid45(9.440002pt)
+      x0:
+      setglyphs: 24.180008pt gid77(0pt) gid109(5.279999pt) gid72(10.839996pt) gid72(13.619995pt) gid28(16.399994pt) gid88(21.399994pt)
+      right: 4.253296pt
+      setglyphs: 43.410004pt gid42(0pt) gid109(7.220001pt) gid96(12.779999pt) gid28(16.699997pt) gid35(21.699997pt) gid66(27.259995pt) gid105(30.040009pt) gid109(33.930008pt) gid96(39.490005pt)
+      w0:
+      setglyphs: 27.809998pt gid28(0pt) gid109(5pt) gid43(10.559998pt) gid105(15pt) gid81(18.889999pt) gid96(23.889999pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 30.910004pt gid98(0pt) gid50(3.940002pt) gid75(8.380005pt) gid84(16.710007pt) gid50(22.550003pt) gid96(26.990005pt)
+      w: 3.289093pt
+      setglyphs: 24.180008pt gid77(0pt) gid109(5.279999pt) gid72(10.839996pt) gid72(13.619995pt) gid28(16.399994pt) gid88(21.399994pt)
+      x: 4.426361pt
+      setglyphs: 27.080002pt gid46(0pt) gid81(7.639999pt) gid77(12.639999pt) gid50(18.199997pt) gid43(22.639999pt)
+      w0:
+      setglyphs: 25.919998pt gid112(0pt) gid28(4.720001pt) gid96(9.720001pt) gid66(13.639999pt) gid109(16.419998pt) gid98(21.979996pt)
+      right: 3.289078pt
+      setglyphs: 16.139999pt gid81(0pt) gid96(5pt) gid43(8.919998pt) gid66(13.360001pt)
+      w0:
+      setglyphs: 17.770004pt gid50(0pt) gid59(4.440002pt) gid50(9.440002pt) gid105(13.880005pt)
+      w0:
+      setglyphs: 22.919998pt gid96(0pt) gid66(3.919998pt) gid98(6.699997pt) gid109(10.639999pt) gid98(16.199997pt) gid88(20.139999pt)
+      x0:
+      setglyphs: 19.919998pt gid46(0pt) gid109(7.639999pt) gid66(13.199997pt) gid98(15.979996pt)
+      w0:
+      setglyphs: 19.460007pt gid77(0pt) gid66(5.559998pt) gid35(8.339996pt) gid63(13.899994pt)
+      right: 3.289078pt
+      setglyphs: 13.889999pt gid75(0pt) gid66(8.330002pt) gid45(11.110001pt)
+      x: 3.297272pt
+      setglyphs: 30pt gid43(0pt) gid81(4.440002pt) gid77(9.440002pt) gid59(15pt) gid109(20pt) gid50(25.559998pt)
+      w0:
+      setglyphs: 12.779999pt gid50(0pt) gid109(4.440002pt) gid45(10pt)
+      x0:
+      setglyphs: 42.270004pt gid28(0pt) gid43(5pt) gid43(9.440002pt) gid109(13.880005pt) gid75(19.440002pt) gid98(27.770004pt) gid28(31.710007pt) gid77(36.710007pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 35.839996pt gid50(0pt) gid72(4.440002pt) gid50(7.220001pt) gid66(11.660004pt) gid55(14.440002pt) gid50(17.500000pt) gid77(21.940002pt) gid47(27.500000pt) gid45(33.059998pt)
+      w: 3.330002pt
+      setglyphs: 31.220001pt gid98(0pt) gid28(3.940002pt) gid59(8.940002pt) gid66(13.940002pt) gid105(16.720001pt) gid105(20.610001pt) gid66(24.500000pt) gid98(27.279999pt)
+      w0:
+      setglyphs: 20.339996pt gid91(0pt) gid109(5.279999pt) gid66(10.839996pt) gid98(13.619995pt) gid45(17.559998pt)
+      w0:
+      setglyphs: 24.449997pt gid47(0pt) gid66(5.559998pt) gid28(8.339996pt) gid75(13.339996pt) gid88(21.669998pt)
+      right: 4.440002pt
+      setglyphs: 19.919998pt gid46(0pt) gid109(7.639999pt) gid66(13.199997pt) gid98(15.979996pt)
+      w0:
+      setglyphs: 17.770004pt gid50(0pt) gid59(4.440002pt) gid50(9.440002pt) gid105(13.880005pt)
+      w0:
+      setglyphs: 16.139999pt gid81(0pt) gid96(5pt) gid43(8.919998pt) gid66(13.360001pt)
+      w0:
+      setglyphs: 10.610001pt gid98(0pt) gid66(3.940002pt) gid105(6.720001pt)
+      w0:
+      setglyphs: 21.660004pt gid28(0pt) gid75(5pt) gid50(13.330002pt) gid105(17.770004pt)
+      w0:
+      setglyphs: 16.139999pt gid81(0pt) gid96(5pt) gid43(8.919998pt) gid66(13.360001pt)
+      w0:
+      setglyphs: 40.669998pt gid47(0pt) gid66(5.559998pt) gid59(8.339996pt) gid77(13.339996pt) gid66(18.899994pt) gid98(21.680008pt) gid98(25.619995pt) gid66(29.559998pt) gid75(32.339996pt)
+      w0:
+      setglyphs: 33.960007pt gid96(0pt) gid109(3.919998pt) gid105(9.479996pt) gid96(13.369995pt) gid109(17.290009pt) gid75(22.850006pt) gid88(31.180008pt)
+    pop:
+    down: 13.615723pt
+    push:
+      right: 50pt
+      setglyphs: 20.830002pt gid76(0pt) gid28(7.500000pt) gid75(12.500000pt)
+      right: 4.433853pt
+      setglyphs: 13.899994pt gid47(0pt) gid109(5.559998pt) gid66(11.119995pt)
+      w: 4.433838pt
+      setglyphs: 26.680008pt gid72(0pt) gid66(2.779999pt) gid59(5.559998pt) gid109(10.559998pt) gid72(16.119995pt) gid28(18.899994pt) gid45(23.899994pt)
+      x: 4.709808pt
+      setglyphs: 33.660004pt gid55(0pt) gid96(3.059998pt) gid66(6.979996pt) gid77(9.759995pt) gid59(15.320007pt) gid66(20.320007pt) gid72(23.100006pt) gid72(25.880005pt) gid28(28.660004pt)
+      w0:
+      setglyphs: 7.779999pt gid28(0pt) gid45(5pt)
+      x0:
+      setglyphs: 35.889999pt gid50(0pt) gid109(4.440002pt) gid66(10pt) gid98(12.779999pt) gid75(16.720001pt) gid81(25.050003pt) gid47(30.330002pt)
+      w: 4.433853pt
+      setglyphs: 33.720001pt gid98(0pt) gid81(3.940002pt) gid47(9.220001pt) gid28(14.779999pt) gid72(19.779999pt) gid50(22.559998pt) gid98(27pt) gid45(30.940002pt)
+      x: 4.709793pt
+      setglyphs: 47.850006pt gid98(0pt) gid81(3.940002pt) gid72(8.940002pt) gid72(11.720001pt) gid66(14.500000pt) gid43(17.279999pt) gid66(21.720001pt) gid105(24.500000pt) gid109(28.389999pt) gid47(33.949997pt) gid66(39.509995pt) gid77(42.290009pt)
+      w0:
+      setglyphs: 15pt gid112(0pt) gid50(5pt) gid72(9.440002pt) gid45(12.220001pt)
+      x0:
+      setglyphs: 19.500000pt gid114(0pt) gid66(7.220001pt) gid98(10pt) gid66(13.940002pt) gid88(16.720001pt)
+      right: 7.751541pt
+      setglyphs: 26.430008pt gid74(0pt) gid81(9.169998pt) gid96(14.169998pt) gid35(18.089996pt) gid66(23.649994pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 27.809998pt gid28(0pt) gid109(5pt) gid43(10.559998pt) gid105(15pt) gid81(18.889999pt) gid96(23.889999pt)
+      w: 2.593979pt
+      setglyphs: 24.470001pt gid72(0pt) gid81(2.779999pt) gid96(7.779999pt) gid50(11.699997pt) gid75(16.139999pt)
+      x: 2.593964pt
+      setglyphs: 16.119995pt gid77(0pt) gid81(5.559998pt) gid77(10.559998pt)
+      w0:
+      setglyphs: 24.229996pt gid68(0pt) gid109(3.059998pt) gid98(8.619995pt) gid105(12.559998pt) gid81(16.449997pt) gid88(21.449997pt)
+      right: 4.194672pt
+      setglyphs: 20.830002pt gid76(0pt) gid28(7.500000pt) gid75(12.500000pt)
+      x0:
+      setglyphs: 21.720001pt gid72(0pt) gid28(2.779999pt) gid43(7.779999pt) gid109(12.220001pt) gid98(17.779999pt)
+      w0:
+      setglyphs: 27.540009pt gid72(0pt) gid66(2.779999pt) gid35(5.559998pt) gid50(11.399994pt) gid96(15.839996pt) gid81(19.759995pt) gid45(24.759995pt)
+      x: 2.741180pt
+      setglyphs: 34.479996pt gid84(0pt) gid96(5.559998pt) gid50(9.479996pt) gid105(13.919998pt) gid66(17.809998pt) gid109(20.589996pt) gid75(26.149994pt)
+      w0:
+      setglyphs: 11.669998pt gid28(0pt) gid105(5pt) gid45(8.889999pt)
+      x0:
+      setglyphs: 33.150009pt gid72(0pt) gid81(2.779999pt) gid35(7.779999pt) gid81(13.619995pt) gid96(18.619995pt) gid105(22.540009pt) gid66(26.430008pt) gid98(29.210007pt)
+      right: 2.593964pt
+      setglyphs: 24.169998pt gid112(0pt) gid66(5.279999pt) gid105(8.059998pt) gid28(11.949997pt) gid50(16.949997pt) gid45(21.389999pt)
+      x0:
+      setglyphs: 34.529999pt gid109(0pt) gid72(5.559998pt) gid105(8.339996pt) gid96(12.229996pt) gid66(16.149994pt) gid43(18.930008pt) gid66(23.369995pt) gid50(26.149994pt) gid98(30.589996pt)
+      w0:
+      setglyphs: 11.110001pt gid50(0pt) gid105(4.440002pt) gid45(8.330002pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 26.169998pt gid105(0pt) gid50(3.889999pt) gid72(8.330002pt) gid72(11.110001pt) gid109(13.889999pt) gid98(19.449997pt) gid88(23.389999pt)
+      right: 4.217621pt
+      setglyphs: 27.080002pt gid46(0pt) gid81(7.639999pt) gid77(12.639999pt) gid50(18.199997pt) gid43(22.639999pt)
+      w: 2.662827pt
+      setglyphs: 32.509995pt gid28(0pt) gid72(5pt) gid66(7.779999pt) gid91(10.559998pt) gid109(15.839996pt) gid50(21.399994pt) gid105(25.839996pt) gid45(29.729996pt)
+      right: 2.796280pt
+      setglyphs: 25.619995pt gid105(0pt) gid81(3.889999pt) gid96(8.889999pt) gid105(12.809998pt) gid81(16.699997pt) gid96(21.699997pt)
+      w0:
+      setglyphs: 13.940002pt gid98(0pt) gid50(3.940002pt) gid47(8.380005pt)
+      w: 2.662842pt
+      setglyphs: 42.270004pt gid28(0pt) gid43(5pt) gid43(9.440002pt) gid109(13.880005pt) gid75(19.440002pt) gid98(27.770004pt) gid28(31.710007pt) gid77(36.710007pt)
+      w0:
+      setglyphs: 46.410004pt gid35(0pt) gid66(5.559998pt) gid35(8.339996pt) gid50(14.180008pt) gid77(18.619995pt) gid47(24.180008pt) gid109(29.740005pt) gid75(35.300003pt) gid45(43.630005pt)
+      right: 2.796265pt
+      setglyphs: 17.250000pt gid50(0pt) gid96(4.440002pt) gid28(8.360001pt) gid105(13.360001pt)
+      w0:
+      setglyphs: 23.899994pt gid72(0pt) gid66(2.779999pt) gid59(5.559998pt) gid109(10.559998pt) gid72(16.119995pt) gid28(18.899994pt)
+      right: 2.662827pt
+      setglyphs: 29.729996pt gid28(0pt) gid72(5pt) gid66(7.779999pt) gid91(10.559998pt) gid109(15.839996pt) gid50(21.399994pt) gid105(25.839996pt)
+      w0:
+      setglyphs: 31.669998pt gid75(0pt) gid28(8.330002pt) gid59(13.330002pt) gid77(18.330002pt) gid28(23.889999pt) gid45(28.889999pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 21.389999pt gid112(0pt) gid66(5.279999pt) gid105(8.059998pt) gid28(11.949997pt) gid50(16.949997pt)
+      w: 2.573135pt
+      setglyphs: 27.839996pt gid81(0pt) gid96(5pt) gid77(8.919998pt) gid28(14.479996pt) gid96(19.479996pt) gid50(23.399994pt)
+      x: 2.573151pt
+      setglyphs: 18.619995pt gid81(0pt) gid47(5.279999pt) gid66(10.839996pt) gid81(13.619995pt)
+      w0:
+      setglyphs: 26.160004pt gid75(0pt) gid50(8.330002pt) gid105(12.770004pt) gid109(16.660004pt) gid98(22.220001pt)
+      x0:
+      setglyphs: 5pt gid28(0pt)
+      w0:
+      setglyphs: 13.889999pt gid75(0pt) gid66(8.330002pt) gid88(11.110001pt)
+      right: 4.187714pt
+      setglyphs: 26.430008pt gid74(0pt) gid81(9.169998pt) gid96(14.169998pt) gid35(18.089996pt) gid66(23.649994pt)
+      x0:
+      setglyphs: 9.440002pt gid28(0pt) gid43(5pt)
+      w0:
+      setglyphs: 16.139999pt gid81(0pt) gid96(5pt) gid43(8.919998pt) gid66(13.360001pt)
+      w0:
+      setglyphs: 8.330002pt gid50(0pt) gid105(4.440002pt)
+      x0:
+      setglyphs: 15.059998pt gid77(0pt) gid66(5.559998pt) gid98(8.339996pt) gid72(12.279999pt)
+      w0:
+      setglyphs: 40.070007pt gid63(0pt) gid50(5.559998pt) gid77(10pt) gid47(15.559998pt) gid96(21.119995pt) gid50(25.040009pt) gid96(29.479996pt) gid66(33.400009pt) gid105(36.180008pt)
+      x0:
+      setglyphs: 28.389999pt gid75(0pt) gid81(8.330002pt) gid72(13.330002pt) gid72(16.110001pt) gid66(18.889999pt) gid98(21.669998pt) gid88(25.610001pt)
+      right: 4.187714pt
+      setglyphs: 51.559998pt gid97(0pt) gid109(5.559998pt) gid98(11.119995pt) gid84(15.059998pt) gid50(20.899994pt) gid77(25.339996pt) gid47(30.899994pt) gid66(36.460007pt) gid98(39.240005pt) gid98(43.180008pt) gid50(47.119995pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 9.449997pt gid109(0pt) gid105(5.559998pt)
+      w: 2.750000pt
+      setglyphs: 28.990005pt gid75(0pt) gid28(8.330002pt) gid98(13.330002pt) gid98(17.270004pt) gid28(21.210007pt) gid88(26.210007pt)
+      x: 4.246674pt
+      setglyphs: 20.080002pt gid42(0pt) gid96(7.220001pt) gid28(11.139999pt) gid98(16.139999pt)
+      right: 2.749985pt
+      setglyphs: 14.440002pt gid77(0pt) gid50(5.559998pt) gid43(10pt)
+      w0:
+      setglyphs: 21.389999pt gid28(0pt) gid77(5pt) gid105(10.279999pt) gid50(14.169998pt) gid88(18.610001pt)
+      x0:
+      setglyphs: 53.800003pt gid83(0pt) gid50(6.529999pt) gid72(10.970001pt) gid72(13.750000pt) gid50(16.529999pt) gid77(20.970001pt) gid105(26.250000pt) gid50(30.139999pt) gid98(34.580002pt) gid91(38.520004pt) gid109(43.800003pt) gid50(49.360001pt)
+      w0:
+      setglyphs: 5pt gid28(0pt)
+      right: 2.749985pt
+      setglyphs: 24.180008pt gid77(0pt) gid109(5.279999pt) gid72(10.839996pt) gid72(13.619995pt) gid28(16.399994pt) gid88(21.399994pt)
+      x0:
+      setglyphs: 21.110001pt gid42(0pt) gid109(7.220001pt) gid75(12.779999pt)
+      w0:
+      setglyphs: 23.160004pt gid98(0pt) gid81(3.940002pt) gid43(9.220001pt) gid66(13.660004pt) gid66(16.440002pt) gid98(19.220001pt)
+      w0:
+      setglyphs: 35.009995pt gid77(0pt) gid28(5.559998pt) gid105(10.559998pt) gid81(14.449997pt) gid91(19.729996pt) gid109(25.009995pt) gid50(30.570007pt)
+      right: 2.749985pt
+      setglyphs: 42.570007pt gid84(0pt) gid50(5.839996pt) gid77(10.279999pt) gid28(15.839996pt) gid105(20.839996pt) gid66(24.729996pt) gid35(27.509995pt) gid109(33.070007pt) gid98(38.630005pt)
+      w0:
+      setglyphs: 8.330002pt gid50(0pt) gid105(4.440002pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 30.610001pt gid75(0pt) gid28(8.330002pt) gid59(13.330002pt) gid77(18.330002pt) gid66(23.889999pt) gid98(26.669998pt)
+      w: 3.199661pt
+      setglyphs: 12.279999pt gid47(0pt) gid66(5.559998pt) gid98(8.339996pt)
+      x: 3.199677pt
+      setglyphs: 44.240005pt gid84(0pt) gid28(5.559998pt) gid96(10.559998pt) gid105(14.479996pt) gid109(18.369995pt) gid96(23.930008pt) gid66(27.850006pt) gid50(30.630005pt) gid77(35.070007pt) gid105(40.350006pt)
+      w0:
+      setglyphs: 33.660004pt gid75(0pt) gid81(8.330002pt) gid77(13.330002pt) gid105(18.610001pt) gid50(22.500000pt) gid98(26.940002pt) gid45(30.880005pt)
+      right: 3.225739pt
+      setglyphs: 36.750000pt gid77(0pt) gid28(5.559998pt) gid98(10.559998pt) gid43(14.500000pt) gid50(18.940002pt) gid105(23.380005pt) gid109(27.270004pt) gid96(32.830002pt)
+      x0:
+      setglyphs: 37.320007pt gid96(0pt) gid66(3.919998pt) gid47(6.699997pt) gid66(12.259995pt) gid43(15.039993pt) gid109(19.479996pt) gid72(25.040009pt) gid109(27.820007pt) gid98(33.380005pt)
+      w0:
+      setglyphs: 20.330002pt gid75(0pt) gid109(8.050003pt) gid98(13.610001pt) gid88(17.550003pt)
+      right: 4.396561pt
+      setglyphs: 37.229996pt gid27(0pt) gid72(7.500000pt) gid66(10.279999pt) gid91(13.059998pt) gid109(18.339996pt) gid28(23.899994pt) gid75(28.899994pt)
+      x0:
+      setglyphs: 39.740005pt gid105(0pt) gid66(3.889999pt) gid77(6.669998pt) gid43(12.229996pt) gid66(16.669998pt) gid47(19.449997pt) gid109(25.009995pt) gid77(30.570007pt) gid105(35.850006pt)
+      w0:
+      setglyphs: 22.820007pt gid109(0pt) gid96(5.559998pt) gid77(9.479996pt) gid28(15.039993pt) gid88(20.040009pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 23.619995pt gid76(0pt) gid109(7.500000pt) gid72(13.059998pt) gid72(15.839996pt) gid28(18.619995pt)
+      w: 3.330002pt
+      setglyphs: 52.009995pt gid109(0pt) gid72(5.559998pt) gid72(8.339996pt) gid28(11.119995pt) gid75(16.119995pt) gid43(24.449997pt) gid81(28.889999pt) gid96(33.889999pt) gid84(37.809998pt) gid50(43.650009pt) gid96(48.089996pt)
+      w0:
+      setglyphs: 47.839996pt gid112(0pt) gid50(5pt) gid98(9.440002pt) gid105(13.380005pt) gid66(17.270004pt) gid35(20.050003pt) gid109(25.610001pt) gid72(31.169998pt) gid109(33.949997pt) gid75(39.509995pt)
+      w0:
+      setglyphs: 28.430008pt gid105(0pt) gid109(3.889999pt) gid96(9.449997pt) gid84(13.369995pt) gid66(18.930008pt) gid98(21.710007pt) gid88(25.649994pt)
+      right: 4.440002pt
+      setglyphs: 53.800003pt gid83(0pt) gid50(6.529999pt) gid72(10.970001pt) gid72(13.750000pt) gid50(16.529999pt) gid77(20.970001pt) gid105(26.250000pt) gid50(30.139999pt) gid98(34.580002pt) gid91(38.520004pt) gid109(43.800003pt) gid50(49.360001pt)
+      w0:
+      setglyphs: 27.360001pt gid43(0pt) gid109(4.440002pt) gid96(10pt) gid98(13.919998pt) gid109(17.860001pt) gid98(23.419998pt)
+      w0:
+      setglyphs: 26.169998pt gid72(0pt) gid109(2.779999pt) gid43(8.339996pt) gid105(12.779999pt) gid109(16.669998pt) gid98(22.229996pt)
+      w0:
+      setglyphs: 32.309998pt gid75(0pt) gid28(8.330002pt) gid109(13.330002pt) gid96(18.889999pt) gid66(22.809998pt) gid98(25.589996pt) gid88(29.529999pt)
+    pop:
+    down: 13.615707pt
+    push:
+      right: 50pt
+      setglyphs: 23.619995pt gid76(0pt) gid109(7.500000pt) gid72(13.059998pt) gid72(15.839996pt) gid28(18.619995pt)
+      w: 3.523605pt
+      setglyphs: 45.610001pt gid75(0pt) gid28(8.330002pt) gid72(13.330002pt) gid50(16.110001pt) gid98(20.550003pt) gid109(24.490005pt) gid28(30.050003pt) gid47(35.050003pt) gid28(40.610001pt)
+      x: 3.523590pt
+      setglyphs: 38.130005pt gid84(0pt) gid81(5.839996pt) gid96(10.839996pt) gid105(14.759995pt) gid105(18.649994pt) gid66(22.540009pt) gid105(25.320007pt) gid81(29.210007pt) gid96(34.210007pt)
+      w0:
+      setglyphs: 24.449997pt gid47(0pt) gid66(5.559998pt) gid28(8.339996pt) gid75(13.339996pt) gid88(21.669998pt)
+      right: 5.020798pt
+      setglyphs: 27.080002pt gid46(0pt) gid81(7.639999pt) gid77(12.639999pt) gid50(18.199997pt) gid43(22.639999pt)
+      w0:
+      setglyphs: 17pt gid55(0pt) gid50(3.059998pt) gid72(7.500000pt) gid66(10.279999pt) gid98(13.059998pt)
+      x0:
+      setglyphs: 20.029999pt gid50(0pt) gid96(4.440002pt) gid28(8.360001pt) gid105(13.360001pt) gid45(17.250000pt)
+      right: 3.572006pt
+      setglyphs: 30pt gid43(0pt) gid81(4.440002pt) gid77(9.440002pt) gid59(15pt) gid109(20pt) gid50(25.559998pt)
+      w0:
+      setglyphs: 18.899994pt gid77(0pt) gid81(5.559998pt) gid77(10.559998pt) gid45(16.119995pt)
+      right: 3.571991pt
+      setglyphs: 36.680008pt gid112(0pt) gid81(5pt) gid72(10pt) gid109(12.779999pt) gid105(18.339996pt) gid84(22.229996pt) gid28(27.790009pt) gid105(32.790009pt)
+      w0:
+      setglyphs: 11.669998pt gid28(0pt) gid105(5pt) gid45(8.889999pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 39.740005pt gid105(0pt) gid66(3.889999pt) gid77(6.669998pt) gid43(12.229996pt) gid66(16.669998pt) gid47(19.449997pt) gid109(25.009995pt) gid77(30.570007pt) gid105(35.850006pt)
+      w: 3.700607pt
+      setglyphs: 39.259995pt gid105(0pt) gid96(3.889999pt) gid66(7.809998pt) gid98(10.589996pt) gid105(14.529999pt) gid66(18.419998pt) gid91(21.199997pt) gid109(26.479996pt) gid50(32.040009pt) gid45(36.479996pt)
+      right: 3.793274pt
+      setglyphs: 27.540009pt gid72(0pt) gid66(2.779999pt) gid35(5.559998pt) gid50(11.399994pt) gid96(15.839996pt) gid81(19.759995pt) gid88(24.759995pt)
+      x: 5.551834pt
+      setglyphs: 37.550003pt gid111(0pt) gid66(7.500000pt) gid112(10.279999pt) gid28(15pt) gid75(20pt) gid109(28.050003pt) gid98(33.610001pt)
+      w0:
+      setglyphs: 30.339996pt gid112(0pt) gid66(5.279999pt) gid112(8.059998pt) gid50(13.059998pt) gid96(17.500000pt) gid96(21.419998pt) gid28(25.339996pt)
+      w0:
+      setglyphs: 47.250000pt gid55(0pt) gid50(3.059998pt) gid96(7.500000pt) gid75(11.419998pt) gid50(19.750000pt) gid77(24.190002pt) gid105(29.470001pt) gid109(33.360001pt) gid75(38.919998pt)
+      right: 3.700623pt
+      setglyphs: 19.779999pt gid55(0pt) gid50(3.059998pt) gid72(7.500000pt) gid66(10.279999pt) gid98(13.059998pt) gid88(17pt)
+      x0:
+      setglyphs: 27.080002pt gid46(0pt) gid81(7.639999pt) gid77(12.639999pt) gid50(18.199997pt) gid43(22.639999pt)
+      w0:
+      setglyphs: 43.059998pt gid77(0pt) gid81(5.559998pt) gid77(10.559998pt) gid109(15.839996pt) gid75(21.399994pt) gid75(29.729996pt) gid118(37.779999pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 53.110001pt gid84(0pt) gid50(5.839996pt) gid72(10.279999pt) gid72(13.059998pt) gid50(15.839996pt) gid77(20.279999pt) gid105(25.559998pt) gid50(29.449997pt) gid98(33.889999pt) gid91(37.830002pt) gid109(43.110001pt) gid50(48.669998pt)
+      w: 4.356659pt
+      setglyphs: 21.389999pt gid28(0pt) gid77(5pt) gid105(10.279999pt) gid50(14.169998pt) gid88(18.610001pt)
+      right: 7.520004pt
+      setglyphs: 40.809998pt gid83(0pt) gid63(6.809998pt) gid28(12.369995pt) gid98(17.369995pt) gid50(21.309998pt) gid72(25.750000pt) gid72(28.529999pt) gid109(31.309998pt) gid98(36.869995pt)
+      w0:
+      setglyphs: 43.400009pt gid28(0pt) gid47(5pt) gid66(10.559998pt) gid84(13.339996pt) gid66(18.899994pt) gid98(21.680008pt) gid43(25.619995pt) gid66(30.059998pt) gid77(32.839996pt) gid59(38.400009pt)
+      x: 4.356674pt
+      setglyphs: 30.910004pt gid98(0pt) gid50(3.940002pt) gid75(8.380005pt) gid84(16.710007pt) gid50(22.550003pt) gid96(26.990005pt)
+      w0:
+      setglyphs: 16.669998pt gid50(0pt) gid72(4.440002pt) gid66(7.220001pt) gid105(10pt) gid88(13.889999pt)
+      right: 7.519989pt
+      setglyphs: 24.070007pt gid83(0pt) gid96(6.809998pt) gid81(10.729996pt) gid66(15.729996pt) gid77(18.509995pt)
+      x0:
+      setglyphs: 47.250000pt gid55(0pt) gid50(3.059998pt) gid96(7.500000pt) gid75(11.419998pt) gid50(19.750000pt) gid77(24.190002pt) gid105(29.470001pt) gid109(33.360001pt) gid75(38.919998pt)
+      w0:
+      setglyphs: 26.210007pt gid75(0pt) gid28(8.330002pt) gid98(13.330002pt) gid98(17.270004pt) gid28(21.210007pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 9.440002pt gid28(0pt) gid43(5pt)
+      w: 3.825882pt
+      setglyphs: 26.949997pt gid91(0pt) gid109(5.279999pt) gid28(10.839996pt) gid75(15.839996pt) gid88(24.169998pt)
+      right: 5.927643pt
+      setglyphs: 15.559998pt gid97(0pt) gid50(5.559998pt) gid47(10pt)
+      w0:
+      setglyphs: 21.669998pt gid47(0pt) gid66(5.559998pt) gid28(8.339996pt) gid75(13.339996pt)
+      w0:
+      setglyphs: 28.430008pt gid105(0pt) gid109(3.889999pt) gid96(9.449997pt) gid84(13.369995pt) gid66(18.930008pt) gid98(21.710007pt) gid45(25.649994pt)
+      right: 3.949860pt
+      setglyphs: 35.600006pt gid75(0pt) gid81(8.330002pt) gid72(13.330002pt) gid50(16.110001pt) gid98(20.550003pt) gid105(24.490005pt) gid66(28.380005pt) gid50(31.160004pt)
+      w0:
+      setglyphs: 24.169998pt gid112(0pt) gid66(5.279999pt) gid105(8.059998pt) gid28(11.949997pt) gid50(16.949997pt) gid45(21.389999pt)
+      x: 3.949844pt
+      setglyphs: 35.029999pt gid84(0pt) gid72(5.559998pt) gid28(8.339996pt) gid43(13.339996pt) gid50(17.779999pt) gid96(22.220001pt) gid28(26.139999pt) gid105(31.139999pt)
+      w0:
+      setglyphs: 7.779999pt gid28(0pt) gid45(5pt)
+      x0:
+      setglyphs: 35.600006pt gid75(0pt) gid81(8.330002pt) gid72(13.330002pt) gid50(16.110001pt) gid98(20.550003pt) gid105(24.490005pt) gid66(28.380005pt) gid50(31.160004pt)
+      right: 3.825897pt
+      setglyphs: 17.220001pt gid77(0pt) gid50(5.559998pt) gid43(10pt) gid45(14.440002pt)
+      x0:
+      setglyphs: 15pt gid72(0pt) gid50(2.779999pt) gid81(7.220001pt) gid88(12.220001pt)
+      right: 5.927643pt
+      setglyphs: 21.940002pt gid74(0pt) gid28(9.169998pt) gid50(14.169998pt) gid64(18.610001pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 23.380005pt gid43(0pt) gid50(4.440002pt) gid77(8.880005pt) gid28(14.440002pt) gid98(19.440002pt)
+      w: 3.704285pt
+      setglyphs: 31.119995pt gid72(0pt) gid28(2.779999pt) gid43(7.779999pt) gid66(12.220001pt) gid77(15pt) gid66(20.559998pt) gid28(23.339996pt) gid88(28.339996pt)
+      right: 5.562851pt
+      setglyphs: 20.830002pt gid76(0pt) gid28(7.500000pt) gid75(12.500000pt)
+      w0:
+      setglyphs: 26.169998pt gid66(0pt) gid84(2.779999pt) gid98(8.339996pt) gid109(12.279999pt) gid75(17.839996pt)
+      right: 3.704300pt
+      setglyphs: 26.680008pt gid72(0pt) gid66(2.779999pt) gid59(5.559998pt) gid109(10.559998pt) gid72(16.119995pt) gid28(18.899994pt) gid45(23.899994pt)
+      x: 3.797852pt
+      setglyphs: 33.059998pt gid50(0pt) gid72(4.440002pt) gid50(7.220001pt) gid66(11.660004pt) gid55(14.440002pt) gid50(17.500000pt) gid77(21.940002pt) gid47(27.500000pt)
+      w0:
+      setglyphs: 11.669998pt gid28(0pt) gid105(5pt) gid45(8.889999pt)
+      x0:
+      setglyphs: 42.270004pt gid28(0pt) gid43(5pt) gid43(9.440002pt) gid109(13.880005pt) gid75(19.440002pt) gid98(27.770004pt) gid28(31.710007pt) gid77(36.710007pt)
+      w0:
+      setglyphs: 17.220001pt gid77(0pt) gid50(5.559998pt) gid43(10pt) gid45(14.440002pt)
+      right: 3.797867pt
+      setglyphs: 32.889999pt gid98(0pt) gid109(3.940002pt) gid98(9.500000pt) gid43(13.440002pt) gid66(17.880005pt) gid84(20.660004pt) gid66(26.220001pt) gid105(29pt)
+      w0:
+      setglyphs: 7.779999pt gid28(0pt) gid45(5pt)
+      x0:
+      setglyphs: 28.949997pt gid66(0pt) gid84(2.779999pt) gid98(8.339996pt) gid109(12.279999pt) gid75(17.839996pt) gid88(26.169998pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 26.430008pt gid74(0pt) gid81(9.169998pt) gid96(14.169998pt) gid35(18.089996pt) gid66(23.649994pt)
+      w: 2.896149pt
+      setglyphs: 31.130005pt gid35(0pt) gid72(5.559998pt) gid28(8.339996pt) gid77(13.339996pt) gid47(18.899994pt) gid66(24.460007pt) gid105(27.240005pt)
+      x: 2.896164pt
+      setglyphs: 23.899994pt gid72(0pt) gid66(2.779999pt) gid59(5.559998pt) gid109(10.559998pt) gid72(16.119995pt) gid28(18.899994pt)
+      w0:
+      setglyphs: 29.729996pt gid55(0pt) gid50(3.059998pt) gid109(7.500000pt) gid59(13.059998pt) gid66(18.059998pt) gid28(20.839996pt) gid105(25.839996pt)
+      w0:
+      setglyphs: 31.669998pt gid75(0pt) gid28(8.330002pt) gid59(13.330002pt) gid77(18.330002pt) gid28(23.889999pt) gid88(28.889999pt)
+      right: 4.295395pt
+      setglyphs: 23.059998pt gid76(0pt) gid109(7.500000pt) gid77(13.059998pt) gid43(18.619995pt)
+      w0:
+      setglyphs: 33.059998pt gid50(0pt) gid72(4.440002pt) gid50(7.220001pt) gid66(11.660004pt) gid55(14.440002pt) gid50(17.500000pt) gid77(21.940002pt) gid47(27.500000pt)
+      x0:
+      setglyphs: 43.110001pt gid43(0pt) gid81(4.440002pt) gid77(9.440002pt) gid98(15pt) gid50(18.940002pt) gid91(23.380005pt) gid109(28.660004pt) gid28(34.220001pt) gid105(39.220001pt)
+      w0:
+      setglyphs: 27.250000pt gid72(0pt) gid81(2.779999pt) gid96(7.779999pt) gid50(11.699997pt) gid75(16.139999pt) gid88(24.470001pt)
+      right: 4.295395pt
+      setglyphs: 15.559998pt gid97(0pt) gid50(5.559998pt) gid47(10pt)
+      w0:
+      setglyphs: 28.339996pt gid72(0pt) gid28(2.779999pt) gid43(7.779999pt) gid66(12.220001pt) gid77(15pt) gid66(20.559998pt) gid28(23.339996pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 21.399994pt gid77(0pt) gid109(5.279999pt) gid72(10.839996pt) gid72(13.619995pt) gid28(16.399994pt)
+      w: 4.061432pt
+      setglyphs: 21.389999pt gid112(0pt) gid66(5.279999pt) gid105(8.059998pt) gid28(11.949997pt) gid50(16.949997pt)
+      w0:
+      setglyphs: 23.889999pt gid50(0pt) gid77(4.440002pt) gid66(10pt) gid75(12.779999pt) gid88(21.110001pt)
+      x: 6.634277pt
+      setglyphs: 53.800003pt gid83(0pt) gid50(6.529999pt) gid72(10.970001pt) gid72(13.750000pt) gid50(16.529999pt) gid77(20.970001pt) gid105(26.250000pt) gid50(30.139999pt) gid98(34.580002pt) gid91(38.520004pt) gid109(43.800003pt) gid50(49.360001pt)
+      w0:
+      setglyphs: 39.740005pt gid105(0pt) gid66(3.889999pt) gid77(6.669998pt) gid43(12.229996pt) gid66(16.669998pt) gid47(19.449997pt) gid109(25.009995pt) gid77(30.570007pt) gid105(35.850006pt)
+      w0:
+      setglyphs: 24.540009pt gid84(0pt) gid109(5.559998pt) gid96(11.119995pt) gid109(15.039993pt) gid98(20.600006pt)
+      right: 4.061417pt
+      setglyphs: 12.220001pt gid112(0pt) gid50(5pt) gid72(9.440002pt)
+      w0:
+      setglyphs: 31.669998pt gid75(0pt) gid28(8.330002pt) gid59(13.330002pt) gid77(18.330002pt) gid28(23.889999pt) gid88(28.889999pt)
+      x0:
+      setglyphs: 30.580002pt gid65(0pt) gid77(3.610001pt) gid105(8.889999pt) gid50(12.779999pt) gid59(17.220001pt) gid50(22.220001pt) gid96(26.660004pt)
+      w0:
+      setglyphs: 16.119995pt gid77(0pt) gid81(5.559998pt) gid77(10.559998pt)
+      w0:
+      setglyphs: 23.889999pt gid50(0pt) gid77(4.440002pt) gid66(10pt) gid75(12.779999pt) gid88(21.110001pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 37.720001pt gid83(0pt) gid96(6.809998pt) gid28(10.729996pt) gid50(15.729996pt) gid98(20.169998pt) gid50(24.110001pt) gid77(28.550003pt) gid105(33.830002pt)
+      w: 2.894485pt
+      setglyphs: 35.889999pt gid50(0pt) gid109(4.440002pt) gid66(10pt) gid98(12.779999pt) gid75(16.720001pt) gid81(25.050003pt) gid47(30.330002pt)
+      w0:
+      setglyphs: 20.839996pt gid77(0pt) gid109(5.279999pt) gid77(10.839996pt) gid43(16.399994pt)
+      x: 2.894470pt
+      setglyphs: 10pt gid50(0pt) gid109(4.440002pt)
+      w0:
+      setglyphs: 27.320007pt gid84(0pt) gid109(5.559998pt) gid96(11.119995pt) gid109(15.039993pt) gid98(20.600006pt) gid88(24.540009pt)
+      right: 4.294830pt
+      setglyphs: 27.080002pt gid46(0pt) gid81(7.639999pt) gid77(12.639999pt) gid50(18.199997pt) gid43(22.639999pt)
+      w0:
+      setglyphs: 43.630005pt gid35(0pt) gid66(5.559998pt) gid35(8.339996pt) gid50(14.180008pt) gid77(18.619995pt) gid47(24.180008pt) gid109(29.740005pt) gid75(35.300003pt)
+      w0:
+      setglyphs: 24.169998pt gid91(0pt) gid109(5.279999pt) gid28(10.839996pt) gid75(15.839996pt)
+      x0:
+      setglyphs: 8.339996pt gid66(0pt) gid77(2.779999pt)
+      w0:
+      setglyphs: 26.169998pt gid105(0pt) gid50(3.889999pt) gid72(8.330002pt) gid72(11.110001pt) gid109(13.889999pt) gid98(19.449997pt) gid88(23.389999pt)
+      right: 4.294830pt
+      setglyphs: 31.949997pt gid76(0pt) gid109(7.500000pt) gid72(13.059998pt) gid72(15.839996pt) gid28(18.619995pt) gid75(23.619995pt)
+      w0:
+      setglyphs: 17.250000pt gid43(0pt) gid109(4.440002pt) gid96(10pt) gid64(13.919998pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 13.440002pt gid98(0pt) gid109(3.940002pt) gid98(9.500000pt)
+      w: 3.664124pt
+      setglyphs: 36.440002pt gid84(0pt) gid109(5.559998pt) gid72(11.119995pt) gid112(13.899994pt) gid66(19.180008pt) gid77(21.960007pt) gid28(27.520004pt) gid96(32.520004pt)
+      x: 3.664108pt
+      setglyphs: 27.830002pt gid72(0pt) gid50(2.779999pt) gid43(7.220001pt) gid105(11.660004pt) gid109(15.550003pt) gid98(21.110001pt) gid88(25.050003pt)
+      right: 5.442352pt
+      setglyphs: 27.080002pt gid46(0pt) gid81(7.639999pt) gid77(12.639999pt) gid50(18.199997pt) gid43(22.639999pt)
+      w0:
+      setglyphs: 8.330002pt gid50(0pt) gid105(4.440002pt)
+      x0:
+      setglyphs: 13.889999pt gid75(0pt) gid66(8.330002pt) gid88(11.110001pt)
+      right: 5.442352pt
+      setglyphs: 20.830002pt gid76(0pt) gid28(7.500000pt) gid75(12.500000pt)
+      x0:
+      setglyphs: 41.960007pt gid112(0pt) gid109(5.279999pt) gid72(10.839996pt) gid84(13.619995pt) gid109(19.180008pt) gid105(24.740005pt) gid28(28.630005pt) gid105(33.630005pt) gid50(37.520004pt)
+      w0:
+      setglyphs: 26.160004pt gid75(0pt) gid50(8.330002pt) gid105(12.770004pt) gid109(16.660004pt) gid98(22.220001pt)
+      w0:
+      setglyphs: 10pt gid50(0pt) gid109(4.440002pt)
+      x0:
+      setglyphs: 23.889999pt gid50(0pt) gid77(4.440002pt) gid66(10pt) gid75(12.779999pt) gid88(21.110001pt)
+      right: 5.442352pt
+      setglyphs: 49.509995pt gid111(0pt) gid50(6.669998pt) gid98(11.110001pt) gid105(15.050003pt) gid66(18.940002pt) gid35(21.720001pt) gid109(27.279999pt) gid72(32.839996pt) gid109(35.619995pt) gid75(41.180008pt)
+    pop:
+    y0:
+    push:
+      right: 35pt
+      setglyphs: 53.110001pt gid84(0pt) gid50(5.839996pt) gid72(10.279999pt) gid72(13.059998pt) gid50(15.839996pt) gid77(20.279999pt) gid105(25.559998pt) gid50(29.449997pt) gid98(33.889999pt) gid91(37.830002pt) gid109(43.110001pt) gid50(48.669998pt)
+      w: 3.330002pt
+      setglyphs: 17pt gid55(0pt) gid50(3.059998pt) gid72(7.500000pt) gid66(10.279999pt) gid98(13.059998pt)
+      w0:
+      setglyphs: 10pt gid50(0pt) gid109(4.440002pt)
+      w0:
+      setglyphs: 28.990005pt gid75(0pt) gid28(8.330002pt) gid98(13.330002pt) gid98(17.270004pt) gid28(21.210007pt) gid88(26.210007pt)
+    pop:
+  pop:
+  down: 25.294937pt
+  push:
+    right: 205pt
+    setglyphs: 5pt gid106(0pt)
+  pop:
+pop:
+
+[page 4 0 0 0 0 0 0 0 0 0]
+xxx: 'pdf:pagesize default'
+down: 627.362427pt
+push:
+  down: -593.362427pt
+  push:
+    push:
+      right: 89pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf" at 10pt
+      setglyphs: 5pt gid57(0pt)
+      right: 174.849991pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmromanslant10-regular.otf" at 10pt
+      setglyphs: 50.419998pt gid42(0pt) gid62(7.220001pt) gid27(14.720001pt) gid83(22.220001pt) gid104(29.029999pt) gid49(36.250000pt) gid95(43.059998pt)
+      w: 3.330002pt
+      setglyphs: 7.779999pt gid82(0pt) gid88(5pt)
+      right: 7.770004pt
+      setglyphs: 42.100006pt gid97(0pt) gid27(5.559998pt) gid74(13.059998pt) gid83(22.229996pt) gid71(29.040009pt) gid49(35.290009pt)
+      w0:
+      setglyphs: 50.419998pt gid42(0pt) gid62(7.220001pt) gid27(14.720001pt) gid83(22.220001pt) gid104(29.029999pt) gid49(36.250000pt) gid95(43.059998pt)
+    pop:
+  pop:
+  down: 568.067490pt
+  push:
+    down: -539.948807pt
+    push:
+      push:
+        right: 89pt
+        fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf" (10pt) at 14.399994pt
+        setglyphs: 20.721588pt gid82(0pt) gid88(8.107193pt) gid107(12.614395pt)
+      pop:
+      right: 124.121582pt
+      setglyphs: 36.647980pt gid42(0pt) gid81(11.707199pt) gid47(20.260788pt) gid50(29.260788pt)
+      right: 5.399994pt
+      setglyphs: 26.395187pt gid105(0pt) gid50(6.307190pt) gid98(13.694397pt) gid105(20.087997pt)
+    pop:
+    down: 21.912994pt
+    push:
+      right: 99.500000pt
+      fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf" at 10pt
+      setglyphs: 21pt gid34(0pt) gid72(5.250000pt) gid28(10.500000pt) gid63(15.750000pt)
+      setglyphs: 5.250000pt gid45(0pt)
+      w: 5.250000pt
+      setglyphs: 21pt gid35(0pt) gid72(5.250000pt) gid28(10.500000pt) gid63(15.750000pt)
+      setglyphs: 5.250000pt gid45(0pt)
+      w0:
+      setglyphs: 26.250000pt gid35(0pt) gid72(5.250000pt) gid28(10.500000pt) gid63(15.750000pt) gid44(21pt)
+      w0:
+      setglyphs: 5.250000pt gid106(0pt)
+      w0:
+      setglyphs: 26.250000pt gid114(0pt) gid81(5.250000pt) gid96(10.500000pt) gid47(15.750000pt) gid98(21pt)
+    pop:
+    down: 33.084991pt
+    push:
+      push:
+        right: 89pt
+        fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf" (10pt) at 14.399994pt
+        setglyphs: 20.721588pt gid82(0pt) gid88(8.107193pt) gid106(12.614395pt)
+      pop:
+      right: 124.121582pt
+      setglyphs: 38.548782pt gid74(0pt) gid28(15.364792pt) gid105(23.241592pt) gid63(29.548782pt)
+      right: 5.399994pt
+      setglyphs: 26.395187pt gid105(0pt) gid50(6.307190pt) gid98(13.694397pt) gid105(20.087997pt)
+    pop:
+    down: 27.624802pt
+    push:
+      push:
+        push:
+          push:
+            right: 134.074738pt
+            down: -14.100128pt
+            fnt: cmex10 at 10pt
+            set: '\x12'
+          pop:
+          push:
+            right: 141.435883pt
+            down: -13.611221pt
+            set: 'Z'
+          pop:
+          push:
+            down: -11.139023pt
+            push:
+              right: 151.435898pt
+              fnt: cmsy7 at 7pt
+              set: '1'
+            pop:
+            down: 20.250244pt
+            push:
+              right: 146.991455pt
+              fnt: cmr7 at 7pt
+              set: '0'
+            pop:
+          pop:
+          push:
+            push:
+              push:
+                down: -6.765076pt
+                push:
+                  push:
+                    right: 162.774765pt
+                    fnt: cmr10 at 10pt
+                    set: 'sin'
+                  pop:
+                  right: 176.719193pt
+                  fnt: cmmi10 at 10pt
+                  set: 'x'
+                pop:
+                right: 162.774765pt
+                down: 4.465057pt
+                putrule: 0.399979pt 19.659698pt
+                down: 9.202652pt
+                push:
+                  push:
+                    right: 2.805542pt
+                    down: -7.202759pt
+                    fnt: cmsy10 at 10pt
+                    set: 'p'
+                  pop:
+                  push:
+                    right: 11.138901pt
+                    down: -7.202759pt
+                    putrule: 0.399979pt 5.715271pt
+                    down: 7.202759pt
+                    push:
+                      fnt: cmmi10 at 10pt
+                      set: 'x'
+                    pop:
+                  pop:
+                pop:
+              pop:
+            pop:
+          pop:
+          right: 183.634460pt
+          set: 'dx'
+          push:
+            down: -14.100128pt
+            fnt: cmex10 at 10pt
+            set: '\x13'
+          pop:
+        pop:
+        push:
+          right: 201.915741pt
+          down: -12.027908pt
+          fnt: cmr7 at 7pt
+          set: '2'
+        pop:
+        right: 209.179581pt
+        fnt: cmr10 at 10pt
+        set: '='
+        push:
+          down: -12.500046pt
+          push:
+            right: 6.064194pt
+            fnt: cmsy7 at 7pt
+            set: '1'
+          pop:
+          down: 12.500046pt
+          push:
+            push:
+              right: 2.828079pt
+              down: -9.500061pt
+              fnt: cmex10 at 10pt
+              set: 'X'
+            pop:
+          pop:
+          down: 12.027817pt
+          push:
+            right: 2.777710pt
+            fnt: cmmi7 at 7pt
+            set: 'k'
+            right: 0.168976pt
+            fnt: cmr7 at 7pt
+            set: '=0'
+          pop:
+        pop:
+        push:
+          push:
+            push:
+              down: -6.765076pt
+              push:
+                right: 26.885757pt
+                fnt: cmr10 at 10pt
+                set: '(2'
+                fnt: cmmi10 at 10pt
+                set: 'k'
+                right: 0.314804pt
+                fnt: cmr10 at 10pt
+                set: ')!'
+              pop:
+              right: 20.189545pt
+              down: 4.465057pt
+              putrule: 0.399979pt 34.468872pt
+              down: 9.159515pt
+              push:
+                set: '2'
+                push:
+                  down: -2.888885pt
+                  fnt: cmr7 at 7pt
+                  set: '2'
+                  fnt: cmmi7 at 7pt
+                  set: 'k'
+                pop:
+                right: 8.906296pt
+                fnt: cmr10 at 10pt
+                set: '('
+                fnt: cmmi10 at 10pt
+                set: 'k'
+                right: 0.314804pt
+                fnt: cmr10 at 10pt
+                set: '!)'
+                push:
+                  down: -2.888885pt
+                  fnt: cmr7 at 7pt
+                  set: '2'
+                pop:
+              pop:
+            pop:
+          pop:
+        pop:
+        push:
+          push:
+            push:
+              down: -6.765076pt
+              push:
+                right: 68.429916pt
+                fnt: cmr10 at 10pt
+                set: '1'
+              pop:
+              right: 57.058411pt
+              down: 4.465057pt
+              putrule: 0.399979pt 27.743011pt
+              down: 9.159515pt
+              push:
+                set: '2'
+                fnt: cmmi10 at 10pt
+                set: 'k'
+                right: 2.536972pt
+                fnt: cmr10 at 10pt
+                set: '+'
+                right: 2.222168pt
+                set: '1'
+              pop:
+            pop:
+          pop:
+        pop:
+        right: 88.779129pt
+        set: '='
+        push:
+          down: -12.500046pt
+          push:
+            right: 6.064194pt
+            fnt: cmsy7 at 7pt
+            set: '1'
+          pop:
+          down: 12.500046pt
+          push:
+            push:
+              right: 3.661423pt
+              down: -9.500061pt
+              fnt: cmex10 at 10pt
+              set: 'Y'
+            pop:
+          pop:
+          down: 12.027817pt
+          push:
+            right: 2.777710pt
+            fnt: cmmi7 at 7pt
+            set: 'k'
+            right: 0.168976pt
+            fnt: cmr7 at 7pt
+            set: '=1'
+          pop:
+        pop:
+        push:
+          push:
+            push:
+              down: -6.765076pt
+              push:
+                right: 28.800629pt
+                fnt: cmr10 at 10pt
+                set: '4'
+                fnt: cmmi10 at 10pt
+                set: 'k'
+                push:
+                  right: 0.314804pt
+                  down: -3.628922pt
+                  fnt: cmr7 at 7pt
+                  set: '2'
+                pop:
+              pop:
+              right: 20.189545pt
+              down: 4.465057pt
+              putrule: 0.399979pt 32.229141pt
+              down: 9.159515pt
+              push:
+                fnt: cmr10 at 10pt
+                set: '4'
+                fnt: cmmi10 at 10pt
+                set: 'k'
+                push:
+                  right: 0.314804pt
+                  down: -2.888885pt
+                  fnt: cmr7 at 7pt
+                  set: '2'
+                pop:
+                right: 7.023102pt
+                fnt: cmsy10 at 10pt
+                set: '\x00'
+                right: 2.222168pt
+                fnt: cmr10 at 10pt
+                set: '1'
+              pop:
+            pop:
+          pop:
+        pop:
+        right: 56.396393pt
+        set: '='
+        push:
+          push:
+            push:
+              down: -6.765076pt
+              push:
+                right: 3.977707pt
+                fnt: cmmi10 at 10pt
+                set: '\x19'
+              pop:
+              right: 3.977707pt
+              down: 4.465057pt
+              putrule: 0.399979pt 6.059052pt
+              down: 9.159515pt
+              push:
+                right: 0.529526pt
+                fnt: cmr10 at 10pt
+                set: '2'
+              pop:
+            pop:
+          pop:
+        pop:
+      pop:
+      push:
+        push:
+          right: 413.440002pt
+          fnt: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf" at 10pt
+          setglyphs: 20.559998pt gid85(0pt) gid82(3.889999pt) gid88(8.889999pt) gid82(11.669998pt) gid86(16.669998pt)
+        pop:
+      pop:
+    pop:
+  pop:
+pop:
