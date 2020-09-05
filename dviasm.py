@@ -180,7 +180,8 @@ def GetInt(s):
   except: return -1
 
 def GetStrASCII(s): # used in Parse()
-  if len(s) > 1 and ((s[0] == "'" and s[-1] == "'") or (s[0] == '"' and s[-1] == '"')): return [ord(c) for c in s[1:-1].decode('unicode_escape')]
+  if len(s) > 1 and ((s[0] == "'" and s[-1] == "'") or (s[0] == '"' and s[-1] == '"')):
+    return [ord(c) for c in s[1:-1].decode('unicode_escape')]
   else: return ''
 
 def UCS2toJIS(c):
@@ -190,12 +191,12 @@ def UCS2toJIS(c):
 
 def GetStrUTF8(s): # used in Parse()
   if len(s) > 1 and ((s[0] == "'" and s[-1] == "'") or (s[0] == '"' and s[-1] == '"')):
-    t = s[1:-1]
+    t = s[1:-1].encode('raw_unicode_escape').decode('unicode_escape')
     if is_ptex: return [UCS2toJIS(c) for c in t]
     else:       return [ord(c)       for c in t]
   else:         return ''
 
-def PutStrASCII(t): # unsed in Dump()
+def PutStrASCII(t): # used in Dump()
   s = ''
   for o in t:
     if o == 92:         s += '\\\\'
@@ -206,7 +207,7 @@ def PutStrASCII(t): # unsed in Dump()
       warning('Not support characters > 65535; may skip %d.\n' % o)
   return "'%s'" % s
 
-def PutStrLatin1(t): # unsed in Dump()
+def PutStrLatin1(t): # used in Dump()
   s = ''
   for o in t:
     if o == 92:                           s += '\\\\'
@@ -224,7 +225,7 @@ def DecodeISO2022JP(c):
     s = ''
   return s
 
-def PutStrUTF8(t): # unsed in Dump()
+def PutStrUTF8(t): # used in Dump()
   s = ''
   if is_subfont:
     for o in t:
@@ -239,7 +240,7 @@ def PutStrUTF8(t): # unsed in Dump()
       else:               s += chr(o)
   return "'%s'" % s
 
-def PutStrSJIS(t): # unsed in Dump()
+def PutStrSJIS(t): # used in Dump()
   s = ''
   for o in t:
     if o == 92:         s += '\\\\'
