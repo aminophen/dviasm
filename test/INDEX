@@ -53,3 +53,8 @@
 
 ## from GitHub PR 5
 * checklength.dump: raw text (check length)
+
+## user-defined subfont
+* ipxm.dvi: Compiled ipxm.tex with LaTeX (not pLaTeX)
+  * ipxm.dump: dumped from above
+  * ipxm.dump.dvi: compiled from above
