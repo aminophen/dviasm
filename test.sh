@@ -81,6 +81,15 @@ cmp $OUT/ajt06kr.dump.dvi $IN/ajt06kr.dump.dvi || exit 1
 
 #####
 
+# checklength: dump -> DVI -> dump
+## checklength.dump ->...-> checklength.dump.dump was different
+## => fixed in py2-20191202
+$DVIASM -u sp $IN/checklength.dump -o $OUT/checklength.dump.dvi
+$DVIASM -u sp $OUT/checklength.dump.dvi >$OUT/checklength.dump.dump
+diff $OUT/checklength.dump.dump $IN/checklength.dump || exit 1
+
+#####
+
 # gh0012: DVI -> dump
 ## gh0012.dvi -> gh0012.dump caused error with --ptex
 ## => [TODO]

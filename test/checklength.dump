@@ -1,0 +1,162 @@
+[preamble]
+id: 2
+numerator: 25400000
+denominator: 473628672
+magnification: 1000
+comment: ''
+
+[postamble]
+maxv: 43725786sp
+maxh: 30785863sp
+maxs: 2
+pages: 1
+
+[font definitions]
+fntdef: cmr10 at 655360sp
+
+[page 1 0 0 0 0 0 0 0 0 0]
+right: 1310720sp
+fnt: cmr10 at 655360sp
+push:
+  set: '126 0x7e'
+  w: 126sp
+  set: '127 0x7f'
+  w: 127sp
+  set: '128 0x0080'
+  w: 128sp
+  set: '129 0x0081'
+  w: 129sp
+  set: 'a'
+pop:
+push:
+  set: '254 0x00fe'
+  w: 254sp
+  set: '255 0x00ff'
+  w: 255sp
+  set: '256 0x0100'
+  w: 256sp
+  set: '257 0x0101'
+  w: 257sp
+  set: 'a'
+pop:
+push:
+  set: '32766 0x7ffe'
+  w: 32766sp
+  set: '32767 0x7fff'
+  w: 32767sp
+  set: '32768 0x008000'
+  w: 32768sp
+  set: '32769 0x008001'
+  w: 32769sp
+  set: 'a'
+pop:
+push:
+  set: '65534 0x00fffe'
+  w: 65534sp
+  set: '65535 0x00ffff'
+  w: 65535sp
+  set: '65536 0x010000'
+  w: 65536sp
+  set: '65537 0x010001'
+  w: 65537sp
+  set: 'a'
+pop:
+push:
+  set: '8388606 0x7ffffe'
+  w: 8388606sp
+  set: '8388607 0x7fffff'
+  w: 8388607sp
+  set: '8388608 0x00800000'
+  w: 8388608sp
+  set: '8388609 0x00800001'
+  w: 8388609sp
+  set: 'a'
+pop:
+push:
+  set: '16777214 0x00fffffe'
+  w: 16777214sp
+  set: '16777215 0x00ffffff'
+  w: 16777215sp
+  set: '16777216 0x01000000'
+  w: 16777216sp
+  set: '16777217 0x01000001'
+  w: 16777217sp
+  set: 'a'
+pop:
+push:
+  set: '1 0x01'
+  w: 1sp
+  set: '0 0x00'
+  w: 0sp
+  set: '-1 0xff'
+  w: -1sp
+  set: '-2 0xfe'
+  w: -2sp
+  set: 'a'
+pop:
+push:
+  set: '-127 0x81'
+  w: -127sp
+  set: '-128 0x80'
+  w: -128sp
+  set: '-129 0xff7f'
+  w: -129sp
+  set: '-130 0xff7e'
+  w: -130sp
+  set: 'a'
+pop:
+push:
+  set: '-255 0xff01'
+  w: -255sp
+  set: '-256 0xff00'
+  w: -256sp
+  set: '-257 0xfeff'
+  w: -257sp
+  set: '-258 0xfefe'
+  w: -258sp
+  set: 'a'
+pop:
+push:
+  set: '-32767 0x8001'
+  w: -32767sp
+  set: '-32768 0x8000'
+  w: -32768sp
+  set: '-32769 0xff7fff'
+  w: -32769sp
+  set: '-32770 0xff7ffe'
+  w: -32770sp
+  set: 'a'
+pop:
+push:
+  set: '-65535 0xff0001'
+  w: -65535sp
+  set: '-65536 0xff0000'
+  w: -65536sp
+  set: '-65537 0xfeffff'
+  w: -65537sp
+  set: '-65538 0xfefffe'
+  w: -65538sp
+  set: 'a'
+pop:
+push:
+  set: '-8388607 0x800001'
+  w: -8388607sp
+  set: '-8388608 0x800000'
+  w: -8388608sp
+  set: '-8388609 0xff7fffff'
+  w: -8388609sp
+  set: '-8388610 0xff7ffffe'
+  w: -8388610sp
+  set: 'a'
+pop:
+push:
+  set: '-16777215 0xff000001'
+  w: -16777215sp
+  set: '-16777216 0xff000000'
+  w: -16777216sp
+  set: '-16777217 0xfeffffff'
+  w: -16777217sp
+  set: '-16777218 0xfefffffe'
+  w: -16777218sp
+  set: 'a'
+pop:
