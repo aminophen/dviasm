@@ -243,16 +243,6 @@ def PutStrUTF8(t): # used in Dump()
       else:               s += chr(o)
   return "'%s'" % s
 
-def PutStrSJIS(t): # used in Dump()
-  s = ''
-  for o in t:
-    if o == 92:         s += '\\\\'
-    elif 32 <= o < 127: s += chr(o)
-    elif o < 128:       s += ('\\x%02x' % o)
-    else:
-      s += DecodeISO2022JP(o).encode('sjis')
-  return "'%s'" % s
-
 def IsFontChanged(f, z):
   global cur_font, cur_ssize, subfont_idx, is_subfont
   for n in subfont_list:
@@ -727,7 +717,7 @@ class DVI(object):
   # Parse: Text -> Internal Format
   ##########################################################
   def Parse(self, fn, encoding=''):
-    fp = open(fn, 'r')
+    fp = open(fn, 'r', encoding=encoding)
     s = fp.read()
     fp.close()
     self.ParseFromString(s, encoding=encoding)
@@ -904,7 +894,7 @@ class DVI(object):
   # Dump: Internal Format -> Text
   ##########################################################
   def Dump(self, fn, tabsize=2, encoding=''):
-    fp = open(fn, 'w')
+    fp = open(fn, 'w', encoding=encoding)
     self.DumpToFile(fp, tabsize=tabsize, encoding=encoding)
     fp.close()
 
@@ -912,7 +902,6 @@ class DVI(object):
     global PutStr
     if   encoding == 'ascii':  PutStr = PutStrASCII
     elif encoding == 'latin1': PutStr = PutStrLatin1
-    elif encoding == 'sjis':   PutStr = PutStrSJIS
     else:                      PutStr = PutStrUTF8
     # DumpPreamble
     fp.write("[preamble]\n")
@@ -1200,12 +1189,12 @@ the Free Software Foundation, either version 3 of the License, or
     parser.error("invalid unit name '%s'!" % options.unit)
   if options.tabsize < 0:
     parser.error("negative tabsize!")
-  if not options.encoding in ['ascii', 'latin1', 'utf8', 'sjis']:
+  if not options.encoding in ['ascii', 'latin1', 'utf8', 'sjis', 'eucjp']:
     parser.error("invalid encoding '%s'!" % options.encoding)
   if options.ptex:
     global is_ptex
     is_ptex = True
-    if not options.encoding in ['utf8', 'sjis']:
+    if not options.encoding in ['utf8', 'sjis', 'eucjp']:
       parser.error("invalid encoding '%s' for Japanese pTeX!" % options.encoding)
   if options.subfont:
     global subfont_list

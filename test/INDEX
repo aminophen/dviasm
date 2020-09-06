@@ -71,3 +71,8 @@
 * varenc-up.dvi: Compiled varenc.tex with upLaTeX
   * varenc-up.dump: dumped from above
   * varenc-up.dump.dvi: compiled from above
+
+## command-line encoding option
+* jisx0208.dvi: Compiled jisx0208.tex with pTeX
+  * jisx0208.dump: dumped from above
+  * jisx0208.dump.dvi: compiled from above

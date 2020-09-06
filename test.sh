@@ -168,6 +168,35 @@ cmp $OUT/varenc-p.dump.dvi $IN/varenc-p.dump.dvi || exit 1
 $DVIASM $IN/varenc-up.dump -o $OUT/varenc-up.dump.dvi
 cmp $OUT/varenc-up.dump.dvi $IN/varenc-up.dump.dvi || exit 1
 
+##### command-line encoding option
+
+# Note: The original ChoF version supported only
+#         * DVI ->(-e sjis -p)-> dump(file)
+#         * DVI ->(-e sjis -p)-> dump(stdout)
+#       The current version by H.Y. supports
+#         * DVI ->(-e sjis/eucjp -p)-> dump(file)
+#         * dump(file) ->(-e sjis/eucjp -p)-> DVI
+
+# first, ordinary UTF-8 dump/compile
+$DVIASM -p $IN/jisx0208.dvi -o $OUT/jisx0208.dump
+diff $OUT/jisx0208.dump $IN/jisx0208.dump || exit 1
+$DVIASM -p $IN/jisx0208.dump -o $OUT/jisx0208.dump.dvi
+cmp $OUT/jisx0208.dump.dvi $IN/jisx0208.dump.dvi || exit 1
+
+# next, Shift-JIS dump/compile
+$DVIASM -e sjis -p $IN/jisx0208.dvi -o $OUT/jisx0208-sjp.dump
+iconv -f UTF-8 -t SHIFT-JIS $IN/jisx0208.dump >$OUT/jisx0208-s.dump
+diff $OUT/jisx0208-sjp.dump $OUT/jisx0208-s.dump || exit 1
+$DVIASM -e sjis -p $OUT/jisx0208-sjp.dump -o $OUT/jisx0208-sjp.dump.dvi
+cmp $OUT/jisx0208-sjp.dump.dvi $IN/jisx0208.dump.dvi || exit 1
+
+# then, EUC-JP dump/compile
+$DVIASM -e eucjp -p $IN/jisx0208.dvi -o $OUT/jisx0208-ejp.dump
+iconv -f UTF-8 -t EUC-JP $IN/jisx0208.dump >$OUT/jisx0208-e.dump
+diff $OUT/jisx0208-ejp.dump $OUT/jisx0208-e.dump || exit 1
+$DVIASM -e eucjp -p $OUT/jisx0208-ejp.dump -o $OUT/jisx0208-ejp.dump.dvi
+cmp $OUT/jisx0208-ejp.dump.dvi $IN/jisx0208.dump.dvi || exit 1
+
 #####
 
 # finish
