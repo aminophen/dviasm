@@ -76,9 +76,9 @@ $DVIASM $IN/hello6.dump -o $OUT/hello6.dump.dvi
 cmp $IN/hello6.dump.dvi $OUT/hello6.dump.dvi || exit 1
 
 # ajt0201cho: DVI -> dump
-$DVIASM $IN/ajt01lig.dvi >$OUT/ajt01lig.dump
+$DVIASM $IN/ajt01lig.dvi -o $OUT/ajt01lig.dump
 diff $IN/ajt01lig.dump $OUT/ajt01lig.dump || exit 1
-$DVIASM --ptex $IN/ajt03jp.dvi >$OUT/ajt03jp.dump
+$DVIASM --ptex $IN/ajt03jp.dvi -o $OUT/ajt03jp.dump
 diff $IN/ajt03jp.dump $OUT/ajt03jp.dump || exit 1
 
 # ajt0201cho: dump -> DVI
@@ -117,7 +117,7 @@ diff $IN/checklength.dump $OUT/checklength.dump.dump || exit 1
 # overbmp: DVI -> dump -> DVI
 ## set3 was unsupported in Python 2.x
 ## => fixed in py3-20191126 (#6, #7)
-$DVIASM $IN/overbmp-up.dvi >$OUT/overbmp-up.dump
+$DVIASM $IN/overbmp-up.dvi -o $OUT/overbmp-up.dump
 diff $IN/overbmp-up.dump $OUT/overbmp-up.dump || exit 1
 $DVIASM $IN/overbmp-up.dump -o $OUT/overbmp-up.dump.dvi
 cmp $IN/overbmp-up.dump.dvi $OUT/overbmp-up.dump.dvi || exit 1
@@ -127,9 +127,9 @@ cmp $IN/overbmp-up.dump.dvi $OUT/overbmp-up.dump.dvi || exit 1
 # gh0012: DVI -> dump
 ## gh0012.dvi -> gh0012.dump caused error with --ptex
 ## => [TODO] workaround in py3-20200905, needs reconsider (#13)
-$DVIASM $IN/gh0012.dvi >$OUT/gh0012.dump
+$DVIASM $IN/gh0012.dvi -o $OUT/gh0012.dump
 diff $IN/gh0012.dump $OUT/gh0012.dump || exit 1
-$DVIASM --ptex $IN/gh0012.dvi >$OUT/gh0012-p.dump
+$DVIASM --ptex $IN/gh0012.dvi -o $OUT/gh0012-p.dump
 diff $IN/gh0012.dump $OUT/gh0012-p.dump || exit 1
 
 # gh0012: dump -> DVI
@@ -143,7 +143,7 @@ cmp $IN/gh0012.dump.dvi $OUT/gh0012-p.dump.dvi || exit 1
 ##### user-defined subfont
 
 # ipxm: DVI -> dump
-$DVIASM --subfont=ipxm-r-u,ipxg-r-u, $IN/ipxm.dvi >$OUT/ipxm.dump
+$DVIASM --subfont=ipxm-r-u,ipxg-r-u, $IN/ipxm.dvi -o $OUT/ipxm.dump
 diff $IN/ipxm.dump $OUT/ipxm.dump || exit 1
 
 # ipxm: dump -> DVI
@@ -155,9 +155,9 @@ cmp $IN/ipxm.dump.dvi $OUT/ipxm.dump.dvi || exit 1
 # varenc: DVI -> dump
 ## varenc-p.dvi -> varenc-p.dump caused error with --ptex
 ## => [TODO] workaround in py3-20200905, needs reconsider (#13)
-$DVIASM -p $IN/varenc-p.dvi >$OUT/varenc-p.dump
+$DVIASM -p $IN/varenc-p.dvi -o $OUT/varenc-p.dump
 diff $IN/varenc-p.dump $OUT/varenc-p.dump || exit 1
-$DVIASM $IN/varenc-up.dvi >$OUT/varenc-up.dump
+$DVIASM $IN/varenc-up.dvi -o $OUT/varenc-up.dump
 diff $IN/varenc-up.dump $OUT/varenc-up.dump || exit 1
 
 # varenc: dump -> DVI
