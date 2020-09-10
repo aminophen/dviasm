@@ -173,7 +173,7 @@ cmp $IN/varenc-up.dump.dvi $OUT/varenc-up.dump.dvi || exit 1
 # Note: The original ChoF version supported only
 #         * DVI ->(-e sjis -p)-> dump(file)
 #         * DVI ->(-e sjis -p)-> dump(stdout)
-#       The current version by H.Y. supports
+#       The current version by HY supports
 #         * DVI ->(-e sjis/eucjp -p)-> dump(file)
 #         * dump(file) ->(-e sjis/eucjp -p)-> DVI
 
