@@ -59,7 +59,7 @@ diff $IN/native.xdump $OUT/native.xdump || exit 1
 
 # font/native: dump -> DVI/XDV
 $DVIASM $IN/font.dump -o $OUT/font.dump.dvi
-cmp $IN/font.dump $OUT/font.dump || exit 1
+cmp $IN/font.dump.dvi $OUT/font.dump.dvi || exit 1
 $DVIASM $IN/font.xdump -o $OUT/font.xdump.xdv
 cmp $IN/font.xdump.xdv $OUT/font.xdump.xdv || exit 1
 $DVIASM $IN/native.xdump -o $OUT/native.xdump.xdv
@@ -109,7 +109,7 @@ diff $IN/ajt06kr.dump.dump $OUT/ajt06kr.dump.dump || exit 1
 ## checklength.dump ->...-> checklength.dump.dump was different
 ## => fixed in py2-20190202 (#3, #5)
 $DVIASM -u sp $IN/checklength.dump -o $OUT/checklength.dump.dvi
-$DVIASM -u sp $OUT/checklength.dump.dvi >$OUT/checklength.dump.dump
+$DVIASM -u sp $OUT/checklength.dump.dvi -o $OUT/checklength.dump.dump
 diff $IN/checklength.dump $OUT/checklength.dump.dump || exit 1
 
 ##### from GitHub Issue 6/7

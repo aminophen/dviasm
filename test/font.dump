@@ -19,9 +19,9 @@ fntdef: cmmi7 at 7pt
 fntdef: cmmi10 at 10pt
 fntdef: cmsy7 at 7pt
 fntdef: cmsy10 at 10pt
-fntdef: cmbx12 (12pt)  at 20.740005pt
-fntdef: cmbx12 (12pt)  at 24.880005pt
-fntdef: cmbx12 (12pt)  at 14.399994pt
+fntdef: cmbx12 (12pt) at 20.740005pt
+fntdef: cmbx12 (12pt) at 24.880005pt
+fntdef: cmbx12 (12pt) at 14.399994pt
 fntdef: cmtt10 at 10pt
 fntdef: cmsl10 at 10pt
 

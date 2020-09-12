@@ -20,9 +20,9 @@ fntdef: cmmi10 at 10pt
 fntdef: cmsy7 at 7pt
 fntdef: cmsy10 at 10pt
 fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf" at 10pt
-fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf" (10pt)  at 20.740005pt
-fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf" (10pt)  at 24.880005pt
-fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf" (10pt)  at 14.399994pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf" (10pt) at 20.740005pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf" (10pt) at 24.880005pt
+fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf" (10pt) at 14.399994pt
 fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf" at 10pt
 fntdef: "c:/w32tex/share/texmf-dist/fonts/opentype/public/lm/lmromanslant10-regular.otf" at 10pt
 

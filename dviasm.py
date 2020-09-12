@@ -919,10 +919,10 @@ class DVI(object):
     # DumpFontDefinitions
     fp.write("\n[font definitions]\n")
     for e in sorted(self.font_def.keys()):
-      fp.write("fntdef: %s" % self.font_def[e]['name'])
+      fp.write("fntdef: %s " % self.font_def[e]['name'])
       if self.font_def[e]['design_size'] != self.font_def[e]['scaled_size']:
-        fp.write(" (%s) " % self.byconv(self.font_def[e]['design_size']))
-      fp.write(" at %s\n" % self.byconv(self.font_def[e]['scaled_size']))
+        fp.write("(%s) " % self.byconv(self.font_def[e]['design_size']))
+      fp.write("at %s\n" % self.byconv(self.font_def[e]['scaled_size']))
     # DumpPages
     for page in self.pages:
       fp.write("\n[page" + (" %d"*10 % tuple(page['count'])) + "]\n")

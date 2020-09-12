@@ -13,7 +13,7 @@ pages: 1
 
 [font definitions]
 fntdef: cmr10 at 10pt
-fntdef: upjisr-h (10pt)  at 9.622192pt
+fntdef: upjisr-h (10pt) at 9.622192pt
 fntdef: ptmr8y at 10pt
 fntdef: tcrm1000 at 10pt
 fntdef: ecrm1000 at 10pt
