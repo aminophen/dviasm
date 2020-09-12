@@ -197,6 +197,20 @@ diff $OUT/jisx0208-e.dump $OUT/jisx0208-ejp.dump || exit 1
 $DVIASM -e eucjp -p $OUT/jisx0208-ejp.dump -o $OUT/jisx0208-ejp.dump.dvi
 cmp $IN/jisx0208.dump.dvi $OUT/jisx0208-ejp.dump.dvi || exit 1
 
+##### from GitHub Issue 16
+
+# spcj: DVI -> dump
+$DVIASM -p $IN/spcj-ep.dvi -o $OUT/spcj-ep.dump
+diff $IN/spcj-ep.dump $OUT/spcj-ep.dump || exit 1
+$DVIASM -p $IN/spcj-ep.dump -o $OUT/spcj-ep.dump.dvi
+cmp $IN/spcj-ep.dump.dvi $OUT/spcj-ep.dump.dvi || exit 1
+
+# spcj: dump -DVI
+$DVIASM $IN/spcj.dvi -o $OUT/spcj.dump
+diff $IN/spcj.dump $OUT/spcj.dump || exit 1
+$DVIASM $IN/spcj.dump -o $OUT/spcj.dump.dvi
+cmp $IN/spcj.dump.dvi $OUT/spcj.dump.dvi || exit 1
+
 #####
 
 # finish

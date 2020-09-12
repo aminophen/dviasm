@@ -76,3 +76,11 @@
 * jisx0208.dvi: Compiled jisx0208.tex with pTeX
   * jisx0208.dump: dumped from above
   * jisx0208.dump.dvi: compiled from above
+
+## from GitHub Issue 16
+* spcj.dvi: Compiled spcj.tex with upLaTeX
+  * spcj.dump: dumped from above
+  * spcj.dump.dvi: compiled from above
+* spcj-ep.dvi: Compiled spcj.tex with pLaTeX (internal EUC-JP)
+  * spcj-ep.dump: dumped from above
+  * spcj-ep.dump.dvi: compiled from above
