@@ -492,7 +492,7 @@ class DVI(object):
       elif o < FNT_NUM_0 + 64 or o in (FNT1, FNT2, FNT3, FNT4):
         s.append([FNT1, p])
       elif o in (XXX1, XXX2, XXX3, XXX4):
-        q = fp.read(p).decode('utf8')
+        q = fp.read(p)
         s.append([XXX1, q])
       elif o in (FNT_DEF1, FNT_DEF2, FNT_DEF3, FNT_DEF4):
         self.DefineFont(p, fp)
@@ -644,10 +644,13 @@ class DVI(object):
           if cmd[1] < 64: s.append(bytes.fromhex('%02x' % (FNT_NUM_0 + cmd[1])))
           else:           s.append(self.CmdPairU(cmd))
         elif cmd[0] == XXX1:
-          cmd1 = cmd[1].encode('utf8')
-          l = len(cmd[1])
-          if l < 256: s.append(bytes.fromhex('%02x' % XXX1) + bytes.fromhex('%02x' % l) + cmd1)
-          else:       s.append(bytes.fromhex('%02x' % XXX4) + PutSignedQuad(l) + cmd1)
+          l = len(cmd[1]) # leave encoding untouched
+          if l < 256:
+            s.append(bytes.fromhex('%02x' % XXX1) + bytes.fromhex('%02x' % l))
+          else:
+            s.append(bytes.fromhex('%02x' % XXX4) + PutSignedQuad(l))
+          for o in cmd[1]:
+            s.append(bytes.fromhex('%02x' % ord(o)))
         elif cmd[0] == DIR:
           s.append(bytes.fromhex('%02x' % DIR) + bytes.fromhex('%02x' % cmd[1]))
         elif cmd[0] == BEGIN_REFLECT:
@@ -937,7 +940,7 @@ class DVI(object):
           fp.write("push:\n")
           indent += tabsize
         elif cmd[0] == XXX1:
-          fp.write("xxx: %s\n" % repr(cmd[1]))
+          fp.write("xxx: %s\n" % PutStrASCII(cmd[1])) # leave encoding untouched
         elif cmd[0] == DIR:
           fp.write("dir: %d\n" % cmd[1])
         elif cmd[0] == BEGIN_REFLECT:
