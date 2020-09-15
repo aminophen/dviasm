@@ -1185,6 +1185,10 @@ the Free Software Foundation, either version 3 of the License, or
                     action="store", type="string", dest="encoding",
                     metavar="STR",
                     help="encoding for input/output [default=%default]")
+  parser.add_option("-x", "--xxx-encoding",
+                    action="store", type="string", dest="xxx_encoding",
+                    metavar="STR",
+                    help="encoding for interpreting xxx strings [default=%default]")
   parser.add_option("-t", "--tabsize",
                     action="store", type="int", dest="tabsize",
                     metavar="INT",
@@ -1192,10 +1196,6 @@ the Free Software Foundation, either version 3 of the License, or
   parser.add_option("-p", "--ptex",
                     action="store_true", dest="ptex", default=False,
                     help="ISO-2022-JP-encoded DVI for Japanese pTeX")
-  parser.add_option("-x", "--xxx-encoding",
-                    action="store", type="string", dest="xxx_encoding",
-                    metavar="STR",
-                    help="encoding for xxx strings [default=%default]")
   parser.add_option("-s", "--subfont",
                     action="append", type="string", dest="subfont",
                     metavar="STR",
