@@ -644,13 +644,20 @@ class DVI(object):
           if cmd[1] < 64: s.append(bytes.fromhex('%02x' % (FNT_NUM_0 + cmd[1])))
           else:           s.append(self.CmdPairU(cmd))
         elif cmd[0] == XXX1:
-          l = len(cmd[1]) # leave encoding untouched
+          if options.xxx_encoding == "none":
+            l = len(cmd[1]) # leave encoding untouched
+          else:
+            cmd1 = cmd[1].encode(options.xxx_encoding)
+            l = len(cmd1)
           if l < 256:
             s.append(bytes.fromhex('%02x' % XXX1) + bytes.fromhex('%02x' % l))
           else:
             s.append(bytes.fromhex('%02x' % XXX4) + PutSignedQuad(l))
-          for o in cmd[1]:
-            s.append(bytes.fromhex('%02x' % ord(o)))
+          if options.xxx_encoding == "none":
+            for o in cmd[1]:
+              s.append(bytes.fromhex('%02x' % ord(o)))
+          else:
+              s.append(cmd1)
         elif cmd[0] == DIR:
           s.append(bytes.fromhex('%02x' % DIR) + bytes.fromhex('%02x' % cmd[1]))
         elif cmd[0] == BEGIN_REFLECT:
@@ -940,7 +947,10 @@ class DVI(object):
           fp.write("push:\n")
           indent += tabsize
         elif cmd[0] == XXX1:
-          fp.write("xxx: %s\n" % PutStrASCII(cmd[1])) # leave encoding untouched
+          if options.xxx_encoding == "none":
+            fp.write("xxx: %s\n" % PutStrASCII(cmd[1])) # leave encoding untouched
+          else:
+            fp.write("xxx: '%s'\n" % cmd[1].decode(options.xxx_encoding))
         elif cmd[0] == DIR:
           fp.write("dir: %d\n" % cmd[1])
         elif cmd[0] == BEGIN_REFLECT:
@@ -1182,16 +1192,22 @@ the Free Software Foundation, either version 3 of the License, or
   parser.add_option("-p", "--ptex",
                     action="store_true", dest="ptex", default=False,
                     help="ISO-2022-JP-encoded DVI for Japanese pTeX")
+  parser.add_option("-x", "--xxx-encoding",
+                    action="store", type="string", dest="xxx_encoding",
+                    metavar="STR",
+                    help="encoding for xxx strings [default=%default]")
   parser.add_option("-s", "--subfont",
                     action="append", type="string", dest="subfont",
                     metavar="STR",
                     help="the list of fonts with UCS2 subfont scheme (comma separated); disable internal subfont list if STR is empty")
-  parser.set_defaults(unit='pt', encoding='utf8', tabsize=2)
+  parser.set_defaults(unit='pt', encoding='utf8', xxx_encoding='none', tabsize=2)
   (options, args) = parser.parse_args()
   if not options.unit in ['sp', 'pt', 'bp', 'mm', 'cm', 'in']:
     parser.error("invalid unit name '%s'!" % options.unit)
   if options.tabsize < 0:
     parser.error("negative tabsize!")
+  if not options.xxx_encoding in ['none', 'utf8', 'sjis', 'eucjp']:
+    parser.error("invalid xxx-encoding '%s'!" % options.xxx_encoding)
   if not options.encoding in ['ascii', 'latin1', 'utf8', 'sjis', 'eucjp']:
     parser.error("invalid encoding '%s'!" % options.encoding)
   if options.ptex:

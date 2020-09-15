@@ -1,0 +1,75 @@
+[preamble]
+id: 2
+numerator: 25400000
+denominator: 473628672
+magnification: 1000
+comment: ' TeX output 2020.09.12:2255'
+
+[postamble]
+maxv: 682pt
+maxh: 398pt
+maxs: 5
+pages: 1
+
+[font definitions]
+fntdef: cmr10 at 10pt
+fntdef: upjisg-h (10pt) at 13.855942pt
+fntdef: cmbx12 (12pt) at 14.399994pt
+
+[page 1 0 0 0 0 0 0 0 0 0]
+push:
+  xxx: 'pdf:tounicode UTF8-UTF16'
+  xxx: 'pdf:docinfo<</Title(日本語の表現テスト)/Subject(カタカナのソ)/Creator(LaTeX with hyperref)/Author(全角　空白)/Keywords(キーワードたち)>>'
+  xxx: 'papersize=597.50787pt,845.04684pt'
+pop:
+push:
+  down: 15.996262pt
+  push:
+    right: 51.996262pt
+    xxx: 'pdf:dest (page.1) [@thispage /XYZ @xpos @ypos null]'
+  pop:
+pop:
+down: 682pt
+push:
+  push:
+    down: -653pt
+    down: 623pt
+    push:
+      right: 53pt
+      down: -598pt
+      xxx: 'pdf:outline 1<</Title(こことか)/A<</S/GoTo/D(section.1)>>>>'
+      xxx: 'pdf:outline 1<</Title(そことか)/A<</S/GoTo/D(section.2)>>>>'
+      xxx: 'pdf:docview<</OpenAction[@page1/Fit]/PageMode/UseOutlines/ViewerPreferences<</DisplayDocTitle true>>>>'
+      xxx: 'pdf:dest (Doc-Start) [@thispage /XYZ @xpos @ypos null]'
+      xxx: 'pdf:dest (section.1) [@thispage /XYZ @xpos @ypos null]'
+      down: 12.193222pt
+      push:
+        push:
+          fnt: cmbx12 (12pt) at 14.399994pt
+          set: '1'
+        pop:
+        right: 24.299973pt
+        fnt: upjisg-h (10pt) at 13.855942pt
+        set: 'こことか'
+      pop:
+      down: 11.565460pt
+      xxx: 'pdf:dest (section.2) [@thispage /XYZ @xpos @ypos null]'
+      down: 16.337296pt
+      push:
+        push:
+          fnt: cmbx12 (12pt) at 14.399994pt
+          set: '2'
+        pop:
+        right: 24.299973pt
+        fnt: upjisg-h (10pt) at 13.855942pt
+        set: 'そことか'
+      pop:
+    pop:
+    down: 30pt
+    push:
+      right: 223pt
+      fnt: cmr10 at 10pt
+      set: '1'
+    pop:
+  pop:
+pop:

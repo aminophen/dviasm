@@ -202,18 +202,34 @@ cmp $IN/jisx0208.dump.dvi $OUT/jisx0208-ejp.dump.dvi || exit 1
 # spcj: DVI -> dump
 $DVIASM $IN/spcj.dvi -o $OUT/spcj.dump || exit 2
 diff $IN/spcj.dump $OUT/spcj.dump || exit 1
-$DVIASM -p $IN/spcj-ep.dvi -o $OUT/spcj-ep.dump || exit 2
-diff $IN/spcj-ep.dump $OUT/spcj-ep.dump || exit 1
 $DVIASM -p $IN/spcj-sp.dvi -o $OUT/spcj-sp.dump || exit 2
 diff $IN/spcj-sp.dump $OUT/spcj-sp.dump || exit 1
+$DVIASM -p $IN/spcj-ep.dvi -o $OUT/spcj-ep.dump || exit 2
+diff $IN/spcj-ep.dump $OUT/spcj-ep.dump || exit 1
 
 # spcj: dump -> DVI
 $DVIASM $IN/spcj.dump -o $OUT/spcj.dump.dvi || exit 2
 cmp $IN/spcj.dump.dvi $OUT/spcj.dump.dvi || exit 1
-$DVIASM -p $IN/spcj-ep.dump -o $OUT/spcj-ep.dump.dvi || exit 2
-cmp $IN/spcj-ep.dump.dvi $OUT/spcj-ep.dump.dvi || exit 1
 $DVIASM -p $IN/spcj-sp.dump -o $OUT/spcj-sp.dump.dvi || exit 2
 cmp $IN/spcj-sp.dump.dvi $OUT/spcj-sp.dump.dvi || exit 1
+$DVIASM -p $IN/spcj-ep.dump -o $OUT/spcj-ep.dump.dvi || exit 2
+cmp $IN/spcj-ep.dump.dvi $OUT/spcj-ep.dump.dvi || exit 1
+
+# spcj: DVI -> dump with -x <enc>
+$DVIASM $IN/spcj.dvi -x utf8 -o $OUT/spcjx.dump || exit 2
+diff $IN/spcjx.dump $OUT/spcjx.dump || exit 1
+$DVIASM -p $IN/spcj-sp.dvi -x sjis -o $OUT/spcjx-sp.dump || exit 2
+diff $IN/spcjx-sp.dump $OUT/spcjx-sp.dump || exit 1
+$DVIASM -p $IN/spcj-ep.dvi -x eucjp -o $OUT/spcjx-ep.dump || exit 2
+diff $IN/spcjx-ep.dump $OUT/spcjx-ep.dump || exit 1
+
+# spcj: dump -> DVI with -x <enc>
+$DVIASM $IN/spcjx.dump -x utf8 -o $OUT/spcjx.dump.dvi || exit 2
+cmp $IN/spcj.dump.dvi $OUT/spcjx.dump.dvi || exit 1
+$DVIASM -p $IN/spcjx-sp.dump -x sjis -o $OUT/spcjx-sp.dump.dvi || exit 2
+cmp $IN/spcj-sp.dump.dvi $OUT/spcjx-sp.dump.dvi || exit 1
+$DVIASM -p $IN/spcjx-ep.dump -x eucjp -o $OUT/spcjx-ep.dump.dvi || exit 2
+cmp $IN/spcj-ep.dump.dvi $OUT/spcjx-ep.dump.dvi || exit 1
 
 #####
 
