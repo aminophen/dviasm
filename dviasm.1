@@ -1,0 +1,96 @@
+.TH DVIASM 1
+.SH NAME
+DVIasm \- a TeX utility program for editing DVI files directly
+.SH SYNOPSIS
+\fBdviasm\fR [<\fIoptions\fR>] <\fIdvi_file\fR>|<\fIdvi_dump_file\fR>
+.SH DESCRIPTION
+\fBDVIasm\fR is a TeX utility program which is
+designed for editing DeVice-Independent (DVI) files directly.
+It consists of a single Python script, dviasm.py,
+in a human readable text format.
+It runs on any platform in which Python 3 is installed.
+.TP 2
+Features of \fBDVIasm\fR includes:
+.IP
+1) Disassemble a DVI file (or XeTeX XDV file) into
+a human-readable text file, the contents of which are easy to modify.
+.IP
+2) Assembles the output text file back to the binary format.
+.RE
+.SH OPTIONS
+.PP
+.TP 10
+\fB--version\fR
+Show program's version number and exit.
+.TP 10
+\fB-h\fR, \fB--help\fR
+Show this help message and exit.
+.TP 10
+\fB-u\fR <\fISTR\fR>, \fB--unit=\fR<\fISTR\fR>
+Set unit [default: `pt'].
+Allowed values are: `sp', `pt', `bp', `mm', `cm' and `in'.
+.TP 10
+\fB-o\fR <\fIFILE\fR>, \fB--output=\fR<\fIFILE\fR>
+Set filename for output instead of stdout.
+.TP 10
+\fB-e\fR <\fISTR\fR>, \fB--encoding=\fR<\fISTR\fR>
+Set encoding for input/output of dumped text [default: `utf8'].
+Allowed values are: `ascii', `latin1', `utf8', `sjis' and `eucjp'.
+When used with the option \fB-p\fR (or \fB--ptex\fR),
+allowed values are only `utf8', `sjis' and `eucjp'.
+.RS 10
+# NOTE: This feature does not support dumping through stdout.
+.RE
+.TP 10
+\fB-x\fR <\fISTR\fR>, \fB--xxx-encoding=\fR<\fISTR\fR>
+Set encoding for interpreting `xxx:' strings [default: `none'].
+Allowed values are: `none', `utf8', `sjis' and `eucjp'.
+.RS 10
+This option allows users to specify the correct encoding for
+dumping/compiling the contents of \\special.
+.TP 2
+Typical usages are as follows:
+.IP
+1) By default, the contents of \\special are dumped/compiled
+as byte-to-byte escape sequences in `\\x..' format.
+This would suffice when you don't need to read/edit
+the contents of \\special.
+.IP
+3) For XeTeX and upTeX users, `\fB-x utf8\fR' would be useful
+since these engines use UTF-8 to encode strings inside
+\\special commands.
+.IP
+2) For pTeX users with ISO-2022-JP-encoded DVI,
+it would be helpful to select the appropriate option
+`\fB-x eucjp\fR' (for Unix) or `\fB-x sjis\fR' (for Windows)
+to be consistent with the internal Kanji encoding used by
+pTeX engine.
+.RE
+.TP 10
+\fB-t\fR <\fIINT\fR>, \fB--tabsize=\fR<\fIINT\fR>
+Set tab size for push/pop [default: 2].
+.TP 10
+\fB-p\fR, \fB--ptex\fR
+Dump and compile ISO-2022-JP-encoded DVI for Japanese pTeX.
+This option is required to decode or encode Japanese characters
+being typeset (using `set2' or `put2') properly.
+.TP 10
+\fB-s\fR <\fISTR\fR>, \fB--subfont=\fR<\fISTR\fR>
+Specify the list of fonts with UCS2 subfont scheme
+in the comma-separated format.
+If <\fISTR\fR> is empty, the pre-defined internal subfont list
+is disabled.
+.RS 10
+This option would be useful for example when using CJK package.
+.RE
+.SH EXAMPLE
+# to be written
+.SH AUTHORS
+The first version was written in Python 2 by Jin-Hwan Cho in 2007.
+Khaled Hosny started to support dumping/compiling XeTeX XDV format in 2014.
+Arthur Reutenauer ported the script to Python 3 in 2019.
+Current maintainer of \fBDVIasm\fR is Hironobu Yamashita, since 2020.
+.SH BUG REPORT
+Please visit the GitHub repository <https://github.com/aminophen/dviasm>.
+.SH SEE ALSO
+# to be written

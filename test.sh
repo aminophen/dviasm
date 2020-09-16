@@ -11,8 +11,7 @@ CMP="cmp"
 # but the output might be written in CRLF on some platform.
 # if 'diff --strip-trailing-cr' is available, exploit it.
 # (useful for tests on win32 binaries run on MSYS shell)
-diffoptCRLF=
-diff --strip-trailing-cr README README \
+$DIFF --strip-trailing-cr README README \
   && DIFF="diff --strip-trailing-cr" || echo
 
 # directory
