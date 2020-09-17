@@ -90,3 +90,8 @@
   * spcj-ep.dump: dumped from above
   * spcj-ep.dump.dvi: compiled from above
   * spcjx-ep.dump: dumped spcj-ep.dvi with -x eucjp
+
+## from GitHub Issue 17
+* putj.dump: raw text (with put)
+  * putj.dump.dvi: compiled from above
+  * putj.dump.dump: dumped from above

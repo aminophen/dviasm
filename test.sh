@@ -240,6 +240,16 @@ $CMP $IN/spcj-sp.dump.dvi $OUT/spcjx-sp.dump.dvi || exit 1
 $DVIASM -p $IN/spcjx-ep.dump -x eucjp -o $OUT/spcjx-ep.dump.dvi || exit 2
 $CMP $IN/spcj-ep.dump.dvi $OUT/spcjx-ep.dump.dvi || exit 1
 
+##### from GitHub Issue 17
+
+# putj: dump -> DVI
+$DVIASM -p $IN/putj.dump -o $OUT/putj.dump.dvi || exit 2
+$CMP $IN/putj.dump.dvi $OUT/putj.dump.dvi || exit 1
+
+# putj: DVI -> dump (back)
+$DVIASM -p $IN/putj.dump.dvi -o $OUT/putj.dump.dump || exit 2
+$DIFF $IN/putj.dump.dump $OUT/putj.dump.dump || exit 1
+
 #####
 
 # finish

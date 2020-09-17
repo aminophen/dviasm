@@ -1,0 +1,36 @@
+[preamble]
+id: 2
+numerator: 25400000
+denominator: 473628672
+magnification: 1000
+comment: ''
+
+[postamble]
+maxv: 0pt
+maxh: 0pt
+maxs: 1
+pages: 1
+
+[font definitions]
+fntdef: min10 at 20pt
+fntdef: cmr10 at 20pt
+
+[page 1 0 0 0 0 0 0 0 0 0]
+fnt: min10 at 20pt
+put: 'テ'
+right: 10pt
+put: 'キ'
+right: 20pt
+put: 'ス'
+right: 30pt
+put: 'ト'
+right: 40pt
+set: 'であり'
+right: 20pt
+fnt: cmr10 at 20pt
+put: 'A'
+right: 25pt
+set: 'text'
+right: 20pt
+fnt: min10 at 20pt
+set: 'である。'

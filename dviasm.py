@@ -455,7 +455,7 @@ class DVI(object):
       if o == SET_RULE:
         s.append([SET_RULE, [p, SignedQuad(fp)]])
       elif o in (PUT1, PUT2, PUT3, PUT4):
-        s.append([PUT1, p])
+        s.append([PUT1, [p]])
       elif o == PUT_RULE:
         s.append([PUT_RULE, [p, SignedQuad(fp)]])
       elif o == NOP:
@@ -816,7 +816,10 @@ class DVI(object):
         else:
           self.cur_page.append([SET1, ol])
       elif key == 'put':
-        self.cur_page.append([PUT1, GetStr(val)])
+        ol = GetStr(val)
+        if len(ol) != 1:
+          warning('only one character is allowed for put!')
+        self.cur_page.append([PUT1, ol])
       elif key == 'setrule':
         v = val.split(' ')
         if len(v) != 2:
