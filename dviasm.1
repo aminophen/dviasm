@@ -16,7 +16,25 @@ Features of \fBDVIasm\fR includes:
 a human-readable text file, the contents of which are easy to modify.
 .IP
 2) Assembles the output text file back to the binary format.
-.RE
+.TP 2
+There are several alternatives for dumping and editing DVI files:
+.IP
+1) \fBDVItype\fR developed by Donald E. Knuth supports
+one-way conversion from DVI to a text format.
+There are also some derivatives: \fBpDVItype\fR for pTeX,
+\fBupDVItype\fR for upTeX, \fBODVItype\fR for Omega.
+.IP
+2) The programs \fBdv2dt\fR and \fBdt2dv\fR can be used
+in pairs to allow two-way conversion between DVI and
+the DVI Text Language (DTL).
+.IP
+3) The program \fBdvispc\fR (part of DVIOUT previewer)
+also has an ability to convert between DVI and text.
+.PP
+Among those, \fBDVIasm\fR is designed to allow users to edit
+DVI files easily, for example by unifying
+``right1''\-``right4'' to a single command ``right''
+which can be used regardless of the amount of move.
 .SH OPTIONS
 .PP
 .TP 10
@@ -84,7 +102,11 @@ is disabled.
 This option would be useful for example when using CJK package.
 .RE
 .SH EXAMPLE
-# to be written
+Documentation of
+.B DVIasm
+by the original author Jin-Hwan Cho is published as:
+     http://tug.org/TUGboat/Articles/tb28-2/tb89cho.pdf (TUGboat)
+     http://ajt.ktug.kr/assets/2008/5/1/0201cho.pdf (Asian Journal of TeX)
 .SH AUTHORS
 The first version was written in Python 2 by Jin-Hwan Cho in 2007.
 Khaled Hosny started to support dumping/compiling XeTeX XDV format in 2014.
@@ -93,4 +115,7 @@ Current maintainer of \fBDVIasm\fR is Hironobu Yamashita, since 2020.
 .SH BUG REPORT
 Please visit the GitHub repository <https://github.com/aminophen/dviasm>.
 .SH SEE ALSO
-# to be written
+.BR dvitype (1),
+.BR dv2dt (1),
+.BR dt2dv (1),
+.BR dvispc (1).
