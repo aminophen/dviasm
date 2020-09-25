@@ -72,7 +72,7 @@ DVI_ID = 2; DVIV_ID = 3; XDVI_ID = 6; XDV_ID = 7;
 DVI_IDS = (DVI_ID, DVIV_ID, XDVI_ID, XDV_ID)
 
 def warning(msg):
-  sys.stderr.write('%s\n' % msg)
+  sys.stderr.write('warning: %s\n' % msg)
 
 def ValidID(dvi_id):
     if dvi_id not in DVI_IDS:
@@ -606,6 +606,12 @@ class DVI(object):
     # WriteFontDefinitions
     self.WriteFontDefinitions(fp)
     # WritePages
+    if not self.pages:
+      # dvistd0.pdf, Section A.1:
+      # > A DVI file consists of a ``preamble,'' followed by a sequence of
+      # > one or more "pages," followed by a ``postamble.''
+      warning('one or more pages required!')
+      self.pages.append({'count':[1,0,0,0,0,0,0,0,0,0], 'content':[]})
     stackdepth = 0; loc = -1
     for page in self.pages:
       w = x = y = z = 0; stack = []
@@ -937,6 +943,12 @@ class DVI(object):
         fp.write("(%s) " % self.byconv(self.font_def[e]['design_size']))
       fp.write("at %s\n" % self.byconv(self.font_def[e]['scaled_size']))
     # DumpPages
+    if not self.pages:
+      # dvistd0.pdf, Section A.1:
+      # > A DVI file consists of a ``preamble,'' followed by a sequence of
+      # > one or more "pages," followed by a ``postamble.''
+      warning('one or more pages required!')
+      self.pages.append({'count':[1,0,0,0,0,0,0,0,0,0], 'content':[]})
     for page in self.pages:
       fp.write("\n[page" + (" %d"*10 % tuple(page['count'])) + "]\n")
       indent = 0
