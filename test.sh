@@ -22,7 +22,15 @@ mkdir -p $OUT
 # debug
 set -x
 
-##### minimum by Arthur Reutenauer
+##### minimum (empty)
+
+touch $OUT/empty.dump
+$DVIASM $OUT/empty.dump -o $OUT/empty.dump.dvi || exit 2
+$CMP $IN/empty.dvi $OUT/empty.dump.dvi || exit 1
+$DVIASM $OUT/empty.dump.dvi -o $OUT/empty.dump.dump || exit 2
+$DIFF $IN/empty.dump $OUT/empty.dump.dump || exit 1
+
+##### simple by Arthur Reutenauer
 
 # simple: DVI -> dump (file)
 $DVIASM $IN/test.dvi -o $OUT/testo.dump || exit 2

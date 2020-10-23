@@ -24,7 +24,7 @@
   * ajt06kr.dump.dvi: compiled above with dviasm
   * ajt06kr.dump.dump: dumped from above
 
-## minimum by Arthur Reutenauer (2019-11-14)
+## simple by Arthur Reutenauer (2019-11-14)
 * test.dvi: Compiled test.tex with Knuth's TeX
   * test.dump: dumped from above
   * test.dump.dvi: compiled from above
@@ -95,3 +95,8 @@
 * putj.dump: raw text (with put)
   * putj.dump.dvi: compiled from above
   * putj.dump.dump: dumped from above
+
+## from GitHub Issue 18
+* empty.dvi: Output from Knuth's TeX
+             (tex -output-comment='' '\shipout\vbox{}\end')
+  * empty.dump: dumped from above
