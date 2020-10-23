@@ -683,7 +683,7 @@ class DVI(object):
       fp.write(b''.join(s))
     # WritePostamble
     post_loc = fp.tell()
-    fp.write(b''.join([bytes.fromhex('%02x' % POST), PutSignedQuad(loc), PutSignedQuad(self.numerator), PutSignedQuad(self.denominator), PutSignedQuad(self.mag), PutSignedQuad(self.max_v), PutSignedQuad(self.max_h), Put2Bytes(stackdepth+1), Put2Bytes(len(self.pages))]))
+    fp.write(b''.join([bytes.fromhex('%02x' % POST), PutSignedQuad(loc), PutSignedQuad(self.numerator), PutSignedQuad(self.denominator), PutSignedQuad(self.mag), PutSignedQuad(self.max_v), PutSignedQuad(self.max_h), Put2Bytes(stackdepth), Put2Bytes(len(self.pages))]))
     # WriteFontDefinitions
     self.WriteFontDefinitions(fp)
     # WritePostPostamble
