@@ -1,0 +1,19 @@
+[page 1]
+fnt: upjisr-h at 20pt
+put: 'テ'
+right: 10pt
+put: 'キ'
+right: 20pt
+put: 'ス'
+right: 30pt
+put: 'ト'
+right: 40pt
+set: 'であり'
+right: 20pt
+fnt: cmr10 at 20pt
+put: 'A'
+right: 25pt
+set: 'text'
+right: 20pt
+fnt: upjisr-h at 20pt
+set: 'である。'

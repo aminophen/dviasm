@@ -253,10 +253,14 @@ $CMP $IN/spcj-ep.dump.dvi $OUT/spcjx-ep.dump.dvi || exit 1
 # putj: dump -> DVI
 $DVIASM -p $IN/putj.dump -o $OUT/putj.dump.dvi || exit 2
 $CMP $IN/putj.dump.dvi $OUT/putj.dump.dvi || exit 1
+$DVIASM $IN/put.dump -o $OUT/put.dump.dvi || exit 2
+$CMP $IN/put.dump.dvi $OUT/put.dump.dvi || exit 1
 
 # putj: DVI -> dump (back)
 $DVIASM -p $IN/putj.dump.dvi -o $OUT/putj.dump.dump || exit 2
 $DIFF $IN/putj.dump.dump $OUT/putj.dump.dump || exit 1
+$DVIASM $IN/put.dump.dvi -o $OUT/put.dump.dump || exit 2
+$DIFF $IN/put.dump.dump $OUT/put.dump.dump || exit 1
 
 #####
 
