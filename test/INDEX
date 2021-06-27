@@ -95,6 +95,9 @@
 * putj.dump: raw text (with put)
   * putj.dump.dvi: compiled from above
   * putj.dump.dump: dumped from above
+* put.dump: raw text (with put)
+  * put.dump.dvi: compiled from above
+  * put.dump.dump: dumped from above
 
 ## from GitHub Issue 18
 * empty.dvi: Output from Knuth's TeX
