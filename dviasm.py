@@ -1261,11 +1261,17 @@ def IsDVI(fname):
 if __name__ == '__main__':
   (options, args) = ProcessOptions()
   aDVI = DVI(unit=options.unit)
-  if IsDVI(args[0]): # dvi -> dump
-    aDVI.Load(args[0])
+  if os.path.isfile(args[0]): fname = args[0]
+  elif os.path.isfile(args[0] + '.xdv'): fname = args[0] + '.xdv'
+  elif os.path.isfile(args[0] + '.dvi'): fname = args[0] + '.dvi'
+  else:
+    sys.stderr.write('Failed to read %s\n' % args[0])
+    sys.exit(1)
+  if IsDVI(fname): # dvi -> dump
+    aDVI.Load(fname)
     if options.output: aDVI.Dump(options.output, tabsize=options.tabsize, encoding=options.encoding)
     else:              aDVI.DumpToFile(sys.stdout, tabsize=options.tabsize, encoding=options.encoding)
   else: # dump -> dvi
-    aDVI.Parse(args[0], encoding=options.encoding)
+    aDVI.Parse(fname, encoding=options.encoding)
     if options.output: aDVI.Save(options.output)
     else:              aDVI.SaveToFile(sys.stdout.buffer)
