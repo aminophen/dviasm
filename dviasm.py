@@ -6,7 +6,7 @@
 # Copyright (C) 2007-2008 by Jin-Hwan Cho <chofchof@ktug.or.kr>
 # Copyright (C) 2011-2017 by Khaled Hosny <khaledhosny@eglug.org>
 # Copyright (C) 2019      by Arthur Reutenauer <arthur@reutenauer.eu>
-# Copyright (C) 2019-2020 by Hironobu Yamashita <h.y.acetaminophen@gmail.com>
+# Copyright (C) 2019-2022 by Hironobu Yamashita <h.y.acetaminophen@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -1180,7 +1180,7 @@ Please report bugs to
 Copyright (C) 2007-2008 by Jin-Hwan Cho <chofchof@ktug.or.kr>
 Copyright (C) 2011-2017 by Khaled Hosny <khaledhosny@eglug.org>
 Copyright (C) 2019      by Arthur Reutenauer <arthur@reutenauer.eu>
-Copyright (C) 2019-2020 by Hironobu Yamashita <h.y.acetaminophen@gmail.com>
+Copyright (C) 2019-2022 by Hironobu Yamashita <h.y.acetaminophen@gmail.com>
 
 This is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -1265,7 +1265,7 @@ if __name__ == '__main__':
   elif os.path.isfile(args[0] + '.xdv'): fname = args[0] + '.xdv'
   elif os.path.isfile(args[0] + '.dvi'): fname = args[0] + '.dvi'
   else:
-    sys.stderr.write('Failed to read %s\n' % args[0])
+    sys.stderr.write('File %s not found\n' % args[0])
     sys.exit(1)
   if IsDVI(fname): # dvi -> dump
     aDVI.Load(fname)
