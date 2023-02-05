@@ -19,7 +19,7 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import sys, os.path
 from optparse import OptionParser
@@ -1169,7 +1169,7 @@ def ProcessOptions():
 DVIasm is a Python script to support changing or creating DVI files
 via disassembling into text, editing, and then reassembling into
 binary format. It is fully documented at
-  http://tug.org/TUGboat/Articles/tb28-2/tb89cho.pdf
+  https://tug.org/TUGboat/Articles/tb28-2/tb89cho.pdf
   http://ajt.ktug.kr/assets/2008/5/1/0201cho.pdf
 
 Please report bugs to
