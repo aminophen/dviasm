@@ -6,7 +6,7 @@
 # Copyright (C) 2007-2008 by Jin-Hwan Cho <chofchof@ktug.or.kr>
 # Copyright (C) 2011-2017 by Khaled Hosny <khaledhosny@eglug.org>
 # Copyright (C) 2019      by Arthur Reutenauer <arthur@reutenauer.eu>
-# Copyright (C) 2019-2022 by Hironobu Yamashita <h.y.acetaminophen@gmail.com>
+# Copyright (C) 2019-2023 by Hironobu Yamashita <h.y.acetaminophen@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -315,8 +315,7 @@ class DVI(object):
     id = GetByte(fp)
     if not ValidID(id):
       warning("ID byte is %d; use the default %d!" % (id, DVI_ID))
-    else:
-      self.id = id
+    self.id = id
     numerator = SignedQuad(fp)
     if numerator <= 0:
       warning('numerator is %d; use the default 25400000!' % numerator)
