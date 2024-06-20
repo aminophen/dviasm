@@ -240,7 +240,12 @@ def PutStrUTF8(t): # used in Dump()
       elif o < 128:       s += ('\\x%02x' % o)
       elif is_ptex:
         s += DecodeISO2022JP(o)
-      else:               s += chr(o)
+      else:
+        try:              s += chr(o)
+        except ValueError: # upTeX may have >= 0x110000
+          if o < 256:         s += '\\x%02x' % o
+          elif o < 65536:     s += '\\u%04x' % o
+          else:               s += '\\U%08x' % o
   return "'%s'" % s
 
 def IsFontChanged(f, z):
