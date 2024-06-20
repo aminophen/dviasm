@@ -192,12 +192,42 @@ def UCS2toJIS(c):
   if len(s) == 1: return ord(s)
   else:           return (s[3] << 8) + s[4]
 
+def XUnicodeDecode(s): # dirty hack to handle >= 0x110000
+  t = []
+  i = 1
+  while i < len(s)-1:
+    if s[i] == '\\':
+      if s[i+1] == 'x':
+        j = int(s[i+2],16)*16+int(s[i+3],16)
+        i += 3
+      elif s[i+1] == 'u':
+        j = int(s[i+2],16)*16+int(s[i+3],16)
+        j = j*256+int(s[i+4],16)*16+int(s[i+5],16)
+        i += 5
+      elif s[i+1] == 'U':
+        j = int(s[i+2],16)*16+int(s[i+3],16)
+        j = j*256+int(s[i+4],16)*16+int(s[i+5],16)
+        j = j*256+int(s[i+6],16)*16+int(s[i+7],16)
+        j = j*256+int(s[i+8],16)*16+int(s[i+9],16)
+        i += 9
+      else:
+        j = ord(s[i+1])
+        i += 1
+    else: j = ord(s[i])
+    i += 1
+    if is_ptex: j = UCS2toJIS(chr(j))
+    t.append(j)
+  return t
+
 def GetStrUTF8(s): # used in Parse()
   if len(s) > 1 and ((s[0] == "'" and s[-1] == "'") or (s[0] == '"' and s[-1] == '"')):
-    t = s[1:-1].encode('raw_unicode_escape').decode('unicode_escape')
-    if is_ptex: return [UCS2toJIS(c) for c in t]
-    else:       return [ord(c)       for c in t]
-  else:         return ''
+    try: # This should work for valid Unicode
+      t = s[1:-1].encode('raw_unicode_escape').decode('unicode_escape')
+      if is_ptex: return [UCS2toJIS(c) for c in t]
+      else:       return [ord(c)       for c in t]
+    except UnicodeDecodeError: # e.g. for upTeX >= 0x110000
+                  return XUnicodeDecode(s)
+  else:           return ''
 
 def PutStrASCII(t): # used in Dump()
   s = ''
@@ -206,8 +236,7 @@ def PutStrASCII(t): # used in Dump()
     elif 32 <= o < 127: s += chr(o)
     elif o < 256:       s += ('\\x%02x' % o)
     elif o < 65536:     s += ('\\u%04x' % o)
-    else:
-      warning('Not support characters > 65535; may skip %d.\n' % o)
+    else:               s += ('\\U%08x' % o)
   return "'%s'" % s
 
 def PutStrLatin1(t): # used in Dump()
@@ -217,8 +246,7 @@ def PutStrLatin1(t): # used in Dump()
     elif 32 <= o < 127 or 161 <= o < 256: s += chr(o)
     elif o < 256:                         s += ('\\x%02x' % o)
     elif o < 65536:                       s += ('\\u%04x' % o)
-    else:
-      warning('Not support characters > 65535; may skip %d.\n' % o)
+    else:                                 s += ('\\U%08x' % o)
   return "'%s'" % s
 
 def DecodeISO2022JP(c):
