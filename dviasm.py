@@ -201,32 +201,34 @@ def XUnicodeDecode(s): # dirty hack to handle >= 0x110000
       if s[i+1] == 'x':
         try:
           c = int(s[i+2:i+4],16)
-          i += 3
+          i += 4
         except ValueError:
           warning('Invalid escape sequence \\x ignored!')
-          i += 1
+          i += 2
       elif s[i+1] == 'u':
         try:
           c = int(s[i+2:i+6],16)
-          i += 5
+          i += 6
         except ValueError:
           warning('Invalid escape sequence \\u ignored!')
-          i += 1
+          i += 2
       elif s[i+1] == 'U':
         try:
           c = int(s[i+2:i+10],16)
-          i += 9
+          i += 10
         except ValueError:
           warning('Invalid escape sequence \\U ignored!')
-          i += 1
+          i += 2
       else:
         if i+1 < len(s)-1:
           c = ord(s[i+1])
+          i += 2
         else:
           warning('Invalid escape character \\ ignored!')
-        i += 1
-    else: c = ord(s[i])
-    i += 1
+          i += 1
+    else:
+          c = ord(s[i])
+          i += 1
     if is_ptex: c = UCS2toJIS(chr(c))
     if c >= 0: t.append(c)
   return t
