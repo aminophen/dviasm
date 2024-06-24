@@ -228,7 +228,7 @@ def XUnicodeDecode(s): # dirty hack to handle >= 0x110000
     else: c = ord(s[i])
     i += 1
     if is_ptex: c = UCS2toJIS(chr(c))
-    if c > 0: t.append(c)
+    if c >= 0: t.append(c)
   return t
 
 def GetStrUTF8(s): # used in Parse()
