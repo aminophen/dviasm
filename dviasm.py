@@ -196,27 +196,39 @@ def XUnicodeDecode(s): # dirty hack to handle >= 0x110000
   t = []
   i = 1
   while i < len(s)-1:
+    c = -1
     if s[i] == '\\':
       if s[i+1] == 'x':
-        j = int(s[i+2],16)*16+int(s[i+3],16)
-        i += 3
+        try:
+          c = int(s[i+2:i+4],16)
+          i += 3
+        except ValueError:
+          warning('Invalid escape sequence \\x ignored!')
+          i += 1
       elif s[i+1] == 'u':
-        j = int(s[i+2],16)*16+int(s[i+3],16)
-        j = j*256+int(s[i+4],16)*16+int(s[i+5],16)
-        i += 5
+        try:
+          c = int(s[i+2:i+6],16)
+          i += 5
+        except ValueError:
+          warning('Invalid escape sequence \\u ignored!')
+          i += 1
       elif s[i+1] == 'U':
-        j = int(s[i+2],16)*16+int(s[i+3],16)
-        j = j*256+int(s[i+4],16)*16+int(s[i+5],16)
-        j = j*256+int(s[i+6],16)*16+int(s[i+7],16)
-        j = j*256+int(s[i+8],16)*16+int(s[i+9],16)
-        i += 9
+        try:
+          c = int(s[i+2:i+10],16)
+          i += 9
+        except ValueError:
+          warning('Invalid escape sequence \\U ignored!')
+          i += 1
       else:
-        j = ord(s[i+1])
+        if i+1 < len(s)-1:
+          c = ord(s[i+1])
+        else:
+          warning('Invalid escape character \\ ignored!')
         i += 1
-    else: j = ord(s[i])
+    else: c = ord(s[i])
     i += 1
-    if is_ptex: j = UCS2toJIS(chr(j))
-    t.append(j)
+    if is_ptex: c = UCS2toJIS(chr(c))
+    if c > 0: t.append(c)
   return t
 
 def GetStrUTF8(s): # used in Parse()
