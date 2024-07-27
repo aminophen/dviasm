@@ -179,11 +179,6 @@ def GetInt(s):
   try: return int(s)
   except: return -1
 
-def GetStrASCII(s): # used in Parse()
-  if len(s) > 1 and ((s[0] == "'" and s[-1] == "'") or (s[0] == '"' and s[-1] == '"')):
-    return [ord(c) for c in s[1:-1].decode('unicode_escape')]
-  else: return ''
-
 def UCS2toJIS(c):
   try:
     s = c.encode('iso2022-jp')
@@ -233,7 +228,7 @@ def XUnicodeDecode(s): # dirty hack to handle >= 0x110000
     if c >= 0: t.append(c)
   return t
 
-def GetStrUTF8(s): # used in Parse()
+def GetStr(s): # used in Parse()
   if len(s) > 1 and ((s[0] == "'" and s[-1] == "'") or (s[0] == '"' and s[-1] == '"')):
     try: # This should work for valid Unicode
       t = s[1:-1].encode('raw_unicode_escape').decode('unicode_escape')
@@ -785,9 +780,7 @@ class DVI(object):
     self.ParseFromString(s, encoding=encoding)
 
   def ParseFromString(self, s, encoding=''):
-    global GetStr, cur_font, cur_dsize, cur_ssize, subfont_idx
-    if encoding == 'ascii': GetStr = GetStrASCII
-    else:                   GetStr = GetStrUTF8
+    global cur_font, cur_dsize, cur_ssize, subfont_idx
     self.Initialize()
     self.fnt_num = 0
     dir_used = 0

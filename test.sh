@@ -185,6 +185,18 @@ $CMP $IN/varenc-p.dump.dvi $OUT/varenc-p.dump.dvi || exit 1
 $DVIASM $IN/varenc-up.dump -o $OUT/varenc-up.dump.dvi || exit 2
 $CMP $IN/varenc-up.dump.dvi $OUT/varenc-up.dump.dvi || exit 1
 
+# varenc: dump/compile with -e ascii
+$DVIASM -e ascii $IN/varenc-up.dvi -o $OUT/varenc-up-a.dump || exit 2
+$DIFF $IN/varenc-up-a.dump $OUT/varenc-up-a.dump || exit 1
+$DVIASM -e ascii $IN/varenc-up-a.dump -o $OUT/varenc-up-a.dump.dvi || exit 2
+$CMP $IN/varenc-up.dump.dvi $OUT/varenc-up-a.dump.dvi || exit 1
+
+# varenc: dump/compile with -e latin1
+$DVIASM -e latin1 $IN/varenc-up.dvi -o $OUT/varenc-up-l.dump || exit 2
+$DIFF $IN/varenc-up-l.dump $OUT/varenc-up-l.dump || exit 1
+$DVIASM -e latin1 $IN/varenc-up-l.dump -o $OUT/varenc-up-l.dump.dvi || exit 2
+$CMP $IN/varenc-up.dump.dvi $OUT/varenc-up-l.dump.dvi || exit 1
+
 ##### command-line encoding option
 
 # Note: The original ChoF version supported only

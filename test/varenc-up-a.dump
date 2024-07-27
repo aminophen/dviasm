@@ -1,0 +1,119 @@
+[preamble]
+id: 2
+numerator: 25400000
+denominator: 473628672
+magnification: 1000
+comment: ' TeX output 2020.09.05:2225'
+
+[postamble]
+maxv: 682pt
+maxh: 398pt
+maxs: 3
+pages: 1
+
+[font definitions]
+fntdef: cmr10 at 10pt
+fntdef: upjisr-h (10pt) at 9.622192pt
+fntdef: ptmr8y at 10pt
+fntdef: tcrm1000 at 10pt
+fntdef: ecrm1000 at 10pt
+
+[page 1 0 0 0 0 0 0 0 0 0]
+down: 682pt
+push:
+  down: -653pt
+  down: 623pt
+  push:
+    down: -588pt
+    push:
+      right: 68pt
+      fnt: cmr10 at 10pt
+      set: 'aller'
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: '\u306e\u8907\u5408\u904e\u53bb\u5f62\u306f'
+      w: -0.277786pt
+      fnt: cmr10 at 10pt
+      set: '^'
+      x: -4.722229pt
+      set: 'etre'
+      right: 3.333328pt
+      set: 'all'
+      w0:
+      set: '\x13'
+      x0:
+      set: 'e'
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: '\u3067\u3059'
+    pop:
+    y: 12pt
+    push:
+      right: 68pt
+      set: '\u76f4\u63a5\u5165\u529b'
+      fnt: tcrm1000 at 10pt
+      set: '\x8c'
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: '\u3082\u78ba\u8a8d'
+    pop:
+    y0:
+    push:
+      right: 68pt
+      fnt: ecrm1000 at 10pt
+      set: 'aller'
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: '\u306e\u8907\u5408\u904e\u53bb\u5f62\u306f'
+      fnt: ecrm1000 at 10pt
+      set: '\xeatre'
+      right: 3.332520pt
+      set: 'all\xe9'
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: '\u3067\u3059'
+    pop:
+    y0:
+    push:
+      right: 68pt
+      set: '\u76f4\u63a5\u5165\u529b'
+      fnt: tcrm1000 at 10pt
+      set: '\x8c'
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: '\u3082\u78ba\u8a8d'
+    pop:
+    y0:
+    push:
+      right: 68pt
+      fnt: ptmr8y at 10pt
+      set: 'aller'
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: '\u306e\u8907\u5408\u904e\u53bb\u5f62\u306f'
+      fnt: ptmr8y at 10pt
+      set: '\xeatre'
+      right: 2.500000pt
+      set: 'all\xe9'
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: '\u3067\u3059'
+    pop:
+    y0:
+    push:
+      right: 68pt
+      set: '\u76f4\u63a5\u5165\u529b'
+      fnt: ptmr8y at 10pt
+      set: '\x83'
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: '\u3082\u78ba\u8a8d'
+    pop:
+    y0:
+    push:
+      right: 68pt
+      set: '\u8457\u4f5c\u306f'
+      fnt: ptmr8y at 10pt
+      set: '\xa9'
+      fnt: upjisr-h (10pt) at 9.622192pt
+      set: '\u30de\u30fc\u30af'
+    pop:
+  pop:
+  down: 30pt
+  push:
+    right: 223pt
+    fnt: ptmr8y at 10pt
+    set: '1'
+  pop:
+pop:
