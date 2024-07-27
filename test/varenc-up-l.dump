@@ -62,9 +62,9 @@ push:
       fnt: upjisr-h (10pt) at 9.622192pt
       set: '\u306e\u8907\u5408\u904e\u53bb\u5f62\u306f'
       fnt: ecrm1000 at 10pt
-      set: 'être'
+      set: 'Ãªtre'
       right: 3.332520pt
-      set: 'allé'
+      set: 'allÃ©'
       fnt: upjisr-h (10pt) at 9.622192pt
       set: '\u3067\u3059'
     pop:
@@ -85,9 +85,9 @@ push:
       fnt: upjisr-h (10pt) at 9.622192pt
       set: '\u306e\u8907\u5408\u904e\u53bb\u5f62\u306f'
       fnt: ptmr8y at 10pt
-      set: 'être'
+      set: 'Ãªtre'
       right: 2.500000pt
-      set: 'allé'
+      set: 'allÃ©'
       fnt: upjisr-h (10pt) at 9.622192pt
       set: '\u3067\u3059'
     pop:
@@ -105,7 +105,7 @@ push:
       right: 68pt
       set: '\u8457\u4f5c\u306f'
       fnt: ptmr8y at 10pt
-      set: '©'
+      set: 'Â©'
       fnt: upjisr-h (10pt) at 9.622192pt
       set: '\u30de\u30fc\u30af'
     pop:

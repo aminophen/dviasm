@@ -193,9 +193,16 @@ $CMP $IN/varenc-up.dump.dvi $OUT/varenc-up-a.dump.dvi || exit 1
 
 # varenc: dump/compile with -e latin1
 $DVIASM -e latin1 $IN/varenc-up.dvi -o $OUT/varenc-up-l.dump || exit 2
-$DIFF $IN/varenc-up-l.dump $OUT/varenc-up-l.dump || exit 1
-$DVIASM -e latin1 $IN/varenc-up-l.dump -o $OUT/varenc-up-l.dump.dvi || exit 2
+iconv -f UTF-8 -t ISO-8859-1 $IN/varenc-up-l.dump >$OUT/varenc-up-l1.dump || exit 3
+$DIFF $OUT/varenc-up-l1.dump $OUT/varenc-up-l.dump || exit 1
+$DVIASM -e latin1 $OUT/varenc-up-l.dump -o $OUT/varenc-up-l.dump.dvi || exit 2
 $CMP $IN/varenc-up.dump.dvi $OUT/varenc-up-l.dump.dvi || exit 1
+
+# varenc: ordinary UTF-8 compile
+$DVIASM $IN/varenc-up-a.dump -o $OUT/varenc-up-a0.dump.dvi || exit 2
+$CMP $IN/varenc-up.dump.dvi $OUT/varenc-up-a0.dump.dvi || exit 1
+$DVIASM $IN/varenc-up-l.dump -o $OUT/varenc-up-l0.dump.dvi || exit 2
+$CMP $IN/varenc-up.dump.dvi $OUT/varenc-up-l0.dump.dvi || exit 1
 
 ##### command-line encoding option
 
